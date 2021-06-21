@@ -1,13 +1,9 @@
 package com.SiGeBan.models.services;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
 
 import com.SiGeBan.entity.*;
-import com.SiGeBan.models.dao.ConfigHibernate;;
+import com.SiGeBan.models.dao.ConfigHibernate;
 
 public class initDB {
 	public static void main(String[] args) {
