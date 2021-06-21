@@ -92,17 +92,17 @@
 
  <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar Nuevo Usuario</h1>
 <form action="add.jsp" method="get">
-<br>	Ingrese nombre:  <p>       <input type="text" name="txtNombre"> <br/>
-<br>	 Ingrese apellido:   <p>     <input type="text" name="txtApellido"> <br/>
-<br>	      Ingrese DNI:  <p>    <input type="text" name="txtNombre"> <br/>
-<br>	 Seleccione Sexo: <p><br/>
+<br>	Ingrese nombre:        <input type="text" name="txtNombre"> <br/>
+<br>	 Ingrese apellido:       <input type="text" name="txtApellido"> <br/>
+<br>	      Ingrese DNI:     <input type="text" name="txtNombre"> <br/>
+<br>	 Seleccione Sexo: 
 		
 		Masculino       <input type="radio" name="Sexo" value="Masc">
-		Femenino       <input type="radio" name="Sexo" value="Feme"> <br><br />
+		Femenino       <input type="radio" name="Sexo" value="Feme"> <br />
 		
-	<br>Seleccione Pais de residencia<br/> <p>
+	<br>Seleccione Pais de residencia
 		
-				<br>	<select name="pais">
+					<select name="pais">
 						<option value="1">México</option>
 						<option value="2">Colombia</option>
 						<option value="3">Chile</option>
@@ -118,9 +118,9 @@
 					</select> 
 		<br/>
 
-    <br>Seleccione Provincia<br/> <p>
+    <br>Seleccione Provincia
 		
-			<br>		<select name="pais">
+				<select name="pais">
 						<option value="1">Buenos aires</option>
 						<option value="2">Jujuy</option>
 						<option value="3">Salta</option>
@@ -135,9 +135,9 @@
 						<option value="12">San Luis</option>
 					</select> 
 		<br/>
-<br> Seleccione Localidad <br/><p>
+<br> Seleccione Localidad 
 		
-			<br>		<select name="pais">
+					<select name="pais">
 						<option value="1">Jose C Paz</option>
 						<option value="2">San Miguel</option>
 						<option value="3">Moreno</option>
@@ -154,16 +154,16 @@
 		
 <br />
 
-  <br>	Ingrese su Fecha de nacimiento:  <p>  <br />   <input type="text" name="txtNombre"> <br />
+  <br>	Ingrese su Fecha de nacimiento:      <input type="text" name="txtNombre"> <br />
 
- <br>   Ingrese su direccion: <p><br />
+ <br>   Ingrese su direccion: 
 		
 		Calle      <input type="text" name="calle">
 		Numero      <input type="text" name="numero" >
 		Dto       <input type="text" name="dto" > 
-<br />	
+
 	
-<br><p>	<input type="submit" name="btnAceptar" value="Ingresar Usuario"><p><br/>
+<br>	<input type="submit" name="btnAceptar" value="Ingresar Usuario"><p><br/>
 
 
 	
