@@ -20,7 +20,7 @@ public class Perfiles implements Serializable {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Columns(name="Profile")
+	@Column(name="Profile")
 	private String perfil;
 
 	

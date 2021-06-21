@@ -28,8 +28,8 @@ public class Personas implements Serializable {
 	@Column(name="Apellido")
 	private String apellido;	
 	
-	@Column(name="Sexo")
-	private Sexos sexo;
+	@Column(name="Genero")
+	private Generos genero;
 	
 	@Column(name="Pais")
 	private Paises pais;
@@ -49,13 +49,13 @@ public class Personas implements Serializable {
 	@Column(name="Usuario")
 	private Usuarios usuario;
 
-	public Personas(int dNI, String nombre, String apellido, Sexos sexo, Paises pais, LocalDate fechanac,
+	public Personas(int dNI, String nombre, String apellido, Generos genero, Paises pais, LocalDate fechanac,
 			String direccion, Localidades localidad, Provincias provincia, Usuarios usuario) {
 		super();
 		DNI = dNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.sexo = sexo;
+		this.genero = genero;
 		this.pais = pais;
 		this.fechanac = fechanac;
 		this.direccion = direccion;
@@ -92,12 +92,12 @@ public class Personas implements Serializable {
 		this.apellido = apellido;
 	}
 
-	public Sexos getSexo() {
-		return sexo;
+	public Generos getGenero() {
+		return genero;
 	}
 
-	public void setSexo(Sexos sexo) {
-		this.sexo = sexo;
+	public void setGeneros(Generos sexo) {
+		this.genero = genero;
 	}
 
 	public Paises getPais() {
