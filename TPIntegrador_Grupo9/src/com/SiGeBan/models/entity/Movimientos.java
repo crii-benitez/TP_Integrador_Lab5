@@ -1,4 +1,4 @@
-package com.SiGeBan.entity;
+package com.SiGeBan.models.entity;
 
 import java.util.Date;
 

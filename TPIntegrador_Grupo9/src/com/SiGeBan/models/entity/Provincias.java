@@ -1,19 +1,29 @@
-package com.SiGeBan.entity;
+package com.SiGeBan.models.entity;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-public class Provincias {
+
+@Entity
+@Table(name = "Provincias")
+public class Provincias implements Serializable{
 	// propiedades
 	private static final long serialVersionUID = 1L;
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Provincia")
 	private String provincia;
 
-	@Column(name = "Pais")
+	@ManyToOne
+	@JoinColumn(name="pais")
 	private Paises pais;
 
 	// constructor

@@ -1,4 +1,4 @@
-package com.SiGeBan.entity;
+package com.SiGeBan.models.entity;
 
 import java.io.Serializable;
 
@@ -10,35 +10,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cities")
-public class Localidades implements Serializable {
-
+public class Generos implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="city")
-	private String ciudad;
+	private String genero;
 	
-	public Localidades()
+	public Generos()
 	{}
 
-	public String getCiudad() {
-		return ciudad;
+	public String getGenero() {
+		return genero;
 	}
 
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	@Override
 	public String toString() {
-		return "Localidades [id=" + id + ", ciudad=" + ciudad + "]";
+		return "Genero [id=" + id + ", genero=" + genero + "]";
 	}
-	
 	
 	
 }

@@ -2,8 +2,8 @@ package com.SiGeBan.models.services;
 
 import org.hibernate.Session;
 
-import com.SiGeBan.entity.*;
 import com.SiGeBan.models.dao.ConfigHibernate;
+import com.SiGeBan.models.entity.*;
 
 public class initDB {
 	public static void main(String[] args) {
