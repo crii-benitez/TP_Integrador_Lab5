@@ -1,29 +1,108 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
-    <meta charset="utf-8">
-</head>
-<body style="background-color: #C9CBCC">
- 
-<h1> AGREGAR CLIENTE </h1>
 
+<html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>SiGesBan LOGIN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <!-- Load Require CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="../assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="../assets/css/templatemo.css">
+    
+    
+</head>
+    <title>SiGesBan LOGIN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <!-- Load Require CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="../assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <!-- Load Tempalte CSS -->
+    <link rel="stylesheet" href="../assets/css/templatemo.css">
+    
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand h1" href="index.html">
+                <i class='bx bx-buildings bx-sm text-dark'></i>
+                <span class="text-dark h4">SiGeBan</span> <span class="text-primary h4">LAB5</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">Contactenos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Seguridad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Preguntas frecuentes</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                
+                <div class="navbar align-self-center d-flex">
+                    <a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
+                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+	<!-- Start Banner Hero -->
+	<div class="bg-light">
+	 <div class="container py-4">
+
+ <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar Nuevo Usuario</h1>
 <form action="add.jsp" method="get">
-	Ingrese su nombre:  <p>       <input type="text" name="txtNombre"> <br>
-	 Ingrese su apellido:   <p>     <input type="text" name="txtApellido"> <br>
-	      Ingrese su DNI:  <p>    <input type="text" name="txtNombre"> <br>
-	 Seleccione un Sexo: <p>
+<br>	Ingrese nombre:  <p>       <input type="text" name="txtNombre"> <br/>
+<br>	 Ingrese apellido:   <p>     <input type="text" name="txtApellido"> <br/>
+<br>	      Ingrese DNI:  <p>    <input type="text" name="txtNombre"> <br/>
+<br>	 Seleccione Sexo: <p><br/>
 		
 		Masculino       <input type="radio" name="Sexo" value="Masc">
 		Femenino       <input type="radio" name="Sexo" value="Feme"> <br><br />
 		
-	<b>Seleccione Su Pais de residencia</b> <p>
+	<br>Seleccione Pais de residencia<br/> <p>
 		
-					<select name="pais">
+				<br>	<select name="pais">
 						<option value="1">México</option>
 						<option value="2">Colombia</option>
 						<option value="3">Chile</option>
@@ -37,11 +116,11 @@
 						<option value="11">Uruguay</option>
 						<option value="12">Suriname</option>
 					</select> 
+		<br/>
+
+    <br>Seleccione Provincia<br/> <p>
 		
-<br />
-<b>Seleccione Provincia</b> <p>
-		
-					<select name="pais">
+			<br>		<select name="pais">
 						<option value="1">Buenos aires</option>
 						<option value="2">Jujuy</option>
 						<option value="3">Salta</option>
@@ -55,10 +134,10 @@
 						<option value="11">Cordoba</option>
 						<option value="12">San Luis</option>
 					</select> 
+		<br/>
+<br> Seleccione Localidad <br/><p>
 		
-<br /><b>Seleccione Localidad</b> <p>
-		
-					<select name="pais">
+			<br>		<select name="pais">
 						<option value="1">Jose C Paz</option>
 						<option value="2">San Miguel</option>
 						<option value="3">Moreno</option>
@@ -75,18 +154,52 @@
 		
 <br />
 
-  	Ingrese su Fecha de nacimiento:  <p>       <input type="text" name="txtNombre"> <br>
+  <br>	Ingrese su Fecha de nacimiento:  <p>  <br />   <input type="text" name="txtNombre"> <br />
 
- Ingrese su direccion: <p>
+ <br>   Ingrese su direccion: <p><br />
 		
 		Calle      <input type="text" name="calle">
 		Numero      <input type="text" name="numero" >
-		Dto       <input type="text" name="dto" > <br><br>
+		Dto       <input type="text" name="dto" > 
+<br />	
 	
-	
-	<input type="submit" name="btnAceptar" value="Aceptar">
-</form>
-<body>
+<br><p>	<input type="submit" name="btnAceptar" value="Ingresar Usuario"><p><br/>
 
-</body>
+
+	
+	<!-- Start Footer -->
+    <footer class="bg-secondary pt-4">
+
+
+        <div class="w-100 bg-primary py-4">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-start text-center text-light light-300">
+                            © Copyright 2021 SiGeBan. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-end text-center text-light light-300">
+                            Realizado por Grupo 9 LAB5 UtnFrgp
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+
+    <!-- Bootstrap -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Templatemo -->
+    <script src="../assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="../assets/js/custom.js"></script>
+	
+	
+	
+</form>
 </html>
