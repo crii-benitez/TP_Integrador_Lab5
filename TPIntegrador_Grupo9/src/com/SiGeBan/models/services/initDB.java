@@ -1,4 +1,4 @@
-package com.SiGeBan.services;
+package com.SiGeBan.models.services;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
