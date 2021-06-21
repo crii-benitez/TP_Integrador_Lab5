@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name = "Users")
-public class Usuario implements Serializable {
+public class Usuarios implements Serializable {
 
 	/**
 	 * //Implementar serializable
@@ -36,7 +36,7 @@ public class Usuario implements Serializable {
 	public void setPerfil(Perfiles perfil) {
 		this.perfil = perfil;
 	}
-	public Usuario() {
+	public Usuarios() {
 		// TODO Auto-generated constructor stub
 	}
 	public int getId() {

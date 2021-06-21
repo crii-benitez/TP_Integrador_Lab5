@@ -15,7 +15,7 @@ public class Paises implements Serializable {
 	 * //Implementar serializable
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
+	@Id//
 	@Column(name="Country")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String Pais;
