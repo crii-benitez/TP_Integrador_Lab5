@@ -1,4 +1,4 @@
-package com.SiGeBan.Entity;
+package com.SiGeBan.entity;
 
 import java.io.Serializable;
 
@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "Users")
 public class Usuarios implements Serializable {
@@ -23,6 +24,18 @@ public class Usuarios implements Serializable {
 	private String user;
 	private String pass;
 	private Perfiles perfil;
+
+	//constructores
+	public Usuarios(String user, String pass) {
+		this.user= user;
+		this.pass = pass;
+	}
+	
+	public Usuarios() {
+	}
+
+	//metodos
+	
 	@Override
 	public String toString() {
 		if(perfil == null)
@@ -35,9 +48,6 @@ public class Usuarios implements Serializable {
 	}
 	public void setPerfil(Perfiles perfil) {
 		this.perfil = perfil;
-	}
-	public Usuarios() {
-		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;

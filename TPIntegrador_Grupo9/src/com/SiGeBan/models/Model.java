@@ -1,4 +1,4 @@
-package com.SiGeBan.model;
+package com.SiGeBan.models;
 
 public class Model {
 

@@ -1,4 +1,4 @@
-package com.SiGeBan.Controllers;
+package com.SiGeBan.controllers;
 
 public class Controllers {
 

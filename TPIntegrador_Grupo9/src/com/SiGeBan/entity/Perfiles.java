@@ -1,4 +1,4 @@
-package com.SiGeBan.Entity;
+package com.SiGeBan.entity;
 
 import java.io.Serializable;
 
@@ -27,6 +27,10 @@ public class Perfiles implements Serializable {
 	public Perfiles()
 	{
 		
+	}
+	public Perfiles(String perfil)
+	{
+		this.perfil = perfil;
 	}
 
 

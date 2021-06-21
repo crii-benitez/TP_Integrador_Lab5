@@ -1,4 +1,4 @@
-package com.SiGeBan.Entity;
+package com.SiGeBan.entity;
 
 import java.io.Serializable;
 
