@@ -2,32 +2,44 @@ package com.SiGeBan.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 @Entity
-@Table(name = "Countries")
 public class Paises implements Serializable {
+	// propiedades
 	/**
 	 * //Implementar serializable
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id//
-	@Column(name="Country")
+
+	@Id //
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String Pais;
+	private String pais;
+
+	// constructor
+	public Paises() {
+	}
+
+	public Paises(String pais) {
+		this.pais = pais;
+	}
+
+	// metodos
+
 	@Override
 	public String toString() {
-		return "Paises [Pais=" + Pais + "]";
+		return "Paises [pais=" + pais + "]";
 	}
+
 	public String getPais() {
-		return Pais;
+		return pais;
 	}
+
 	public void setPais(String pais) {
-		Pais = pais;
+		this.pais = pais;
 	}
 
 }
