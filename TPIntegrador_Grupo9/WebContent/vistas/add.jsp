@@ -61,16 +61,16 @@
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Alta cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">Contactenos</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html"> Listar Cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Seguridad</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Alta cuenta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Preguntas frecuentes</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Listar Cuenta</a>
                         </li>
                        
                     </ul>
