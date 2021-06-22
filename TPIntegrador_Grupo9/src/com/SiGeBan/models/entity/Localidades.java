@@ -29,8 +29,10 @@ public class Localidades implements Serializable {
 	public Localidades() {
 	}
 
-	public Localidades(String ciudad) {
+	public Localidades(String ciudad,Provincias provincia) {
+		super();
 		this.ciudad = ciudad;
+		this.provincia = provincia;
 	}
 
 	public String getCiudad() {

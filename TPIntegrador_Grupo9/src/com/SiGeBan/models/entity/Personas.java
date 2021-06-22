@@ -3,7 +3,7 @@ package com.SiGeBan.models.entity;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,51 +11,63 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.Columns;
 
 @Entity
 public class Personas implements Serializable {
+
+	// propiedades
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idPersona;
+
 	private int DNI;
 	private String nombre;
-	private String apellido;	
-	private Generos genero;
-	private Paises pais;
-	private LocalDate fechanac;
+	private String apellido;
+	private LocalDate fechaNacimiento;
 	private String direccion;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "localidad")
 	private Localidades localidad;
-	
-	@ManyToOne
-	@JoinColumn(name="provincia")
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "pais")
+	private Paises pais;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "genero")
+	private Generos genero;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "provincia")
 	private Provincias provincia;
-	
-	@OneToOne
-	@JoinColumn(name="usuario")
+
+	@OneToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "usuario")
 	private Usuarios usuario;
 
-	public Personas(int dNI, String nombre, String apellido, Generos genero, Paises pais, LocalDate fechanac,
-			String direccion, Localidades localidad, Provincias provincia, Usuarios usuario) {
+	// constructor
+	public Personas() {
+
+	}
+
+	public Personas(int dNI, String nombre, String apellido, String fechaNacimiento, String direccion,
+			Localidades localidad, Provincias provincia, Paises pais, Generos genero, Usuarios usuario) {
 		super();
 		DNI = dNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.genero = genero;
-		this.pais = pais;
-		this.fechanac = fechanac;
+		this.fechaNacimiento = LocalDate.parse(fechaNacimiento);
 		this.direccion = direccion;
 		this.localidad = localidad;
 		this.provincia = provincia;
+		this.pais = pais;
+		this.genero = genero;
 		this.usuario = usuario;
 	}
 
-	public Personas() {
-		
-	}
-
+	// metodos
 	public int getDNI() {
 		return DNI;
 	}
@@ -84,7 +96,7 @@ public class Personas implements Serializable {
 		return genero;
 	}
 
-	public void setGeneros(Generos sexo) {
+	public void setGeneros(Generos genero) {
 		this.genero = genero;
 	}
 
@@ -97,11 +109,11 @@ public class Personas implements Serializable {
 	}
 
 	public LocalDate getFechanac() {
-		return fechanac;
+		return fechaNacimiento;
 	}
 
-	public void setFechanac(LocalDate fechanac) {
-		this.fechanac = fechanac;
+	public void setFechanac(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getDireccion() {
@@ -136,11 +148,30 @@ public class Personas implements Serializable {
 		this.usuario = usuario;
 	}
 
+	public void setGenero(Generos genero) {
+		this.genero = genero;
+	}
+
 	@Override
 	public String toString() {
-		return "Personas [DNI=" + DNI + ", nombre=" + nombre + ", apellido=" + apellido + ", fechanac=" + fechanac
-				+ ", direccion=" + direccion + "]";
+		return "Personas [DNI=" + DNI + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento="
+				+ fechaNacimiento + ", direccion=" + direccion + "]";
 	}
-	
-	
+
+	public int getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
+	}
+
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 }

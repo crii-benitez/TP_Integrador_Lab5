@@ -10,14 +10,11 @@ import javax.persistence.Id;
 @Entity
 public class Paises implements Serializable {
 	// propiedades
-	/**
-	 * //Implementar serializable
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id //
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idPais;
 	private String pais;
 
 	// constructor
@@ -33,6 +30,14 @@ public class Paises implements Serializable {
 	@Override
 	public String toString() {
 		return "Paises [pais=" + pais + "]";
+	}
+
+	public int getIdPais() {
+		return idPais;
+	}
+
+	public void setIdPais(int idPais) {
+		this.idPais = idPais;
 	}
 
 	public String getPais() {

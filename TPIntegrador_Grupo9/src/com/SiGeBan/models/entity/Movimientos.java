@@ -1,19 +1,47 @@
 package com.SiGeBan.models.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Movimientos {
-	private Cuentas numeroDecuentaOrigen;
-	private Cuentas numeroDecuentaDestino;
-	private Date fechaDeMovimiento;
+	// propiedades
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idMovimiento;
 	private String detalle;
 	private double importe;
-	
+	private LocalDate fechaDeMovimiento;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "numeroCuentaOrigen")
+	private Cuentas numeroDecuentaOrigen;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "numeroCuentaDestino")
+	private Cuentas numeroDecuentaDestino;
+
+	// constructor
 	public Movimientos() {
-		// TODO Auto-generated constructor stub
 	}
 
-	
+	public Movimientos(String detalle, double importe, LocalDate fechaDeMovimiento, Cuentas numeroDecuentaOrigen, Cuentas numeroDecuentaDestino) {
+		super();
+		this.detalle = detalle;
+		this.importe = importe;
+		this.fechaDeMovimiento = fechaDeMovimiento;
+		this.numeroDecuentaOrigen = numeroDecuentaOrigen;
+		this.numeroDecuentaDestino = numeroDecuentaDestino;
+	}
+
+	// metodos
 	public Cuentas getNumeroDecuentaOrigen() {
 		return numeroDecuentaOrigen;
 	}
@@ -30,11 +58,11 @@ public class Movimientos {
 		this.numeroDecuentaDestino = numeroDecuentaDestino;
 	}
 
-	public Date getFechaDeMovimiento() {
+	public LocalDate getFechaDeMovimiento() {
 		return fechaDeMovimiento;
 	}
 
-	public void setFechaDeMovimiento(Date fechaDeMovimiento) {
+	public void setFechaDeMovimiento(LocalDate fechaDeMovimiento) {
 		this.fechaDeMovimiento = fechaDeMovimiento;
 	}
 
@@ -54,5 +82,12 @@ public class Movimientos {
 		this.importe = importe;
 	}
 
+	public int getIdMovimiento() {
+		return idMovimiento;
+	}
+
+	public void setIdMovimiento(int idMovimiento) {
+		this.idMovimiento = idMovimiento;
+	}
 
 }
