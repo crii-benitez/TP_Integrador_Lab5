@@ -69,14 +69,11 @@
 			<form class="table table-bordered bg-light" action="#" method="post">
 				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
 				<div class="text-white  bg-dark">Datos de la Cuenta</div>
-				<div class="form-group">
 					<input type="text" class="form-control border border-secondary"
-						required title="NumCuenta" placeholder="Número de Cuenta" /> <input
-						type="text" class="form-control border border-secondary" required
+					    title="NumCuenta" placeholder="Número de Cuenta" /> <input
+						type="text" class="form-control border border-secondary"
 						title="NombCuenta" placeholder="Nombre de Cuenta" />
-				</div>
 				<div class="text-white bg-dark">Datos de apertura</div>
-				<div class="form-group">
 					<select name="pais" class="form-control border border-secondary"
 						placeholder="Tipo de Cuenta">
 						<option value="1">Caja de ahorro   - Pesos</option>
@@ -84,12 +81,10 @@
 						<option value="3">Cuenta corriente - Pesos</option>
 						<option value="4">Cuenta corriente - Dolares</option>
 					</select> <input type="text" class="form-control border border-secondary"
-						required title="NombCuenta" placeholder="Fecha Creacion" /> <input
-						type="text" class="form-control border border-secondary" required
+						title="NombCuenta" placeholder="Fecha Creacion" /> <input
+						type="text" class="form-control border border-secondary"
 						title="NombCuenta" placeholder="CBU" /> <span
 						class="input-group-text border border-secondary">$10000</span>
-						
-					</div>
 					<button type="button" class="btn btn-primary">Ingresar
 						Cuenta</button>
 				
