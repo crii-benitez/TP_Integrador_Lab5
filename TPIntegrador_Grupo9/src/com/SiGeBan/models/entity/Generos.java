@@ -2,12 +2,10 @@ package com.SiGeBan.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Generos implements Serializable {
@@ -22,6 +20,10 @@ public class Generos implements Serializable {
 	
 	public Generos()
 	{}
+	public Generos(String genero)
+	{	
+		this.genero = genero;
+	}
 
 	public String getGenero() {
 		return genero;

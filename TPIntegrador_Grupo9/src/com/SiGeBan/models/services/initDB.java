@@ -34,7 +34,7 @@ public class initDB {
 		session.save(pais07);
 		session.save(pais08);
 		session.save(pais09);
-		session.save(pais10);		
+		session.save(pais10);
 		/*--------------Carga de provincias en la base------*/
 		Provincias provincia01 = new Provincias("Buenos Aires");
 		Provincias provincia02 = new Provincias("Ciudad Autonoma de Buenos Aires");
@@ -57,17 +57,33 @@ public class initDB {
 		session.save(provincia09);
 		session.save(provincia10);
 		/*---------------Carga de Localidades en la base-------*/
-		Localidades localidad01 = new Localidades("");
-		Localidades localidad02 = new Localidades();
-		Localidades localidad03 = new Localidades();
-		Localidades localidad04 = new Localidades();
-		Localidades localidad05 = new Localidades();
-		Localidades localidad06 = new Localidades();
-		Localidades localidad07 = new Localidades();
-		Localidades localidad08 = new Localidades();
-		Localidades localidad09 = new Localidades();
-		Localidades localidad10 = new Localidades();
-		
+		Localidades localidad01 = new Localidades("Moreno");
+		Localidades localidad02 = new Localidades("Ciudadela");
+		Localidades localidad03 = new Localidades("Posadas");
+		Localidades localidad04 = new Localidades("Mendoza");
+		Localidades localidad05 = new Localidades("Resistencia");
+		Localidades localidad06 = new Localidades("San Salvador de Jujuy");
+		Localidades localidad07 = new Localidades("Rafaela");
+		Localidades localidad08 = new Localidades("Rio Gallegos");
+		Localidades localidad09 = new Localidades("Bariloche");
+		Localidades localidad10 = new Localidades("Cordoba");
+		session.save(localidad01);
+		session.save(localidad02);
+		session.save(localidad03);
+		session.save(localidad04);
+		session.save(localidad05);
+		session.save(localidad06);
+		session.save(localidad07);
+		session.save(localidad08);
+		session.save(localidad09);
+		session.save(localidad10);
+		/*------------------Carga de Perfiles en la base-------*/
+		Generos genero01 = new Generos("Masculino");
+		Generos genero02 = new Generos("Femenino");
+		Generos genero03 = new Generos("Indefinido");
+		session.save(genero01);
+		session.save(genero02);
+		session.save(genero03);
 		/*------------------Carga de Perfiles en la base-------*/
 		Perfiles perfil01 = new Perfiles("bancario");
 		Perfiles perfil02 = new Perfiles("cliente");
@@ -76,13 +92,18 @@ public class initDB {
 		session.save(perfil02);
 		session.save(perfil03);
 		/*--------------Cargga de Tipos de Cuentas en la base--*/
-		TipoDeCuenta tipoDeCuenta01 = new TipoDeCuenta("CAP","Caja de Ahorro en Pesos");
-		TipoDeCuenta tipoDeCuenta02 = new TipoDeCuenta("CAD","Caja de Ahorro en Dolares");
-		TipoDeCuenta tipoDeCuenta03 = new TipoDeCuenta("CCP","Cuenta Corriente en Pesos");
-		TipoDeCuenta tipoDeCuenta04 = new TipoDeCuenta("CCD","Cuenta Corriente en Dolares");
+		TipoDeCuenta tipoDeCuenta01 = new TipoDeCuenta("CAP", "Caja de Ahorro en Pesos");
+		TipoDeCuenta tipoDeCuenta02 = new TipoDeCuenta("CAD", "Caja de Ahorro en Dolares");
+		TipoDeCuenta tipoDeCuenta03 = new TipoDeCuenta("CCP", "Cuenta Corriente en Pesos");
+		TipoDeCuenta tipoDeCuenta04 = new TipoDeCuenta("CCD", "Cuenta Corriente en Dolares");
 		session.save(tipoDeCuenta01);
 		session.save(tipoDeCuenta02);
 		session.save(tipoDeCuenta03);
+		session.save(tipoDeCuenta04);
+		/*---------------Carga de Usuarios en la base------------------*/
+		
+		session.save(tipoDeCuenta04);
+		session.save(tipoDeCuenta04);
 		session.save(tipoDeCuenta04);
 		/*---------------Carga de Usuarios en la base------------------*/
 		Usuarios user01 = new Usuarios("usuarioBanco01", "claveBanco");
