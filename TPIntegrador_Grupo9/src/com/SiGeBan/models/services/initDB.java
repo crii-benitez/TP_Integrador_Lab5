@@ -189,29 +189,29 @@ public class initDB {
 		session.save(movimiento10);
 
 		/* DATASET = Personas */
-		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", "22-01-1984", "Miguel Angel 393",
+		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", LocalDate.now(), "Miguel Angel 393",
 				localidad01, provincia01, pais01, genero01, user01);
-		Personas persona02 = new Personas(31632067, "Pablo", "Maciel", "15-10-1983", "Joseph 663", localidad02,
+		Personas persona02 = new Personas(31632067, "Pablo", "Maciel",  LocalDate.now(), "Joseph 663", localidad02,
 				provincia01, pais01, genero01, user02);
-		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli", "31-12-1987", "Tribulato 4612", localidad02,
+		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli",  LocalDate.now(), "Tribulato 4612", localidad02,
 				provincia01, pais01, genero01, user03);
-		Personas persona04 = new Personas(31456998, "German", "Medina", "20-06-1986", "Del Carril 23", localidad02,
+		Personas persona04 = new Personas(31456998, "German", "Medina", LocalDate.now(), "Del Carril 23", localidad02,
 				provincia01, pais01, genero01, user04);
-		Personas persona05 = new Personas(37987112, "Cristian", "Benitez", "25-05-1991", "Siempreviva 123", localidad02,
+		Personas persona05 = new Personas(37987112, "Cristian", "Benitez",  LocalDate.now(), "Siempreviva 123", localidad02,
 				provincia01, pais01, genero01, user05);
-		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", "30-03-1977", "Guadalajara 8897",
+		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", LocalDate.now(), "Guadalajara 8897",
 				localidad01, provincia01, pais01, genero01, user06);
-		Personas persona07 = new Personas(26123887, "Ricardo", "Fort", "01-01-1978", "Comandante 2525", localidad01,
+		Personas persona07 = new Personas(26123887, "Ricardo", "Fort",  LocalDate.now(), "Comandante 2525", localidad01,
 				provincia01, pais01, genero01, user07);
-		Personas persona08 = new Personas(8984621, "Victor", "Sueiro", "02-04-1949", "De las Luces 666", localidad01,
+		Personas persona08 = new Personas(8984621, "Victor", "Sueiro",  LocalDate.now(), "De las Luces 666", localidad01,
 				provincia01, pais01, genero01, user08);
-		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", "24-10-1998", "Tupungato 333", localidad01,
+		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", LocalDate.now(), "Tupungato 333", localidad01,
 				provincia01, pais01, genero01, user09);
-		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui", "01-11-1970", "Montañeses 99", localidad01,
+		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui",  LocalDate.now(), "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user10);
-		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", "01-11-1970", "Montañeses 99", localidad01,
+		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", LocalDate.now(), "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
-		Personas persona12 = new Personas(98475695, "Tomas", "Profesor", "01-11-1970", "Montañeses 99", localidad01,
+		Personas persona12 = new Personas(98475695, "Tomas", "Profesor",  LocalDate.now(), "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user12);
 		session.save(persona01);
 		session.save(persona02);

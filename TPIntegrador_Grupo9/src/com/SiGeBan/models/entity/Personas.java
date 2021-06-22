@@ -52,13 +52,13 @@ public class Personas implements Serializable {
 
 	}
 
-	public Personas(int dNI, String nombre, String apellido, String fechaNacimiento, String direccion,
+	public Personas(int dNI, String nombre, String apellido, LocalDate fechaNacimiento, String direccion,
 			Localidades localidad, Provincias provincia, Paises pais, Generos genero, Usuarios usuario) {
 		super();
 		DNI = dNI;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.fechaNacimiento = LocalDate.parse(fechaNacimiento);
+		this.fechaNacimiento = fechaNacimiento;
 		this.direccion = direccion;
 		this.localidad = localidad;
 		this.provincia = provincia;
