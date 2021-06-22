@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Columns;
@@ -20,33 +21,20 @@ public class Personas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int DNI;
-	
-	@Column(name="Nombre")
 	private String nombre;
-	
-	@Column(name="Apellido")
 	private String apellido;	
-	
-	@Column(name="Genero")
 	private Generos genero;
-	
-	@Column(name="Pais")
 	private Paises pais;
-	
-	@Column(name="FechaNac")
 	private LocalDate fechanac;
-	
-	@Column(name="Direccion")
 	private String direccion;
-	
-	@Column(name="Localidad")
 	private Localidades localidad;
 	
 	@ManyToOne
 	@JoinColumn(name="provincia")
 	private Provincias provincia;
 	
-	@Column(name="Usuario")
+	@OneToOne
+	@JoinColumn(name="usuario")
 	private Usuarios usuario;
 
 	public Personas(int dNI, String nombre, String apellido, Generos genero, Paises pais, LocalDate fechanac,

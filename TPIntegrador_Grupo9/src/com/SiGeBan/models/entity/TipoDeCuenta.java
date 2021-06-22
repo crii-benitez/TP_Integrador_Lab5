@@ -1,8 +1,22 @@
 package com.SiGeBan.models.entity;
 
-public class TipoDeCuenta {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class TipoDeCuenta implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	//propiedades
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String sigla;
 	private String nombreDeTipoDeCuenta;
 

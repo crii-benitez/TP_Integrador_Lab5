@@ -16,8 +16,8 @@
         <mapping class="com.SiGeBan.models.entity.Localidades"/>
         <mapping class="com.SiGeBan.models.entity.Generos"/>
         <mapping class="com.SiGeBan.models.entity.Perfiles"/>
-        <mapping class="com.SiGeBan.models.entity.Cuentas"/>
-<!--         TODO: FALTA TIPODECUENTA -->
+        <mapping class="com.SiGeBan.models.entity.TipoDeCuenta"/>
+		<mapping class="com.SiGeBan.models.entity.Cuentas"/>
         <mapping class="com.SiGeBan.models.entity.Usuarios"/>
         <mapping class="com.SiGeBan.models.entity.Personas"/>
         
