@@ -2,50 +2,66 @@ package com.SiGeBan.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Localidades implements Serializable {
-
+	// propiedades
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	private String ciudad;
-	
-	@OneToOne
-	@JoinColumn(name="provincia")
+	private int idLocalidad;
+	private String localidad;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "provincia")
 	private Provincias provincia;
-	
+
+	// constructor
 	public Localidades() {
 	}
 
-	public Localidades(String ciudad,Provincias provincia) {
+	public Localidades(String localidad,Provincias provincia) {
 		super();
-		this.ciudad = ciudad;
+		this.localidad = localidad;
+		this.provincia = provincia;
+	}
+
+	// metodos
+	public int getIdLocalidad() {
+		return idLocalidad;
+	}
+
+	public void setIdLocalidad(int idLocalidad) {
+		this.idLocalidad = idLocalidad;
+	}
+
+	public Provincias getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(Provincias provincia) {
 		this.provincia = provincia;
 	}
 
 	public String getCiudad() {
-		return ciudad;
+		return localidad;
 	}
 
 	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+		this.localidad = ciudad;
 	}
 
 	@Override
 	public String toString() {
-		return "Localidades [id=" + id + ", ciudad=" + ciudad + "]";
+		return "Localidades [idLocalidad=" + idLocalidad + ", ciudad=" + localidad + "]";
 	}
 
 }

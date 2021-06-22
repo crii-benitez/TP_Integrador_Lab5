@@ -14,7 +14,7 @@ public class Generos implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idGenero;
 	
 	private String genero;
 	
@@ -35,7 +35,7 @@ public class Generos implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Genero [id=" + id + ", genero=" + genero + "]";
+		return "Genero [id=" + idGenero + ", genero=" + genero + "]";
 	}
 	
 	
