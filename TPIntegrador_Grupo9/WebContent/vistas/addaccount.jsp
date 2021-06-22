@@ -121,8 +121,6 @@
 					Cuenta</button>
 
 			</form>
-
-
 			<div class="bg-lingh">
 				<div class="container table py-4">
 					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
