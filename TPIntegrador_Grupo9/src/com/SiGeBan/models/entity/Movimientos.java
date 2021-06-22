@@ -1,6 +1,7 @@
 package com.SiGeBan.models.entity;
 
-import java.time.LocalDate;
+import java.sql.Timestamp;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ public class Movimientos {
 	private int idMovimiento;
 	private String detalle;
 	private double importe;
-	private LocalDate fechaDeMovimiento;
+	private Timestamp fechaDeMovimiento;
 
 	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "numeroCuentaOrigen")
@@ -32,7 +33,7 @@ public class Movimientos {
 	public Movimientos() {
 	}
 
-	public Movimientos(String detalle, double importe, LocalDate fechaDeMovimiento, Cuentas numeroDecuentaOrigen, Cuentas numeroDecuentaDestino) {
+	public Movimientos(String detalle, double importe, Timestamp fechaDeMovimiento, Cuentas numeroDecuentaOrigen, Cuentas numeroDecuentaDestino) {
 		super();
 		this.detalle = detalle;
 		this.importe = importe;
@@ -58,11 +59,11 @@ public class Movimientos {
 		this.numeroDecuentaDestino = numeroDecuentaDestino;
 	}
 
-	public LocalDate getFechaDeMovimiento() {
+	public Timestamp getFechaDeMovimiento() {
 		return fechaDeMovimiento;
 	}
 
-	public void setFechaDeMovimiento(LocalDate fechaDeMovimiento) {
+	public void setFechaDeMovimiento(Timestamp fechaDeMovimiento) {
 		this.fechaDeMovimiento = fechaDeMovimiento;
 	}
 

@@ -1,7 +1,8 @@
 package com.SiGeBan.models.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -24,7 +25,7 @@ public class Personas implements Serializable {
 	private int DNI;
 	private String nombre;
 	private String apellido;
-	private LocalDate fechaNacimiento;
+	private Date fechaNacimiento;
 	private String direccion;
 
 	@ManyToOne(cascade = { CascadeType.ALL })
@@ -52,7 +53,7 @@ public class Personas implements Serializable {
 
 	}
 
-	public Personas(int dNI, String nombre, String apellido, LocalDate fechaNacimiento, String direccion,
+	public Personas(int dNI, String nombre, String apellido, Date fechaNacimiento, String direccion,
 			Localidades localidad, Provincias provincia, Paises pais, Generos genero, Usuarios usuario) {
 		super();
 		DNI = dNI;
@@ -108,11 +109,11 @@ public class Personas implements Serializable {
 		this.pais = pais;
 	}
 
-	public LocalDate getFechanac() {
+	public Date getFechanac() {
 		return fechaNacimiento;
 	}
 
-	public void setFechanac(LocalDate fechaNacimiento) {
+	public void setFechanac(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -166,11 +167,11 @@ public class Personas implements Serializable {
 		this.idPersona = idPersona;
 	}
 
-	public LocalDate getFechaNacimiento() {
+	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

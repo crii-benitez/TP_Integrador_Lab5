@@ -1,6 +1,10 @@
 package com.SiGeBan.models.services;
 
+import java.util.Date;
 import java.time.LocalDate;
+import java.sql.Timestamp;
+import java.time.*;
+
 
 import org.hibernate.Session;
 
@@ -10,8 +14,17 @@ import com.SiGeBan.models.entity.*;
 public class initDB {
 	public static void main(String[] args) {
 
+		//seteo la fecha para movimientos
+		LocalDateTime ldt = LocalDateTime.now();
+		Timestamp fechaAhora = Timestamp.valueOf(ldt);
+		
+		Date fecha = new Date();
+
+		
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
+		
+		session.beginTransaction();
 
 		/*
 		 * generacion de datos
@@ -167,16 +180,28 @@ public class initDB {
 		session.save(user12);
 
 		/* DATASET = Movimientos */
-		Movimientos movimiento01 = new Movimientos("Transferencia", 8000.00, LocalDate.now(), cuenta01, cuenta02);
-		Movimientos movimiento02 = new Movimientos("Transferencia", 20.00, LocalDate.now(), cuenta02, cuenta03);
-		Movimientos movimiento03 = new Movimientos("Transferencia", 720.00, LocalDate.now(), cuenta03, cuenta04);
-		Movimientos movimiento04 = new Movimientos("Transferencia", 1030.00, LocalDate.now(), cuenta04, cuenta05);
-		Movimientos movimiento05 = new Movimientos("Transferencia", 1220.00, LocalDate.now(), cuenta05, cuenta06);
-		Movimientos movimiento06 = new Movimientos("Transferencia", 3002.00, LocalDate.now(), cuenta06, cuenta07);
-		Movimientos movimiento07 = new Movimientos("Transferencia", 10000.00, LocalDate.now(), cuenta07, cuenta08);
-		Movimientos movimiento08 = new Movimientos("Transferencia", 11000.00, LocalDate.now(), cuenta08, cuenta09);
-		Movimientos movimiento09 = new Movimientos("Transferencia", 100.00, LocalDate.now(), cuenta09, cuenta10);
-		Movimientos movimiento10 = new Movimientos("Transferencia", 5000.00, LocalDate.now(), cuenta10, cuenta01);
+		
+		// Getting system timezone
+//		ZoneId systemTimeZone = ZoneId.systemDefault();
+//		
+//		// converting LocalDateTime to ZonedDateTime with the system timezone
+//		ZonedDateTime zonedDateTime = fechaLocal.atStartOfDay(systemTimeZone);
+//		
+//		// converting ZonedDateTime to Date using Date.from() and ZonedDateTime.toInstant()
+//		Date fechaAhora = Date.from(zonedDateTime.toInstant());
+		
+		
+		
+		Movimientos movimiento01 = new Movimientos("Transferencia", 8000.00, fechaAhora, cuenta01, cuenta02);
+		Movimientos movimiento02 = new Movimientos("Transferencia", 20.00, fechaAhora, cuenta02, cuenta03);
+		Movimientos movimiento03 = new Movimientos("Transferencia", 720.00, fechaAhora, cuenta03, cuenta04);
+		Movimientos movimiento04 = new Movimientos("Transferencia", 1030.00, fechaAhora, cuenta04, cuenta05);
+		Movimientos movimiento05 = new Movimientos("Transferencia", 1220.00, fechaAhora, cuenta05, cuenta06);
+		Movimientos movimiento06 = new Movimientos("Transferencia", 3002.00, fechaAhora, cuenta06, cuenta07);
+		Movimientos movimiento07 = new Movimientos("Transferencia", 10000.00, fechaAhora, cuenta07, cuenta08);
+		Movimientos movimiento08 = new Movimientos("Transferencia", 11000.00, fechaAhora, cuenta08, cuenta09);
+		Movimientos movimiento09 = new Movimientos("Transferencia", 100.00, fechaAhora, cuenta09, cuenta10);
+		Movimientos movimiento10 = new Movimientos("Transferencia", 5000.00, fechaAhora, cuenta10, cuenta01);
 		session.save(movimiento01);
 		session.save(movimiento02);
 		session.save(movimiento03);
@@ -189,29 +214,29 @@ public class initDB {
 		session.save(movimiento10);
 
 		/* DATASET = Personas */
-		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", LocalDate.now(), "Miguel Angel 393",
+		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fecha, "Miguel Angel 393",
 				localidad01, provincia01, pais01, genero01, user01);
-		Personas persona02 = new Personas(31632067, "Pablo", "Maciel",  LocalDate.now(), "Joseph 663", localidad02,
+		Personas persona02 = new Personas(31632067, "Pablo", "Maciel",  fecha, "Joseph 663", localidad02,
 				provincia01, pais01, genero01, user02);
-		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli",  LocalDate.now(), "Tribulato 4612", localidad02,
+		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli",  fecha, "Tribulato 4612", localidad02,
 				provincia01, pais01, genero01, user03);
-		Personas persona04 = new Personas(31456998, "German", "Medina", LocalDate.now(), "Del Carril 23", localidad02,
+		Personas persona04 = new Personas(31456998, "German", "Medina", fecha, "Del Carril 23", localidad02,
 				provincia01, pais01, genero01, user04);
-		Personas persona05 = new Personas(37987112, "Cristian", "Benitez",  LocalDate.now(), "Siempreviva 123", localidad02,
+		Personas persona05 = new Personas(37987112, "Cristian", "Benitez",  fecha, "Siempreviva 123", localidad02,
 				provincia01, pais01, genero01, user05);
-		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", LocalDate.now(), "Guadalajara 8897",
+		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", fecha, "Guadalajara 8897",
 				localidad01, provincia01, pais01, genero01, user06);
-		Personas persona07 = new Personas(26123887, "Ricardo", "Fort",  LocalDate.now(), "Comandante 2525", localidad01,
+		Personas persona07 = new Personas(26123887, "Ricardo", "Fort",  fecha, "Comandante 2525", localidad01,
 				provincia01, pais01, genero01, user07);
-		Personas persona08 = new Personas(8984621, "Victor", "Sueiro",  LocalDate.now(), "De las Luces 666", localidad01,
+		Personas persona08 = new Personas(8984621, "Victor", "Sueiro",  fecha, "De las Luces 666", localidad01,
 				provincia01, pais01, genero01, user08);
-		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", LocalDate.now(), "Tupungato 333", localidad01,
+		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", fecha, "Tupungato 333", localidad01,
 				provincia01, pais01, genero01, user09);
-		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui",  LocalDate.now(), "Montañeses 99", localidad01,
+		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui",  fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user10);
-		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", LocalDate.now(), "Montañeses 99", localidad01,
+		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
-		Personas persona12 = new Personas(98475695, "Tomas", "Profesor",  LocalDate.now(), "Montañeses 99", localidad01,
+		Personas persona12 = new Personas(98475695, "Tomas", "Profesor",  fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user12);
 		session.save(persona01);
 		session.save(persona02);
@@ -227,6 +252,7 @@ public class initDB {
 		session.save(persona12);
 
 		// cierre de transacciones 
+		session.getTransaction().commit();
 		ch.cerrarSession();
 	}
 
