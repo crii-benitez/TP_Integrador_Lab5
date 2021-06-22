@@ -53,16 +53,26 @@
 			class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
 			id="navbar-toggler-success">
 			<div class="flex-fill mx-xl-5 mb-2">
-				<ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-				<li class="nav-item"><a	class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Mis Cuentas</a></li>
-					<li class="nav-item"><a	class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Movimientos</a></li>
-					<li class="nav-item"><a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Transferencias</a></li>
+				<ul
+					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+					<li class="nav-item"><a
+						class="nav-link btn-outline-primary rounded-pill px-3"
+						href="index.html">Mis Cuentas</a></li>
+					<li class="nav-item"><a
+						class="nav-link btn-outline-primary rounded-pill px-3"
+						href="index.html">Movimientos</a></li>
+					<li class="nav-item"><a
+						class="nav-link btn-outline-primary rounded-pill px-3"
+						href="work.html">Transferencias</a></li>
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#">LYermoli <i class='bx bx-user-circle bx-sm text-primary'></i></a>
-				<a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> 
-				<a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a> 
+				<a class="nav-link" href="#">LYermoli <i
+					class='bx bx-user-circle bx-sm text-primary'></i></a> <a
+					class="nav-link" href="#"><i
+					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
+					class="nav-link" href="#"><i
+					class='bx bx-cog bx-sm text-primary'></i></a>
 			</div>
 		</div>
 	</div>
@@ -73,66 +83,67 @@
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Transferencias</h1>
 			<form class="table table-bordered bg-light" action="#" method="post">
-				
+
 				<div class="text-white bg-dark">Datos de la Transferencia</div>
-			
-					<select name="tipo" class="form-control border border-secondary" placeholder="Tipo de transferencia">
-						<option value="1">A cuenta Propia</option>
-						<option value="2">A cuenta de un Tercero</option>
-					</select>
-				</br>
+
+				<select name="tipo" class="form-control border border-secondary"
+					placeholder="Tipo de transferencia">
+					<option value="1">A cuenta Propia</option>
+					<option value="2">A cuenta de un Tercero</option>
+				</select> </br>
 
 				<div class="text-white  bg-dark">Datos de la Cuenta Origen</div>
-			<!--  <div class="form-group">-->	
-					<select name="pais" class="form-control border border-secondary"
-						placeholder="Tipo de Cuenta">
-						<option value="1">Caja de ahorro - Pesos</option>
-						<option value="2">Caja de ahorro - Dolares</option>
-						<option value="3">Cuenta corriente - Pesos</option>
-						<option value="4">Cuenta corriente - Dolares</option>
-					</select> <span class="input-group-text border border-secondary">1458963/4</span>
-					<span class="input-group-text border border-secondary">$
-						478964.25</span>
-			<!--	</div>-->	
-</br>
+				<!--  <div class="form-group">-->
+				<select name="pais" class="form-control border border-secondary"
+					placeholder="Tipo de Cuenta">
+					<option value="1">Caja de ahorro - Pesos</option>
+					<option value="2">Caja de ahorro - Dolares</option>
+					<option value="3">Cuenta corriente - Pesos</option>
+					<option value="4">Cuenta corriente - Dolares</option>
+				</select> <span class="input-group-text border border-secondary">1458963/4</span>
+				<span class="input-group-text border border-secondary">$
+					478964.25</span>
+				<!--	</div>-->
+				</br>
 				<div class="text-white bg-dark">Datos de la Cuenta Destino</div>
-			
-					<input type="text" class="form-control border border-secondary"
-						required title="CBU" placeholder="CBU" /> <span
-						class="input-group-text border border-secondary">Maximiliano
-						Dario Guiol</span> <span class="input-group-text border border-secondary">$25000.00</span>
-			</br>
-			
+
+				<input type="text" class="form-control border border-secondary"
+					required title="CBU" placeholder="CBU" /> <span
+					class="input-group-text border border-secondary">Maximiliano
+					Dario Guiol</span> <span class="input-group-text border border-secondary">$25000.00</span>
+				</br>
+
 				<div class="text-white bg-dark">Monto a Transferir</div>
-			
-					<input type="text" class="form-control border border-secondary"
-						required title="Monto a Transferir" placeholder="Monto a Transferir" />
-			</br>
-				<button type="button" class="btn btn-primary">Realizar Transferencia</button>
+
+				<input type="text" class="form-control border border-secondary"
+					required title="Monto a Transferir"
+					placeholder="Monto a Transferir" /> </br>
+				<button type="button" class="btn btn-primary">Realizar
+					Transferencia</button>
 			</form>
-		
-	</div>
-	<!-- Start Footer -->
-	<footer class="bg-secondary pt-4">
+
+		</div>
+		<!-- Start Footer -->
+		<footer class="bg-secondary pt-4">
 
 
-	<div class="w-100 bg-primary py-4">
-		<div class="container">
-			<div class="row pt-2">
-				<div class="col-lg-6 col-sm-12">
-					<p class="text-lg-start text-center text-light light-300">©
-						Copyright 2021 SiGeBan. All Rights Reserved.</p>
-				</div>
-				<div class="col-lg-6 col-sm-12">
-					<p class="text-lg-end text-center text-light light-300">
-						Realizado por Grupo 9 LAB5 UtnFrgp</p>
+		<div class="w-100 bg-primary py-4">
+			<div class="container">
+				<div class="row pt-2">
+					<div class="col-lg-6 col-sm-12">
+						<p class="text-lg-start text-center text-light light-300">©
+							Copyright 2021 SiGeBan. All Rights Reserved.</p>
+					</div>
+					<div class="col-lg-6 col-sm-12">
+						<p class="text-lg-end text-center text-light light-300">
+							Realizado por Grupo 9 LAB5 UtnFrgp</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	</footer>
-	<!-- End Footer -->
+		</footer>
+		<!-- End Footer -->
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
