@@ -64,7 +64,7 @@
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#"><i
+				<a class="nav-link" href="#">GMedina<i
 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
 					class="nav-link" href="#"><i
 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link"
@@ -80,7 +80,6 @@
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Movimientos
 				Históricos</h1>
 			<form class="table table-bordered bg-light" action="#" method="post">
-				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
 				<div class="text-white  bg-dark">Datos de Busqueda</div>
 				<table class="container table table-bordered">
 					<tr>

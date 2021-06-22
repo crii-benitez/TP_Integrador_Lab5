@@ -104,7 +104,7 @@
 					title="NombCuenta" placeholder="Fecha Creacion" /> <input
 					type="text" class="form-control border border-secondary"
 					title="NombCuenta" placeholder="CBU" /> <span
-					class="input-group-text border border-secondary">$10000</span> </br>
+					class="input-group-text border border-secondary">Monto en $</span> </br>
 
 				<div class="text-white bg-dark">Datos del Cliente</div>
 
