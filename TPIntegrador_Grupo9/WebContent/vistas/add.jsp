@@ -41,22 +41,17 @@
 
 		<div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
 			<div class="flex-fill mx-xl-5 mb-2">
-				<ul
-					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="index.html">ABML Usuarios</a></li>
-					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="work.html">ABML Cuentas</a></li>
+				<ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+					<li class="nav-item"><a class="nav-link btn-outline-primary rounded-pill px-1" href="index.html">ABM Usuarios</a></li>
+					<li class="nav-item"><a class="nav-link btn-outline-primary rounded-pill px-1" href="index.html">Usuarios</a></li>
+					<li class="nav-item"><a class="nav-link btn-outline-primary rounded-pill px-1" href="index.html">ABM Cuentas</a></li>
+					<li class="nav-item"><a class="nav-link btn-outline-primary rounded-pill px-1" href="work.html">Cuentas</a></li>
 				</ul>
 			</div>
-			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#"><i
-					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
-					class="nav-link" href="#"><i
-					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link"
-					href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+		<div class="navbar align-self-center d-flex">
+				<a class="nav-link" href="#">GPavichevich <i class='bx bx-user-circle bx-sm text-primary'></i></a>
+				<a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> 
+				<a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a> 
 			</div>
 		</div>
 	</div>
@@ -148,10 +143,14 @@
 
 			<div class="bg-lingh">
 				<div class="container table py-4">
-					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
-						de Usuarios</h1>
-					<table id="example"
-						class="container table table-striped table-bordered">
+					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado de Usuarios</h1>
+					
+						<p>	Buscar: <input class="text-control border border-secondary" placeholder="Ingrese detalle a buscar"
+						type="text" name="buscar"> <button type="button" class="btn btn-primary">Filtrar</button> </p>
+						
+						</br>
+					
+					<table id="example" class="container table table-striped table-bordered">
 						<thead>
 							<tr>
 								<th>Nombre</th>
@@ -225,6 +224,10 @@
 									<button type="button" class="btn btn-danger">
 										<i class="fas fa-trash-alt"></i>
 									</button></td>
+							</tr>
+							<tr>
+								<td colspan="9" align="right">1... 1</td>
+								
 							</tr>
 						</tbody>
 					</table>
