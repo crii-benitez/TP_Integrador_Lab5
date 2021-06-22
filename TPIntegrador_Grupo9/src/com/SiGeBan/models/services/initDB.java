@@ -226,7 +226,7 @@ public class initDB {
 		session.save(persona11);
 		session.save(persona12);
 
-		// cierre de transacciones
+		// cierre de transacciones 
 		ch.cerrarSession();
 	}
 
