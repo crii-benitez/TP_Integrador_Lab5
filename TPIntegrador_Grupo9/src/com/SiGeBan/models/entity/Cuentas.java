@@ -10,33 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Accounts")
 public class Cuentas implements Serializable{
 
 	//Implementar serializable
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="User")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int usuario;
-	
-	@Column(name="EntryDate")
 	private String fechaDeCreacion;
-	
-	@Column(name="AccountType")
 	private String tipoDeCuenta;
-	
-    @Column(name="AccountNumber")
 	private int numeroDeCuenta;
-    
-    @Column(name="CBU")
     private int cbu;
-    
-    @Column(name="AccountName")
     private String nombreCuenta;
-    
-    @Column(name="Balance")
     private int saldo;
     
 	

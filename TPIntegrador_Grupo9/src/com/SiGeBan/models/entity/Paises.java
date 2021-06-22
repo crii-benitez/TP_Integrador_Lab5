@@ -17,6 +17,7 @@ public class Paises implements Serializable {
 
 	@Id //
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String pais;
 
 	// constructor

@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Users")
 public class Usuarios implements Serializable {
 
 	/**
@@ -18,16 +19,17 @@ public class Usuarios implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private String user;
+	private String usuario;
 	private String pass;
+	@OneToOne
+	@JoinColumn(name="id")
 	private Perfiles perfil;
 
 	//constructores
-	public Usuarios(String user, String pass) {
-		this.user= user;
+	public Usuarios(String usuario, String pass) {
+		this.usuario= usuario;
 		this.pass = pass;
 	}
 	
@@ -39,9 +41,9 @@ public class Usuarios implements Serializable {
 	@Override
 	public String toString() {
 		if(perfil == null)
-			return "Usuario [id=" + id + ", user=" + user + ", pass=" + pass +  "]";
+			return "Usuario [id=" + id + ", usuario=" + usuario + ", pass=" + pass +  "]";
 		else
-			return "Usuario [id=" + id + ", user=" + user + ", pass=" + pass + ", perfil=" + perfil + "]";
+			return "Usuario [id=" + id + ", usuario=" + usuario + ", pass=" + pass + ", perfil=" + perfil + "]";
 	}
 	public Perfiles getPerfil() {
 		return perfil;
@@ -55,11 +57,11 @@ public class Usuarios implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUser() {
-		return user;
+	public String getUsuario() {
+		return usuario;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 	public String getPass() {
 		return pass;
