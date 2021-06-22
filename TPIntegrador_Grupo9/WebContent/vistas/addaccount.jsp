@@ -41,14 +41,11 @@
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Alta cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">ABML Clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">ABML Cuentas</a>
-                        </li>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Alta cuenta</a>
+                        </li> 
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Tipos de Cuentas</a>
                         </li>
@@ -66,35 +63,32 @@
     <!-- Close Header -->
 
 	<!-- Start Banner Hero -->
-	<div class="bg-dark">
 	 <div class="container table py-4">
 
         <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Creacion de Cuenta</h1>
-       		<div class="bg-dark">
-				<form action="#" method="post" >
+				<form class="table  table-bordered bg-light" action="#" method="post" >
 				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
-				<div class="bg-dark text-white">Datos de la Cuenta</div>
+				<div class="text-white  bg-dark">Datos de la Cuenta</div>
 				<div class="form-group">
-						<input type="text" class="form-control" required title="NumCuenta" placeholder="Número de Cuenta" />
-						<input type="text" class="form-control" required title="NombCuenta" placeholder="Nombre de Cuenta" />
+						<input type="text" class="form-control border border-secondary" required title="NumCuenta" placeholder="Número de Cuenta" />
+						<input type="text" class="form-control border border-secondary" required title="NombCuenta" placeholder="Nombre de Cuenta" />
 				</div>
-				<div class="bg-dark text-white">Datos de apertura</div>
+				<div class="text-white bg-dark">Datos de apertura</div>
 				<div class="form-group">
-						<select  name="pais" class="form-control" placeholder="Tipo de Cuenta">
+						<select  name="pais" class="form-control border border-secondary" placeholder="Tipo de Cuenta">
 							<option value="1">Caja de ahorro común - Pesos</option>
 							<option value="2">Caja de ahorro común - Dolares</option>
 							<option value="3">Cuenta corriente - Pesos</option>
 							<option value="4">Cuenta corriente - Dolares</option>
 						</select>
-			        <input type="text" class="form-control" required title="NombCuenta" placeholder="Fecha Creacion" />
-					<input type="text" class="form-control" required title="NombCuenta" placeholder="CBU" />
-					<span class="input-group-text">$10000</span>
-					<button type="button" class="btn btn-primary">Ingresar</button>
+			        <input type="text" class="form-control border border-secondary" required title="NombCuenta" placeholder="Fecha Creacion" />
+					<input type="text" class="form-control border border-secondary" required title="NombCuenta" placeholder="CBU" />
+					<span class="input-group-text border border-secondary">$10000</span>
+					<button type="button" class="btn btn-primary">Ingresar Cuenta</button>
 				</div>
 				</form>
-			</div>
 	</div>
-	</div>
+
 	
 	<div class="bg-lingh">
 		<div class="container table py-4">
