@@ -82,6 +82,18 @@
 						title="NombCuenta" placeholder="CBU" /> <span
 						class="input-group-text border border-secondary">$10000</span>
 					</br>
+					
+				<div class="text-white bg-dark">Datos del Cliente</div>
+				
+				<input type="text" class="form-control border border-secondary"
+						required title="DNI" placeholder="DNI" /> <span
+						class="input-group-text border border-secondary">Fernando Flego</span> 
+						<span class="input-group-text border border-secondary">Av. Presidente Peron 4785</span>
+						<span class="input-group-text border border-secondary">San Miguel</span>
+						<span class="input-group-text border border-secondary">Buenos Aires</span>
+						
+			</br>
+				
 					<button type="button" class="btn btn-primary">Ingresar
 						Cuenta</button>
 				
