@@ -118,6 +118,14 @@
 					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">
 						Cuenta seleccionada: Caja de Ahorro Nro: 20750921406888 CBU:
 						0110092130001111111111</h1>
+						
+						<p>
+						Buscar: <input class="text-control border border-secondary"
+							placeholder="ingrese campo a filtrar" type="text" name="buscar">
+						<button type="button" class="btn btn-primary">Filtrar</button>
+					</p>
+
+					</br>
 					<table id="example"
 						class="container table table-striped table-bordered">
 						<thead>
