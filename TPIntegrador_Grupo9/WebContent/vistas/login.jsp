@@ -107,9 +107,9 @@
 					<a href="#" class="enviarLG">Continuar</a>
 				</form>
 			</div>
-			   <div class="contact-img col-lg-5 align-items-end col-md-4">
+			<!--   <div class="contact-img col-lg-5 align-items-end col-md-4">
                     <img src="../assets/img/apple-icon.png">
-                </div><!-- -->
+                </div> -->
 		</div>
 	</div>
 	<!-- End Banner Hero -->

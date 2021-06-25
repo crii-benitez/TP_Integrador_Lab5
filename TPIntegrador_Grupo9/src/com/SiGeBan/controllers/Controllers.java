@@ -11,7 +11,7 @@ public class Controllers {
 	public ModelAndView eventoRedireccionarLogin()
 	{
 		ModelAndView MV = new ModelAndView();
-		MV.setViewName("login");
+		MV.setViewName("/login");
 		return MV;
 		
 	}
