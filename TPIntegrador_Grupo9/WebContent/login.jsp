@@ -10,11 +10,11 @@
 <title>SiGesBan LOGIN</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
 <link rel="shortcut icon" type="image/x-icon"
-	href="../assets/img/favicon.ico">
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/css/boxicon.min.css" rel="stylesheet">
+	href="assets/img/favicon.ico">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/boxicon.min.css" rel="stylesheet">
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
 	rel="stylesheet">
@@ -28,8 +28,8 @@
 <link
 	href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"
 	rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/custom.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/templatemo.css">
 </head>
 
 <body>
