@@ -7,6 +7,24 @@
 	<packaging>war</packaging>
 	<name>SiGeBan</name>
 	<description>Sistema de Gestion Bancaria realizado para el TP Integrador de Laboratorio 5, TUSI</description>
+	
+	<dependency>
+	 <groupId>org.springframework</groupId>
+	 <artifactId>spring-core</artifactId>
+	 <version>4.2.5.RELEASE</version>
+	 </dependency>
+	 <dependency>
+	 
+	 <groupId>org.springframework</groupId>
+	 <artifactId>spring-webmvc</artifactId>
+	 <version>4.2.5.RELEASE</version>
+	 </dependency>
+	 
+	 <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+	</dependency>
 
 	<dependencies>
 		<dependency>
