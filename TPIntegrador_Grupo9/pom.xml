@@ -8,6 +8,8 @@
 	<name>SiGeBan</name>
 	<description>Sistema de Gestion Bancaria realizado para el TP Integrador de Laboratorio 5, TUSI</description>
 	
+	
+<dependencies>
 	<dependency>
 	 <groupId>org.springframework</groupId>
 	 <artifactId>spring-core</artifactId>
@@ -25,8 +27,7 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
 	</dependency>
-
-	<dependencies>
+	
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -42,11 +43,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.25</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>mysql</groupId> -->
-<!-- 			<artifactId>mysql-connector-java</artifactId> -->
-<!-- 			<version>5.1.6</version> -->
-<!-- 		</dependency> -->
+ 		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
