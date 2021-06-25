@@ -125,48 +125,47 @@
 						<button type="button" class="btn btn-primary">Filtrar</button>
 					</p>
 
-					</br>
-					<table id="example"
+					<table id="listmovimientos"
 						class="container table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th>Fecha Movimiento</th>
-								<th>Nº Cuenta Origen</th>
-								<th>Nº Cuenta Destino</th>
-								<th>Detalle</th>
-								<th>Importe</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>09/03/2020</td>
-								<td>20750921406888</td>
-								<td>20784585484518</td>
-								<td>Transferencia a Terceros</td>
-								<td>$37200,000</td>
-							</tr>
-							<tr>
-								<td>15/03/2020</td>
-								<td>20750921406888</td>
-								<td>20750921406890</td>
-								<td>Transferencia entre Cuentas</td>
-								<td>$10200,000</td>
-							</tr>
-							<tr>
-								<td>05/03/2021</td>
-								<td>20750921406888</td>
-								<td>20784585484518</td>
-								<td>Transferencia a Terceros</td>
-								<td>$37200,000</td>
-							</tr>
-							<tr>
-								<td>10/05/2021</td>
-								<td>20750921406888</td>
-								<td>20784585484518</td>
-								<td>Transferencia a Terceros</td>
-								<td>$37200,000</td>
-							</tr>
-						</tbody>
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th>Fecha Movimiento</th> -->
+<!-- 								<th>Nº Cuenta Origen</th> -->
+<!-- 								<th>Nº Cuenta Destino</th> -->
+<!-- 								<th>Detalle</th> -->
+<!-- 								<th>Importe</th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<!-- 							<tr> -->
+<!-- 								<td>09/03/2020</td> -->
+<!-- 								<td>20750921406888</td> -->
+<!-- 								<td>20784585484518</td> -->
+<!-- 								<td>Transferencia a Terceros</td> -->
+<!-- 								<td>$37200,000</td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>15/03/2020</td> -->
+<!-- 								<td>20750921406888</td> -->
+<!-- 								<td>20750921406890</td> -->
+<!-- 								<td>Transferencia entre Cuentas</td> -->
+<!-- 								<td>$10200,000</td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>05/03/2021</td> -->
+<!-- 								<td>20750921406888</td> -->
+<!-- 								<td>20784585484518</td> -->
+<!-- 								<td>Transferencia a Terceros</td> -->
+<!-- 								<td>$37200,000</td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>10/05/2021</td> -->
+<!-- 								<td>20750921406888</td> -->
+<!-- 								<td>20784585484518</td> -->
+<!-- 								<td>Transferencia a Terceros</td> -->
+<!-- 								<td>$37200,000</td> -->
+<!-- 							</tr> -->
+<!-- 						</tbody> -->
 					</table>
 				</div>
 			</div>
@@ -196,7 +195,13 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable();
+		$('#listmovimientos').DataTable();
+		
+        var list = ${json};
+        $.each(list, function( index, value ) {
+            alert( index + ": " + value );
+        });
+        
 	});
 </script>
 <!-- Bootstrap -->
