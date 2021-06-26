@@ -21,22 +21,22 @@ public class Controllers {
 		return MV;
 		
 	}
-    @RequestMapping(value = "traermovhistoricos.html", method = RequestMethod.GET)
+    @RequestMapping(value = "IrAMovimientos.html", method = RequestMethod.GET)
     public ModelAndView listMovement() {
     	ObjectMapper mapper = new ObjectMapper();
     
-        List<String> list = new ArrayList<String>();
-        list.add("List A");
-        list.add("List B");
-        list.add("List C");
-        list.add("List D");
-        list.add("List E");
+        List<String> listMovement = new ArrayList<String>();
+        listMovement.add("List A");
+        listMovement.add("List B");
+        listMovement.add("List C");
+        listMovement.add("List D");
+        listMovement.add("List E");
         
         ModelAndView model = new ModelAndView("movementhistory");
         
         String json = "";
         try {
-            json = mapper.writeValueAsString(list);
+            json = mapper.writeValueAsString(listMovement);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +46,33 @@ public class Controllers {
         return model;
 
     }
-	
+    
+    @RequestMapping("IrAAdd.html")
+    public ModelAndView abrirAdd() {   
+        
+        ModelAndView model = new ModelAndView();
+        model.setViewName("add");
+        return model;
+
+    }
+    
+    @RequestMapping("IrAAddAccount.html")
+    public ModelAndView abrirAddAccount() {   
+        
+        ModelAndView model = new ModelAndView();
+        model.setViewName("addaccount");
+        return model;
+
+    }
+    @RequestMapping("IrATransferencias.html")
+    public ModelAndView abrirTransferencias() {   
+        
+        ModelAndView model = new ModelAndView("transferencias");
+        //model.setViewName("transferencias");
+        return model;
+
+    }
+    
 	public Controllers() {
 		// TODO Auto-generated constructor stub
 	}

@@ -4,6 +4,9 @@
 <html>
 
 <!DOCTYPE html>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
 
 <head>
@@ -127,6 +130,25 @@
 
 					<table id="listmovimientos"
 						class="container table table-striped table-bordered">
+				            <tr>
+				                <th style="width:  50px;">ID</th>
+				                <th style="width: 150px;">Nombre</th>
+				                <th style="width: 150px;">Apellido</th>
+				                <th style="width: 150px;">Calle</th>
+				                <th style="width: 150px;">Ciudad</th>
+				            </tr>
+						    <c:forEach var="listValue" items="${json}">
+						    <li>${listValue}</li>
+						    </c:forEach>
+				            <!--<c:forEach var="customer" items="${json}">
+				                <<tr>
+				                    <td>${customer.id}</td>
+				                    <td>${customer.firstName}</td>
+				                    <td>${customer.lastName}</td>
+				                    <td>${customer.street}</td>
+				                    <td>${customer.city}</td>
+				                </tr>
+				            </c:forEach>-->
 <!-- 						<thead> -->
 <!-- 							<tr> -->
 <!-- 								<th>Fecha Movimiento</th> -->

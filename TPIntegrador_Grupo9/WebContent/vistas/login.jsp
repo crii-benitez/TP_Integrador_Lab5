@@ -66,7 +66,7 @@
 						href="work.html">Seguridad</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="traermovhistoricos.html">Ver Movimientos</a></li>
+						href="IrAMovimientos.html">Ver Movimientos</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
 						href="pricing.html">Preguntas frecuentes</a></li>

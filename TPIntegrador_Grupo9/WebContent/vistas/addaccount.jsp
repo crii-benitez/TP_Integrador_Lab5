@@ -63,10 +63,10 @@
 						href="index.html">Usuarios</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-1"
-						href="index.html">ABM Cuentas</a></li>
+						href="../IrATransferencias.html">Transferencias</a></li>
 					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-1"
-						href="work.html">Cuentas</a></li>
+						class="nav-link btn-outline-primary rounded-pill px-3"
+						href="../IrAMovimientos.html">Ver Movimientos</a></li>
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
