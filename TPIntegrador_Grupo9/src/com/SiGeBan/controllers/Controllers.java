@@ -60,6 +60,7 @@ public class Controllers {
 
 		/* List<?> listMovement=negocioMovimiento.listarMovimientos(); */
 
+<<<<<<< HEAD
 		ModelAndView model = new ModelAndView("movementhistory");
 
 		String json = "";
@@ -99,6 +100,15 @@ public class Controllers {
 		// model.setViewName("transferencias");
 		return model;
 
+=======
+    }
+    
+   
+	
+    
+	public Controllers() {
+		// TODO Auto-generated constructor stub
+>>>>>>> branch 'master' of https://github.com/crii-benitez/TP_Integrador_Lab5.git
 	}
 
 }
