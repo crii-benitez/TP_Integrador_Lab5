@@ -60,10 +60,10 @@
 						href="index.html">Mis Cuentas</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="index.html">Movimientos</a></li>
+						href="IrAMovimientos.html">Movimientos</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="work.html">Transferencias</a></li>
+						href="IrATransferencias.html">Transferencias</a></li>
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
