@@ -5,16 +5,19 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class ConfigHibernate {
 
 	private SessionFactory sessionFactory;
 	private Session session;
+	private Configuration configuration;
 
 	public ConfigHibernate()
 	{
-		Configuration configuration = new Configuration();
+		//Este new configuration no se puede sacar a un bean po
+		configuration = new Configuration();
         configuration.configure();
         ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
