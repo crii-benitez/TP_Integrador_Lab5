@@ -94,10 +94,10 @@
 				a nuestro Home Banking</h1>
 			<div class="loginLG">
 				<div class="tituloLG">SiGeBan</div>
-				<form action="#" method="post"
+				<form action="AccionLoguear.html" method="post"
 					enctype="application/x-www-form-urlencoded">
-					<input type="text" required title="Usuario" placeholder="Usuario"
-						data-icon="U"> <input type="password" required
+					<input type="text" name="txtUsuario" required title="Usuario" placeholder="Usuario"
+						data-icon="U"> <input type="password" name="txtPass" required
 						title="Contraseña" placeholder="Contraseña" data-icon="x">
 					<div class="olvidoLG">
 						<div class="colLG">
@@ -107,7 +107,8 @@
 							<a href="#" title="Recuperar contraseña">Olvido contraseña?</a>
 						</div>
 					</div>
-					<a href="#" class="enviarLG">Continuar</a>
+					<a href="AccionLoguear.html" class="enviarLG">Continuar</a>
+					<h1>${Mensaje}</h1>
 				</form>
 			</div>
 			<!--   <div class="contact-img col-lg-5 align-items-end col-md-4">

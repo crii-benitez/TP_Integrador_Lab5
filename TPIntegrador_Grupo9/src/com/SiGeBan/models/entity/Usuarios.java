@@ -17,7 +17,7 @@ public class Usuarios implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idUsuario;
+	private Long idUsuario;
 	private String usuario;
 	private String pass;
 
@@ -70,11 +70,11 @@ public class Usuarios implements Serializable {
 		this.pass = pass;
 	}
 
-	public int getIdUsuario() {
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 

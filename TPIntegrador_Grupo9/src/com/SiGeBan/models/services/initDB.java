@@ -164,8 +164,7 @@ public class initDB {
 		Usuarios user08 = new Usuarios("usuarioCliente08", "claveCliente", perfil02);
 		Usuarios user09 = new Usuarios("usuarioCliente09", "claveCliente", perfil02);
 		Usuarios user10 = new Usuarios("usuarioCliente10", "claveCliente", perfil02);
-		Usuarios user11 = new Usuarios("usuarioBanco01", "claveBanco", perfil01);
-		Usuarios user12 = new Usuarios("usuarioBanco02", "claveBanco", perfil01);
+		Usuarios user11 = new Usuarios("administrador", "claveBanco", perfil01);
 		session.save(user01);
 		session.save(user02);
 		session.save(user03);
@@ -177,7 +176,6 @@ public class initDB {
 		session.save(user09);
 		session.save(user10);
 		session.save(user11);
-		session.save(user12);
 
 		/* DATASET = Movimientos */
 		
@@ -237,7 +235,7 @@ public class initDB {
 		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
 		Personas persona12 = new Personas(98475695, "Tomas", "Profesor",  fecha, "Montañeses 99", localidad01,
-				provincia01, pais01, genero01, user12);
+				provincia01, pais01, genero01, user11);
 		session.save(persona01);
 		session.save(persona02);
 		session.save(persona03);
