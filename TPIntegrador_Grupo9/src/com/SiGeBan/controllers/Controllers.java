@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.SiGeBan.models.dao.UsuariosDAO;
+import com.SiGeBan.models.entity.Usuarios;
 import com.SiGeBan.models.services.IUsuariosService;
 import com.SiGeBan.models.services.UsuariosService;
 import com.SiGeBan.resources.ConfigBeans;
@@ -43,9 +45,12 @@ public class Controllers {
 
 	@RequestMapping("AccionLoguear.html")
 	public ModelAndView accionLoguear(String txtUsuario) {
+		UsuariosDAO User = new UsuariosDAO();
+		
+		System.out.println(txtUsuario);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("txtUsuario",txtUsuario);
-		mv.addObject("txtPrueba","si le pongo un texto cualquiera anda, pero no toma el post");
+		mv.addObject("txtUsuario", User.prueba1(txtUsuario));
+	//	mv.addObject("txtPrueba","si le pongo un texto cualquiera anda, pero no toma el post");
 		mv.setViewName("usuarioLogueado");
 		return mv;
 	}

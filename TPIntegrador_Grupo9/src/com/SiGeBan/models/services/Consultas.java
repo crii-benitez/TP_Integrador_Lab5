@@ -7,10 +7,10 @@ import com.SiGeBan.models.dao.ConfigHibernate;
 import com.SiGeBan.models.entity.*;
 
 public class Consultas {
-	@Autowired
+	//@Autowired
 	private static UsuariosService usuarioService;
 	public static void main(String[] args) {
-		prueba2();
+		prueba1();
 	}
 	public static void prueba1() {
 		Usuarios usuario = new Usuarios();
