@@ -7,16 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<%
-// if(request.getParameter("btnAceptar")!=null){
-	String var1 = request.getParameter("txtUsuario");
-	String Mensaje = request.getParameter("Mensaje");
-	String var2 = request.getParameter("txtMensaje");
-%>
-<br>
-	<h1><%=var1%></h1>
-	<h6><%=var2%></h6>
-	<h6><%=Mensaje%></h6>
+<h1>${txtUsuario}</h1><br><h1>${txtPrueba}</h1><br>
 </body>
 </html>

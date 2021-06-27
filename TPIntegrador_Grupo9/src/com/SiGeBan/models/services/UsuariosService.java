@@ -1,17 +1,15 @@
 package com.SiGeBan.models.services;
 
-import java.util.ArrayList;
-
 import com.SiGeBan.models.dao.UsuariosDAO;
 import com.SiGeBan.models.entity.Usuarios;
 
 public class UsuariosService {
 	
-	private UsuariosDAO usuarioDAO;
+	private UsuariosDAO usuarioDAO = null;
 
-	public Usuarios obtenerUsuarioPorUsuario(String usser) {
-		return new Usuarios();
-	}
+	public Usuarios obtenerUsuariosPorUsuario(String usser) {
+		return usuarioDAO.obtenerUsuariosPorUsuario(usser);
+	} 
 	//
 //	public void setDataAccess(UsuariosDAO dataAccess) {
 //		this.dataAccess = dataAccess;

@@ -33,11 +33,6 @@
 </head>
 
 <body>
-	<%
-		String txtUsuario = null;
-		String txtPass = null;
-		String Mensaje = null;
-	%>
 	<!-- Header -->
 	<nav id="main_nav"
 		class="navbar navbar-expand-lg navbar-light bg-white shadow">
@@ -99,12 +94,12 @@
 				a nuestro Home Banking</h1>
 			<div class="loginLG">
 				<div class="tituloLG">SiGeBan</div>
-				<form action="AccionLoguear.html" method="get"
+				<form action="AccionLoguear.html" method="post"
 					enctype="application/x-www-form-urlencoded">
 					<input type="text" name="txtUsuario" required title="Usuario"
-						placeholder="Usuario" data-icon="U" value=<%=txtUsuario%>> <input
+						placeholder="Usuario" data-icon="U"> <input
 						type="password" name="txtPass" required title="Contraseña"
-						placeholder="Contraseña" data-icon="x" value=<%=txtPass%>>
+						placeholder="Contraseña" data-icon="x">
 					<div class="olvidoLG">
 						<div class="colLG">
 							<a href="#" title="Ver contraseña">Ver contraseña</a>
@@ -113,8 +108,7 @@
 							<a href="#" title="Recuperar contraseña">Olvido contraseña?</a>
 						</div>
 					</div>
-					<a name=btnContinuar href="AccionLoguear.html" class="enviarLG">Continuar</a>
-					<h1>${Mensaje}</h1>
+					<a name="btnContinuar" href="AccionLoguear.html" class="enviarLG">Continuar</a>
 				</form>
 			</div>
 			<!--   <div class="contact-img col-lg-5 align-items-end col-md-4">

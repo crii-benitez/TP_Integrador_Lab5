@@ -13,21 +13,27 @@ import com.SiGeBan.models.entity.Usuarios;
 
 public class UsuariosDAO {
 
-	private Usuarios usuario;
-	private ConfigHibernate ch;
-	private Session session;
+//	private Usuarios usuario;
+//	private ConfigHibernate ch;
+//	private Session session;
+	private HibernateTemplate hibernateTemplate = null;
 	
-
-	public Usuarios obtenerUsuarioPorUsuario(String usser) {
-		usuario = new Usuarios();
-		ch = new ConfigHibernate();
-		session = ch.abrirConexion();
-		session.beginTransaction();
-		usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+usser+"'").uniqueResult();
-		System.out.println(usuario.toString());
-		ch.cerrarSession();
-		return usuario;
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public Usuarios obtenerUsuariosPorUsuario(String usser) {
+		return this.hibernateTemplate.get(Usuarios.class, usser);
 	}
+
+//	public Usuarios obtenerUsuariosPorUsuario(String usser) {
+//		usuario = new Usuarios();
+//		ch = new ConfigHibernate();
+//		session = ch.abrirConexion();
+//		session.beginTransaction();
+//		usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'" + usser + "'")
+//				.uniqueResult();
+//		System.out.println(usuario.toString());
+//		ch.cerrarSession();
+//		return usuario;
+//	}
 	
 //	private HibernateTemplate hibernateTemplate = null;
 //

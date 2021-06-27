@@ -11,8 +11,8 @@ import org.hibernate.Session;
 import com.SiGeBan.models.dao.ConfigHibernate;
 import com.SiGeBan.models.entity.*;
 
-public class initDB {
-	public static void main(String[] args) {
+public class InitDB {
+	public void iniciarBase() {
 
 		//seteo la fecha para movimientos
 		LocalDateTime ldt = LocalDateTime.now();
@@ -254,7 +254,7 @@ public class initDB {
 		ch.cerrarSession();
 	}
 
-	public initDB() {
+	public InitDB() {
 		// TODO Auto-generated constructor stub
 	}
 
