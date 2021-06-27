@@ -33,9 +33,14 @@
 </head>
 
 <body>
-
+	<%
+		String txtUsuario = null;
+		String txtPass = null;
+		String Mensaje = null;
+	%>
 	<!-- Header -->
-	<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+	<nav id="main_nav"
+		class="navbar navbar-expand-lg navbar-light bg-white shadow">
 	<div
 		class="container d-flex justify-content-between align-items-center">
 		<a class="navbar-brand h1" href="index.html"> <i
@@ -94,11 +99,12 @@
 				a nuestro Home Banking</h1>
 			<div class="loginLG">
 				<div class="tituloLG">SiGeBan</div>
-				<form action="AccionLoguear.html" method="post"
+				<form action="AccionLoguear.html" method="get"
 					enctype="application/x-www-form-urlencoded">
-					<input type="text" name="txtUsuario" required title="Usuario" placeholder="Usuario"
-						data-icon="U"> <input type="password" name="txtPass" required
-						title="Contraseña" placeholder="Contraseña" data-icon="x">
+					<input type="text" name="txtUsuario" required title="Usuario"
+						placeholder="Usuario" data-icon="U" value=<%=txtUsuario%>> <input
+						type="password" name="txtPass" required title="Contraseña"
+						placeholder="Contraseña" data-icon="x" value=<%=txtPass%>>
 					<div class="olvidoLG">
 						<div class="colLG">
 							<a href="#" title="Ver contraseña">Ver contraseña</a>
@@ -107,7 +113,7 @@
 							<a href="#" title="Recuperar contraseña">Olvido contraseña?</a>
 						</div>
 					</div>
-					<a href="AccionLoguear.html" class="enviarLG">Continuar</a>
+					<a name=btnContinuar href="AccionLoguear.html" class="enviarLG">Continuar</a>
 					<h1>${Mensaje}</h1>
 				</form>
 			</div>
@@ -146,7 +152,7 @@
 
 	<!-- Bootstrap -->
 	<script src="../assets/js/bootstrap.bundle.min.js"></script>
-	
+
 	<!-- Templatemo -->
 	<script src="../assets/js/templatemo.js"></script>
 	<!-- Custom -->

@@ -18,12 +18,15 @@ public class UsuariosDAO {
 	private Session session;
 	
 
-	public Usuarios obtenerUsuarioPorUsuario(String usuario) {
+	public Usuarios obtenerUsuarioPorUsuario(String usser) {
+		usuario = new Usuarios();
 		ch = new ConfigHibernate();
 		session = ch.abrirConexion();
 		session.beginTransaction();
-		this.usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = "+usuario).uniqueResult();
-		return this.usuario;
+		usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+usser+"'").uniqueResult();
+		System.out.println(usuario.toString());
+		ch.cerrarSession();
+		return usuario;
 	}
 	
 //	private HibernateTemplate hibernateTemplate = null;

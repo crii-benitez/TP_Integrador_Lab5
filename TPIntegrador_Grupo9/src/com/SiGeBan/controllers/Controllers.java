@@ -2,12 +2,16 @@ package com.SiGeBan.controllers;
 
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.support.RequestContext;
 
 import com.SiGeBan.models.commerce.NegMovimientos;
 import com.SiGeBan.models.dao.UsuariosDAO;
@@ -28,29 +32,18 @@ public class Controllers {
 	 */
 	// @Autowired private UsuarioService usuarioService;
 
-	@RequestMapping("IrALogin.html")
+	@RequestMapping(value = "IrALogin.html", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView eventoRedireccionarLogin() {
 		ModelAndView mv = new ModelAndView();
+		
 		mv.setViewName("login");
 		return mv;
 
 	}
 
-	@RequestMapping(value = "AccionLoguear.html", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView accionLoguear(String txtUsuario, String txtPass) {
+	@RequestMapping(value = "AccionLoguear.html", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView accionLoguear(String txtUsuario, String Mensaje) {
 		ModelAndView mv = new ModelAndView();
-		Usuarios usuario = new Usuarios();
-		usuario.setPass(txtPass);
-		usuario.setUsuario(txtUsuario);
-//		mv.addObject("txtUsuario", txtUsuario);s
-//		UsuariosDAO usuarioDAO = new UsuariosDAO();
-//		usuario = (Usuarios) usuarioDAO.obtenerUsuarioPorUsuario(txtUsuario);
-	
-		System.out.println(usuario.toString());
-//		if(txtPass!=usuario.getPass())
-//			System.out.println(mv.addObject("Mensaje", "La contraseña ingresada es erronea."));
-				
-		mv.setViewName("login");
 		return mv;
 	}
 
@@ -59,7 +52,6 @@ public class Controllers {
 		ObjectMapper mapper = new ObjectMapper();
 
 		/* List<?> listMovement=negocioMovimiento.listarMovimientos(); */
-
 
 		ModelAndView model = new ModelAndView("movementhistory");
 
@@ -100,11 +92,8 @@ public class Controllers {
 		// model.setViewName("transferencias");
 		return model;
 
-    }
-    
-   
-	
-    
+	}
+
 	public Controllers() {
 		// TODO Auto-generated constructor stub
 	}

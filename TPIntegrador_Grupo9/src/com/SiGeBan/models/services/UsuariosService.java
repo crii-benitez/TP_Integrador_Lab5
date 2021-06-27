@@ -7,8 +7,12 @@ import com.SiGeBan.models.entity.Usuarios;
 
 public class UsuariosService {
 	
-//	private UsuariosDAO dataAccess = null;
-//
+	private UsuariosDAO usuarioDAO;
+
+	public Usuarios obtenerUsuarioPorUsuario(String usser) {
+		return new Usuarios();
+	}
+	//
 //	public void setDataAccess(UsuariosDAO dataAccess) {
 //		this.dataAccess = dataAccess;
 //	}
@@ -16,7 +20,7 @@ public class UsuariosService {
 //	public ArrayList<Usuarios> obtenerUsuarioss() {
 //		return dataAccess.obtenerUsuarios();
 //	}
-//
+////
 //	public Usuarios obtenerUnRegistro(String nombreUser) {
 //		return dataAccess.obtenerUsuariosPorNombre(nombreUser);
 //	}

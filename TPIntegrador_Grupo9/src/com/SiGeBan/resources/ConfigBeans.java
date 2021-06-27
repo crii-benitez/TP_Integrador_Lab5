@@ -1,26 +1,35 @@
 package com.SiGeBan.resources;
 
+import java.util.ArrayList;
+
 import javax.transaction.Transaction;
 import javax.transaction.TransactionManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 
 import com.SiGeBan.models.dao.ConfigHibernate;
 import com.SiGeBan.models.entity.Usuarios;
 import com.mysql.cj.xdevapi.SessionFactory;
 
+@Configuration
 public class ConfigBeans {
 
+//	@Bean
+//	public ArrayList<Usuarios> obtenerUsuarioss(){
+//		
+//	}
 	
-//	@Autowired
-//	private ConfigHibernate configHibernate;
-//	
+	
 //	@Bean
 //	public HibernateTransactionManager transactionManager() {
 //		set.dataAccess(dataAccesBean);
 //	}
+//	@Autowired
+//	private ConfigHibernate configHibernate;
+//	
 //	<!-- CREO EL SERVICIO PARA USUARIO -->
 //	<bean id="serviceBean" class="frgp.utn.edu.ar.servicioImpl.UsuarioServicioImpl">
 //		<property name="dataAccess" ref="dataAccessBean"></property>
