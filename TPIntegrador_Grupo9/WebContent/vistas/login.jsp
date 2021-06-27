@@ -10,11 +10,11 @@
 <title>SiGesBan LOGIN</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
 <link rel="shortcut icon" type="image/x-icon"
-	href="../assets/img/favicon.ico">
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/css/boxicon.min.css" rel="stylesheet">
+	href="assets/img/favicon.ico">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/boxicon.min.css" rel="stylesheet">
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
 	rel="stylesheet">
@@ -28,12 +28,13 @@
 <link
 	href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"
 	rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/custom.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/templatemo.css">
 </head>
 
 <body>
 	<!-- Header -->
+	
 	<nav id="main_nav"
 		class="navbar navbar-expand-lg navbar-light bg-white shadow">
 	<div
@@ -64,9 +65,6 @@
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
 						href="work.html">Seguridad</a></li>
-					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAMovimientos.html">Ver Movimientos</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
 						href="pricing.html">Preguntas frecuentes</a></li>
@@ -111,7 +109,7 @@
 				</form>
 			</div>
 			<!--   <div class="contact-img col-lg-5 align-items-end col-md-4">
-                    <img src="../assets/img/apple-icon.png">
+                    <img src="assets/img/apple-icon.png">
                 </div> -->
 		</div>
 	</div>
@@ -144,12 +142,12 @@
 
 
 	<!-- Bootstrap -->
-	<script src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Templatemo -->
-	<script src="../assets/js/templatemo.js"></script>
+	<script src="assets/js/templatemo.js"></script>
 	<!-- Custom -->
-	<script src="../assets/js/custom.js"></script>
+	<script src="assets/js/custom.js"></script>
 </body>
 
 </html>
