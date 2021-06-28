@@ -1,10 +1,9 @@
 package com.SiGeBan.controllers;
 
-import java.util.List;
-
 import javax.servlet.ServletConfig;
 
 import org.apache.catalina.connector.Request;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -70,16 +69,18 @@ public class Controllers {
 	@RequestMapping("IrAMovimientos.html")
 	public ModelAndView listMovement() {
 		DaoMovimientos Movs = new DaoMovimientos();
-		
+/*//esto funciona trae un registro de la tabla tipos de movimientos.
+ * 	
 		System.out.println("Entro en controller listMovement");
 		ModelAndView mv = new ModelAndView();
-		String listMovement=Movs.prueba1();
-		mv.addObject("listmovimientos", listMovement);
+		String _listMovement=Movs.prueba2();
+		mv.addObject("listmovimientos", _listMovement);
 		mv.setViewName("movementhistory");
 		return mv;
-/*
+*/
+		
 		ObjectMapper mapper = new ObjectMapper();
-		List<Movimientos> listMovement=negocioMovimiento.listarMovimientos();
+		List listMovement=(List)Movs.ListarMovimientos();
 		ModelAndView model = new ModelAndView("movementhistory");
 		String json = "";
 		try 
@@ -92,7 +93,7 @@ public class Controllers {
 		}
 		model.addObject("listmovimientos", json);
 		return model;
-*/
+		
 	}
 
 	@RequestMapping("IrAAdd.html")
@@ -140,8 +141,8 @@ public class Controllers {
 
 	}
 
-	public Controllers() {
+	/*public Controllers() {
 		// TODO Auto-generated constructor stub
-	}
+	}*/
 
 }

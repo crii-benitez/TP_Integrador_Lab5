@@ -1,10 +1,11 @@
 package com.SiGeBan.models.dao;
 
-import java.util.List;
+//import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -26,14 +27,24 @@ public class DaoMovimientos {
 		Session session = ch.abrirConexion();
 		session.beginTransaction();
 		System.out.println("dentro de prueba1 prueba1");
-		return session.createQuery("FROM Movimientos").toString();
+		return session.createQuery("select detalle FROM Movimientos where idmovimiento=1").toString();
 	}
-	public List<Movimientos> ListarMovimientos() {
+	public String prueba2() {
+		ConfigHibernate ch = new ConfigHibernate();
+		System.out.println("Inicio DaoMovimientos Metodo prueba2");
+		Session session = ch.abrirConexion();
+		session.beginTransaction();
+		System.out.println("Fin DaoMovimientos Metodo prueba2");
+		return session.createQuery("select nombreDeTipoDeCuenta FROM TiposDeCuentas where idTipoDeCuenta=1").list().toString();
+		//return "Devuelto por DaoMovimientos Metodo prueba2";
+	}
+	public List ListarMovimientos() {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 		session.beginTransaction();
 		System.out.println("En DaoMovimientos 'ListarMovimientos': antes de cargar el listado");
-		List<Movimientos> lm = (List<Movimientos>) session.createQuery("FROM Movimientos").list();
+		Query query=session.createQuery("FROM Movimientos");
+		List lm =(List) query.list();
 		System.out.println("En DaoMovimientos 'ListarMovimientos': " + lm.toString());
 		return lm;
 	}

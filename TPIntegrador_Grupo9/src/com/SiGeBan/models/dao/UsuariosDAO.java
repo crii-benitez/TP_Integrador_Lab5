@@ -24,13 +24,13 @@ public class UsuariosDAO {
 	}
 	
 	public String prueba1(String algo) {
-		Usuarios usuario = new Usuarios();
+		/*Usuarios usuario = new Usuarios();*/
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 		session.beginTransaction();
-		usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'");
-		System.out.println(usuario.toString());
-		return usuario.toString();
+		/*usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'");
+		System.out.println(usuario.toString());*/
+		return session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'").list().toString();
 	}
 
 //	public Usuarios obtenerUsuariosPorUsuario(String usser) {

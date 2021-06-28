@@ -140,9 +140,11 @@
 				                <th style="width: 150px;">Calle</th>
 				                <th style="width: 150px;">Ciudad</th>
 				            </tr>
+				            <h1>${listmovimientos}</h1>
 						    <c:forEach var="listValue" items="${json}">
 						    <li>${listValue}</li>
 						    </c:forEach>
+						    
 				            <!--<c:forEach var="customer" items="${json}">
 				                <<tr>
 				                    <td>${customer.id}</td>
