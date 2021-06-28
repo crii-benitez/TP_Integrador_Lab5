@@ -1,9 +1,12 @@
 package com.SiGeBan.controllers;
 
+import java.util.List;
+
 import javax.servlet.ServletConfig;
 
 import org.apache.catalina.connector.Request;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -13,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.SiGeBan.models.commerce.NegMovimientos;
 import com.SiGeBan.models.dao.UsuariosDAO;
+import com.SiGeBan.models.dao.DaoMovimientos;
+import com.SiGeBan.models.entity.Movimientos;
 import com.SiGeBan.models.entity.Usuarios;
 import com.SiGeBan.models.services.IUsuariosService;
 import com.SiGeBan.models.services.UsuariosService;
@@ -23,13 +29,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class Controllers {
 
-	/*
-	 * @Autowired
-	 * 
-	 * @Qualifier("servicioMovimientos") private NegMovimientos negocioMovimiento;
-	 * 
-	 * @Autowired private Movimientos movimiento;
-	 */
+/*
+	@Autowired
+	@Qualifier("servicioMovimientos") 
+	private NegMovimientos negocioMovimiento;
+*/
 //	@Autowired
 //	private IUsuariosService usuarioService;
 //
@@ -65,22 +69,30 @@ public class Controllers {
 
 	@RequestMapping("IrAMovimientos.html")
 	public ModelAndView listMovement() {
+		DaoMovimientos Movs = new DaoMovimientos();
+		
+		System.out.println("Entro en controller listMovement");
+		ModelAndView mv = new ModelAndView();
+		String listMovement=Movs.prueba1();
+		mv.addObject("listmovimientos", listMovement);
+		mv.setViewName("movementhistory");
+		return mv;
+/*
 		ObjectMapper mapper = new ObjectMapper();
-
-		/* List<?> listMovement=negocioMovimiento.listarMovimientos(); */
-
+		List<Movimientos> listMovement=negocioMovimiento.listarMovimientos();
 		ModelAndView model = new ModelAndView("movementhistory");
-
 		String json = "";
-		/*
-		 * try { json = mapper.writeValueAsString(listMovement); } catch (Exception e) {
-		 * e.printStackTrace(); }
-		 */
-
+		try 
+		{ 
+			json = mapper.writeValueAsString(listMovement); 
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace(); 
+		}
 		model.addObject("listmovimientos", json);
-
 		return model;
-
+*/
 	}
 
 	@RequestMapping("IrAAdd.html")

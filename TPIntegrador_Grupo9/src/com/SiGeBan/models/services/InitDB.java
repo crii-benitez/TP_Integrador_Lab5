@@ -13,7 +13,7 @@ import com.SiGeBan.models.entity.*;
 
 public class InitDB {
 	public void iniciarBase() {
-
+		
 		//seteo la fecha para movimientos
 		LocalDateTime ldt = LocalDateTime.now();
 		Timestamp fechaAhora = Timestamp.valueOf(ldt);

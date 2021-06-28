@@ -10,14 +10,16 @@ import com.SiGeBan.models.entity.Movimientos;
 
 @Service("servicioMovimientos")
 public class NegMovimientos {
+	/*
 	@Autowired
 	private DaoMovimientos daoMovimientos;
 	
-	public List<?> listarMovimientos() {
+	public List<Movimientos> listarMovimientos() {
 		return daoMovimientos.listarMovimientos();
 	}
 
 	public boolean agregarPersona(Movimientos p) {
 		return daoMovimientos.agregarMovimiento(p);
 	}
+	*/
 }
