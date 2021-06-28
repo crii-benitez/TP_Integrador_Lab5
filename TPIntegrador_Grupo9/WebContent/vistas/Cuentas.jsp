@@ -57,10 +57,10 @@
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-1"
-						href="IrAAdd.html">ABM Usuarios</a></li>
+						href="IrAUsuarios.html">ABM Usuarios</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-1"
-						href="IrAUsuarios.html">Usuarios</a></li>
+						href="IrAAdd.html">Usuarios</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-1"
 						href="IrAAddAccount.html">ABM Cuentas</a></li>
@@ -82,46 +82,8 @@
 	</nav>
 	<!-- Close Header -->
 	<div class="bg-light">
-		<div class="container table py-4">
-
-			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Creacion
-				de Cuenta</h1>
-			<form class="table table-bordered bg-light" action="#" method="post">
-				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
-				<div class="text-white  bg-dark">Datos de la Cuenta</div>
-				<input type="text" class="form-control border border-secondary"
-					title="NumCuenta" placeholder="Número de Cuenta" /> <input
-					type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="Nombre de Cuenta" /> </br>
-				<div class="text-white bg-dark">Datos de apertura</div>
-				<select name="pais" class="form-control border border-secondary"
-					placeholder="Tipo de Cuenta">
-					<option value="1">Caja de ahorro - Pesos</option>
-					<option value="2">Caja de ahorro - Dolares</option>
-					<option value="3">Cuenta corriente - Pesos</option>
-					<option value="4">Cuenta corriente - Dolares</option>
-				</select> <input type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="Fecha Creacion" /> <input
-					type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="CBU" /> <span
-					class="input-group-text border border-secondary">Monto en $</span> </br>
-
-				<div class="text-white bg-dark">Datos del Cliente</div>
-
-				<input type="text" class="form-control border border-secondary"
-					required title="DNI" placeholder="DNI" /> <span
-					class="input-group-text border border-secondary">Fernando
-					Flego</span> <span class="input-group-text border border-secondary">Av.
-					Presidente Peron 4785</span> <span
-					class="input-group-text border border-secondary">San Miguel</span>
-				<span class="input-group-text border border-secondary">Buenos
-					Aires</span> </br>
-
-				<button type="button" class="btn btn-primary">Ingresar
-					Cuenta</button>
-
-			</form>
-			<div class="bg-lingh">
+	
+			
 				<div class="container table py-4">
 					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
 						de Cuentas</h1>
@@ -476,8 +438,7 @@
 					</table>
 				</div>
 			</div>
-		</div>
-	</div>
+	
 	<!-- Start Footer -->
 	<footer class="bg-secondary pt-4">
 

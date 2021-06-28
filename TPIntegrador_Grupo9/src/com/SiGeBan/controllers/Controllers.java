@@ -42,6 +42,14 @@ public class Controllers {
 		return mv;
 
 	}
+	
+	@RequestMapping("IrAMisCuentas.html")
+	public ModelAndView eventoRedireccionarMisCuentas() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("MisCuentas");
+		return mv;
+
+	}
 
 	@RequestMapping("AccionLoguear.html")
 	public ModelAndView accionLoguear(String txtUsuario) {
@@ -83,7 +91,25 @@ public class Controllers {
 		return model;
 
 	}
+	
+	@RequestMapping("IrAUsuarios.html")
+	public ModelAndView abrirUsuarios() {
 
+		ModelAndView model = new ModelAndView();
+		model.setViewName("Usuarios");
+		return model;
+
+	}
+
+	@RequestMapping("IrACuentas.html")
+	public ModelAndView abrirCuentas() {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("Cuentas");
+		return model;
+
+	}
+	
 	@RequestMapping("IrAAddAccount.html")
 	public ModelAndView abrirAddAccount() {
 

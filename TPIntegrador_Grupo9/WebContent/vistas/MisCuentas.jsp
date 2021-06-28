@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-<title>SiGesBan ABML Transferencias</title>
+<title>SiGesBan Cuentas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
@@ -53,7 +53,7 @@
 			class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
 			id="navbar-toggler-success">
 			<div class="flex-fill mx-xl-5 mb-2">
-				<ul
+			<ul
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
@@ -67,7 +67,7 @@
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#">LYermoli <i
+				<a class="nav-link" href="#">PMaciel <i
 					class='bx bx-user-circle bx-sm text-primary'></i></a> <a
 					class="nav-link" href="#"><i
 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
@@ -81,69 +81,126 @@
 	<div class="bg-light">
 		<div class="container table py-4">
 
-			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Transferencias</h1>
+			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Cuentas</h1>
 			<form class="table table-bordered bg-light" action="#" method="post">
+				
+				<div class="text-white bg-dark">Datos del Cliente</div>
 
-				<div class="text-white bg-dark">Datos de la Transferencia</div>
+				 <span
+					class="input-group-text border border-secondary">32.128.258</span> <span
+					class="input-group-text border border-secondary">Fernando
+					Flego</span> <span class="input-group-text border border-secondary">Av.
+					Presidente Peron 4785</span> <span
+					class="input-group-text border border-secondary">San Miguel</span>
+				<span class="input-group-text border border-secondary">Buenos
+					Aires</span> 
 
-				<select name="tipo" class="form-control border border-secondary"
-					placeholder="Tipo de transferencia">
-					<option value="1">A cuenta Propia</option>
-					<option value="2">A cuenta de un Tercero</option>
-				</select> </br>
-
-				<div class="text-white  bg-dark">Datos de la Cuenta Origen</div>
-				<!--  <div class="form-group">-->
-				<select name="pais" class="form-control border border-secondary"
-					placeholder="Tipo de Cuenta">
-					<option value="1">Caja de ahorro - Pesos</option>
-					<option value="2">Caja de ahorro - Dolares</option>
-					<option value="3">Cuenta corriente - Pesos</option>
-					<option value="4">Cuenta corriente - Dolares</option>
-				</select> <span class="input-group-text border border-secondary">1458963/4</span>
-				<span class="input-group-text border border-secondary">$
-					478964.25</span>
-				<!--	</div>-->
-				</br>
-				<div class="text-white bg-dark">Datos de la Cuenta Destino</div>
-
-				<input type="text" class="form-control border border-secondary"
-					required title="CBU" placeholder="CBU" /> <span
-					class="input-group-text border border-secondary">Maximiliano
-					Dario Guiol</span> <span class="input-group-text border border-secondary">$25000.00</span>
-				</br>
-
-				<div class="text-white bg-dark">Monto a Transferir</div>
-
-				<input type="text" class="form-control border border-secondary"
-					required title="Monto a Transferir"
-					placeholder="Monto a Transferir" /> </br>
-				<button type="button" class="btn btn-primary">Realizar
-					Transferencia</button>
 			</form>
-
-		</div>
-		<!-- Start Footer -->
-		<footer class="bg-secondary pt-4">
-
-
-		<div class="w-100 bg-primary py-4">
-			<div class="container">
-				<div class="row pt-2">
-					<div class="col-lg-6 col-sm-12">
-						<p class="text-lg-start text-center text-light light-300">©
-							Copyright 2021 SiGeBan. All Rights Reserved.</p>
-					</div>
-					<div class="col-lg-6 col-sm-12">
-						<p class="text-lg-end text-center text-light light-300">
-							Realizado por Grupo 9 LAB5 UtnFrgp</p>
-					</div>
+			<div class="bg-lingh">
+				<div class="container table py-4">
+					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
+						de Cuentas</h1>
+					<p>
+				
+					<table id="example"
+						class="container table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Número de Cuenta</th>
+								<th>Nombre de Cuenta</th>
+								<th>Tipo de Cuenta</th>
+								<th>CBU</th>
+								<th>Fecha Creacion</th>
+								<th>Saldo</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Brielle Williamson</td>
+								<td>Integration Specialist</td>
+								<td>Caja de ahorro - Pesos</td>
+								<td>61</td>
+								<td>2012/12/02</td>
+								<td>$37200,000</td>
+								<td><button type="button" class="btn btn-primary">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button type="button" class="btn btn-danger">
+										<i class="fas fa-trash-alt"></i>
+									</button></td>
+							</tr>
+							<tr>
+								<td>Herrod Chandler</td>
+								<td>Sales Assistant</td>
+								<td>Caja de ahorro - Pesos</td>
+								<td>59</td>
+								<td>2012/08/06</td>
+								<td>$13007,500</td>
+								<td><button type="button" class="btn btn-primary">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button type="button" class="btn btn-danger">
+										<i class="fas fa-trash-alt"></i>
+									</button></td>
+							</tr>
+							<tr>
+								<td>Rhona Davidson</td>
+								<td>Integration Specialist</td>
+								<td>Caja de ahorro - Dolares</td>
+								<td>55</td>
+								<td>2010/10/14</td>
+								<td>$32007,900</td>
+								<td><button type="button" class="btn btn-primary">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button type="button" class="btn btn-danger">
+										<i class="fas fa-trash-alt"></i>
+									</button></td>
+							</tr>
+							<tr>
+								<td>Colleen Hurst</td>
+								<td>Javascript Developer</td>
+								<td>Caja de ahorro - Pesos</td>
+								<td>39</td>
+								<td>2009/09/15</td>
+								<td>$20500,500</td>
+								<td><button type="button" class="btn btn-primary">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button type="button" class="btn btn-danger">
+										<i class="fas fa-trash-alt"></i>
+									</button></td>
+							</tr>
+							
+							
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
+	</div>
+	<!-- Start Footer -->
+	<footer class="bg-secondary pt-4">
 
-		</footer>
-		<!-- End Footer -->
+
+	<div class="w-100 bg-primary py-4">
+		<div class="container">
+			<div class="row pt-2">
+				<div class="col-lg-6 col-sm-12">
+					<p class="text-lg-start text-center text-light light-300">©
+						Copyright 2021 SiGeBan. All Rights Reserved.</p>
+				</div>
+				<div class="col-lg-6 col-sm-12">
+					<p class="text-lg-end text-center text-light light-300">
+						Realizado por Grupo 9 LAB5 UtnFrgp</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</footer>
+	<!-- End Footer -->
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {

@@ -13,11 +13,11 @@
 <title>SiGesBan ABML Cuentas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="apple-touch-icon" href="../assets/img/apple-icon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
 <link rel="shortcut icon" type="image/x-icon"
-	href="../assets/img/favicon.ico">
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/css/boxicon.min.css" rel="stylesheet">
+	href="assets/img/favicon.ico">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/boxicon.min.css" rel="stylesheet">
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
 	rel="stylesheet">
@@ -31,8 +31,8 @@
 <link
 	href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css"
 	rel="stylesheet" />
-<link rel="stylesheet" href="../assets/css/custom.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/templatemo.css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 		class="navbar navbar-expand-lg navbar-light bg-white shadow">
 	<div
 		class="container d-flex justify-content-between align-items-center">
-		<a class="navbar-brand h1" href="index.html"> <i
+		<a class="navbar-brand h1" href="IrALogin.html"> <i
 			class='bx bx-buildings bx-sm text-dark'></i> <span
 			class="text-dark h4">SiGeBan</span> <span class="text-primary h4">LAB5</span>
 		</a>
@@ -56,14 +56,17 @@
 			class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
 			id="navbar-toggler-success">
 			<div class="flex-fill mx-xl-5 mb-2">
-				<ul
+			<ul
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="index.html">ABML Usuarios</a></li>
+						href="IrAMisCuentas.html">Cuentas</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="work.html">ABML Cuentas</a></li>
+						href="IrAMovimientos.html">Movimientos</a></li>
+					<li class="nav-item"><a
+						class="nav-link btn-outline-primary rounded-pill px-3"
+						href="IrATransferencias.html">Transferencias</a></li>
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
@@ -227,10 +230,10 @@
 	});
 </script>
 <!-- Bootstrap -->
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Templatemo -->
-<script src="../assets/js/templatemo.js"></script>
+<script src="assets/js/templatemo.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <!-- Custom -->
-<script src="../assets/js/custom.js"></script>
+<script src="assets/js/custom.js"></script>
 </html>
