@@ -154,17 +154,17 @@ public class InitDB {
 		session.save(cuenta10);
 
 		/* DATASET = Usuarios */
-		Usuarios user01 = new Usuarios("usuarioCliente01", "claveCliente", perfil02);
-		Usuarios user02 = new Usuarios("usuarioCliente02", "claveCliente", perfil02);
-		Usuarios user03 = new Usuarios("usuarioCliente03", "claveCliente", perfil02);
-		Usuarios user04 = new Usuarios("usuarioCliente04", "claveCliente", perfil02);
-		Usuarios user05 = new Usuarios("usuarioCliente05", "claveCliente", perfil02);
-		Usuarios user06 = new Usuarios("usuarioCliente06", "claveCliente", perfil02);
-		Usuarios user07 = new Usuarios("usuarioCliente07", "claveCliente", perfil02);
-		Usuarios user08 = new Usuarios("usuarioCliente08", "claveCliente", perfil02);
-		Usuarios user09 = new Usuarios("usuarioCliente09", "claveCliente", perfil02);
-		Usuarios user10 = new Usuarios("usuarioCliente10", "claveCliente", perfil02);
-		Usuarios user11 = new Usuarios("administrador", "claveBanco", perfil01);
+		Usuarios user01 = new Usuarios("usuarioCliente01", "claveCliente", perfil02,true);
+		Usuarios user02 = new Usuarios("usuarioCliente02", "claveCliente", perfil02,true);
+		Usuarios user03 = new Usuarios("usuarioCliente03", "claveCliente", perfil02,true);
+		Usuarios user04 = new Usuarios("usuarioCliente04", "claveCliente", perfil02,true);
+		Usuarios user05 = new Usuarios("usuarioCliente05", "claveCliente", perfil02,true);
+		Usuarios user06 = new Usuarios("usuarioCliente06", "claveCliente", perfil02,true);
+		Usuarios user07 = new Usuarios("usuarioCliente07", "claveCliente", perfil02,true);
+		Usuarios user08 = new Usuarios("usuarioCliente08", "claveCliente", perfil02,true);
+		Usuarios user09 = new Usuarios("usuarioCliente09", "claveCliente", perfil02,true);
+		Usuarios user10 = new Usuarios("usuarioCliente10", "claveCliente", perfil02,true);
+		Usuarios user11 = new Usuarios("administrador", "claveBanco", perfil01,true);
 		session.save(user01);
 		session.save(user02);
 		session.save(user03);

@@ -129,73 +129,34 @@ if ((Integer) session.getAttribute("perfilUser") == 1) {
 						0110092130001111111111</h1>
 						
 						<p>
-						Buscar: <input class="text-control border border-secondary"
+						<!-- Buscar: <input class="text-control border border-secondary"
 							placeholder="ingrese campo a filtrar" type="text" name="buscar">
 						<button type="button" class="btn btn-primary">Filtrar</button>
+						 -->
 					</p>
 
-					<table id="listmovimientos"
+					<table id="tableta"
 						class="container table table-striped table-bordered">
+				            <thead>
 				            <tr>
-				                <th style="width:  50px;">ID</th>
-				                <th style="width: 150px;">Nombre</th>
-				                <th style="width: 150px;">Apellido</th>
-				                <th style="width: 150px;">Calle</th>
-				                <th style="width: 150px;">Ciudad</th>
+				                <td style="width:  50px;">FechaDeMovimiento</td>
+				                <td style="width: 150px;">NumeroDecuentaOrigen</td>
+				                <td style="width: 150px;">NumeroDecuentaDestino</td>
+				                <td style="width: 150px;">Detalle</td>
+				                <td style="width: 150px;">Importe</td>
 				            </tr>
-				            <h1>${listmovimientos}</h1>
-						    <c:forEach var="listValue" items="${json}">
-						    <li>${listValue}</li>
-						    </c:forEach>
-						    
-				            <!--<c:forEach var="customer" items="${json}">
-				                <<tr>
-				                    <td>${customer.id}</td>
-				                    <td>${customer.firstName}</td>
-				                    <td>${customer.lastName}</td>
-				                    <td>${customer.street}</td>
-				                    <td>${customer.city}</td>
+				            </thead>
+						    <tbody>
+				            <c:forEach var="mov" items="${listmovimientos}">
+				                <tr>
+				                    <td>${mov.fechaDeMovimiento}</td>
+				                    <td>${mov.numeroDecuentaOrigen.numeroDeCuenta}</td>
+				                    <td>${mov.numeroDecuentaDestino.numeroDeCuenta}</td>
+				                    <td>${mov.detalle}</td>
+				                    <td>${mov.importe}</td>
 				                </tr>
-				            </c:forEach>-->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th>Fecha Movimiento</th> -->
-<!-- 								<th>Nº Cuenta Origen</th> -->
-<!-- 								<th>Nº Cuenta Destino</th> -->
-<!-- 								<th>Detalle</th> -->
-<!-- 								<th>Importe</th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<!-- 							<tr> -->
-<!-- 								<td>09/03/2020</td> -->
-<!-- 								<td>20750921406888</td> -->
-<!-- 								<td>20784585484518</td> -->
-<!-- 								<td>Transferencia a Terceros</td> -->
-<!-- 								<td>$37200,000</td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td>15/03/2020</td> -->
-<!-- 								<td>20750921406888</td> -->
-<!-- 								<td>20750921406890</td> -->
-<!-- 								<td>Transferencia entre Cuentas</td> -->
-<!-- 								<td>$10200,000</td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td>05/03/2021</td> -->
-<!-- 								<td>20750921406888</td> -->
-<!-- 								<td>20784585484518</td> -->
-<!-- 								<td>Transferencia a Terceros</td> -->
-<!-- 								<td>$37200,000</td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td>10/05/2021</td> -->
-<!-- 								<td>20750921406888</td> -->
-<!-- 								<td>20784585484518</td> -->
-<!-- 								<td>Transferencia a Terceros</td> -->
-<!-- 								<td>$37200,000</td> -->
-<!-- 							</tr> -->
-<!-- 						</tbody> -->
+				            </c:forEach>
+				           	</tbody>
 					</table>
 				</div>
 			</div>
@@ -223,22 +184,51 @@ if ((Integer) session.getAttribute("perfilUser") == 1) {
 	</footer>
 	<!-- End Footer -->
 </body>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#listmovimientos').DataTable();
-		
-        var list = ${json};
-        $.each(list, function( index, value ) {
-            alert( index + ": " + value );
-        });
-        
-	});
-</script>
+
 <!-- Bootstrap -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Templatemo -->
 <script src="assets/js/templatemo.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#tableta').DataTable({
+        paging: true,
+        lengthChange: true,
+        pageLength: 25,
+        searching: true,
+        ordering: true,
+        stateSave: true,
+        autoWidth: true,
+        scrollx: true,
+        scrollY: 430,
+        scrollCollapse: true,
+        language:
+        {
+            searchPlaceholder: "Que desea buscar?",
+            "emptyTable": "No hay datos para mostrar.",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+            "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+            "infoFiltered": "(filtrados de _MAX_ registros totales)",
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros que coincidan con las condiciones de busqueda especficadas",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Proxima",
+                "previous": "Previa"
+            }
+        }
+
+    });
+
+});
+</script>
 <!-- Custom -->
 <script src="assets/js/custom.js"></script>
 </html>

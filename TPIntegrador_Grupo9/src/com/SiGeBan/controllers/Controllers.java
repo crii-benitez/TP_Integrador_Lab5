@@ -90,29 +90,11 @@ public class Controllers {
 	@RequestMapping("IrAMovimientos.html")
 	public ModelAndView listMovement() {
 		DaoMovimientos Movs = new DaoMovimientos();
-/*//esto funciona trae un registro de la tabla tipos de movimientos.
- * 	
-		System.out.println("Entro en controller listMovement");
-		ModelAndView mv = new ModelAndView();
-		String _listMovement=Movs.prueba2();
-		mv.addObject("listmovimientos", _listMovement);
-		mv.setViewName("movementhistory");
-		return mv;
-*/
 		
-		ObjectMapper mapper = new ObjectMapper();
-		ArrayList<Movimientos> listMovement=(ArrayList<Movimientos>)Movs.ListarMovimientos();
+		ArrayList<Movimientos> _Lmovimientos=(ArrayList<Movimientos>)Movs.ListarMovimientos();
 		ModelAndView model = new ModelAndView("movementhistory");
-		String json = "";
-		try 
-		{ 
-			json = mapper.writeValueAsString(listMovement); 
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace(); 
-		}
-		model.addObject("listmovimientos", json);
+
+		model.addObject("listmovimientos", _Lmovimientos);
 		return model;
 		
 	}
