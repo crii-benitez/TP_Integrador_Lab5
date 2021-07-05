@@ -2,6 +2,7 @@ package com.SiGeBan.models.dao;
 
 import java.util.ArrayList;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,25 @@ public class UsuariosDAO {
 		return this.hibernateTemplate.get(Usuarios.class, usser);
 	}
 	
-	public String prueba1(String algo) {
-		/*Usuarios usuario = new Usuarios();*/
+	public Usuarios prueba1(String algo, String algoPass) {
+		Usuarios usuario = new Usuarios();
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 		session.beginTransaction();
-		/*usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'");
-		System.out.println(usuario.toString());*/
-		return session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'").list().toString();
+		try {
+		usuario = (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'" + " and u.pass = " + "'"+algoPass+"'").uniqueResult();
+		
+		}
+		catch (Exception e) {
+			usuario.setUsuario("-1");
+		}
+		//System.out.println(usuario.toString());
+//		return session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'").list().toString();
+		//return (Usuarios) session.createQuery("FROM Usuarios u WHERE u.usuario = " + "'"+algo+"'");
+		return usuario;
+		
+		
+		
 	}
 
 //	public Usuarios obtenerUsuariosPorUsuario(String usser) {

@@ -1,5 +1,7 @@
 package com.SiGeBan.controllers;
 
+import java.util.Objects;
+
 import javax.servlet.ServletConfig;
 
 import org.apache.catalina.connector.Request;
@@ -55,14 +57,32 @@ public class Controllers {
 	}
 
 	@RequestMapping("AccionLoguear.html")
-	public ModelAndView accionLoguear(String txtUsuario) {
-		UsuariosDAO User = new UsuariosDAO();
+	public ModelAndView accionLoguear(String txtUsuario, String txtPass) {
+		UsuariosDAO UserDao = new UsuariosDAO();
+		Usuarios User = new Usuarios();
 		
-		System.out.println(txtUsuario);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("txtUsuario", User.prueba1(txtUsuario));
+		
+		User = UserDao.prueba1(txtUsuario,txtPass);
+		
+		if (Objects.isNull(User)){
+			
+			mv.setViewName("login");
+			
+		}else
+		{
+			if (User.getPerfil().getIdPerfil() == 2){
+				mv.setViewName("MisCuentas");
+			}else
+			{
+				mv.setViewName("addaccount");
+
+			}
+
+		}
+	//	mv.addObject("txtUsuario", User.prueba1(txtUsuario));
 	//	mv.addObject("txtPrueba","si le pongo un texto cualquiera anda, pero no toma el post");
-		mv.setViewName("usuarioLogueado");
+	//	mv.setViewName("usuarioLogueado");
 		return mv;
 	}
 

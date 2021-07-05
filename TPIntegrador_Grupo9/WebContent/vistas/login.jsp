@@ -72,24 +72,24 @@
 				</ul> -->
 			</div>
 		<div class="flex-fill mx-xl-5 mb-2">
-				<ul
-					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAAdd.html">PERFIL BANCO</a></li>
+<!-- 				<ul -->
+<!-- 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark"> -->
+<!-- 					<li class="nav-item"><a -->
+<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
+<!-- 						href="IrAAdd.html">PERFIL BANCO</a></li> -->
 				
-					<li class="nav-item"><a
-						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAMisCuentas.html">PERFIL USUARIO</a></li>
+<!-- 					<li class="nav-item"><a -->
+<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
+<!-- 						href="IrAMisCuentas.html">PERFIL USUARIO</a></li> -->
 
-				</ul>
+<!-- 				</ul> -->
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="IrALogin.html"><i
-					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
-					class="nav-link" href="IrALogin.html"><i
-					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link"
-					href="IrALogin.html"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+<!-- 				<a class="nav-link" href="IrALogin.html"><i -->
+<!-- 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a -->
+<!-- 					class="nav-link" href="IrALogin.html"><i -->
+<!-- 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link" -->
+<!-- 					href="IrALogin.html"><i class='bx bx-user-circle bx-sm text-primary'></i></a> -->
 			</div>
 		</div>
 	</div>
