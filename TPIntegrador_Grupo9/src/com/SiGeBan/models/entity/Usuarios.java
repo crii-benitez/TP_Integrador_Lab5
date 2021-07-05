@@ -20,17 +20,18 @@ public class Usuarios implements Serializable {
 	private Long idUsuario;
 	private String usuario;
 	private String pass;
+	private Boolean activo;
 
 	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "perfil")
 	private Perfiles perfil;
 
 	// constructores
-	public Usuarios(String usuario, String pass, Perfiles perfil) {
-		super();
+	public Usuarios(String usuario, String pass, Perfiles perfil, Boolean estado) {
 		this.usuario = usuario;
 		this.pass = pass;
 		this.perfil = perfil;
+		this.activo = estado;
 	}
 
 	public Usuarios() {
@@ -40,10 +41,8 @@ public class Usuarios implements Serializable {
 
 	@Override
 	public String toString() {
-		if (perfil == null)
-			return "Usuario [idUsuario=" + idUsuario + ", usuario=" + usuario + ", pass=" + pass + "]";
-		else
-			return "Usuario [idUsuario=" + idUsuario + ", usuario=" + usuario + ", pass=" + pass + ", perfil=" + perfil + "]";
+		return "Usuarios [idUsuario=" + idUsuario + ", usuario=" + usuario + ", pass=" + pass + ", activo=" + activo
+				+ ", perfil=" + perfil + "]";
 	}
 
 	public Perfiles getPerfil() {
@@ -77,5 +76,14 @@ public class Usuarios implements Serializable {
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
+	public Boolean getActivo() {
+		return activo;
+	}
+
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
+	}
+	
 
 }
