@@ -18,12 +18,13 @@ public class Cuentas implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCuenta;
+	private Long idCuenta;
 	private LocalDate fechaDeCreacion;
 	private String cbu;
 	private String numeroDeCuenta;
 	private String alias;
 	private double saldo;
+	private Boolean  activa;
 
 	@ManyToOne(cascade= {CascadeType.ALL})
 	@JoinColumn(name="tipoDeCuenta")
@@ -35,7 +36,6 @@ public class Cuentas implements Serializable {
 
 	public Cuentas(String cbu, String numeroDeCuenta, String alias, LocalDate fechaDeCreacion,
 			double saldo, TiposDeCuentas tipoDeCuenta) {
-		super();
 		this.fechaDeCreacion = fechaDeCreacion;
 		this.numeroDeCuenta = numeroDeCuenta;
 		this.cbu = cbu;
@@ -45,11 +45,11 @@ public class Cuentas implements Serializable {
 	}
 
 	// metodos
-	public int getIdCuenta() {
+	public Long getIdCuenta() {
 		return idCuenta;
 	}
 
-	public void setIdCuenta(int idCuenta) {
+	public void setIdCuenta(Long idCuenta) {
 		this.idCuenta = idCuenta;
 	}
 
@@ -107,14 +107,21 @@ public class Cuentas implements Serializable {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+	
+
+	public Boolean getActiva() {
+		return activa;
+	}
+
+	public void setActiva(Boolean activa) {
+		this.activa = activa;
+	}
 
 	@Override
 	public String toString() {
-		return "Cuentas [fechaDeCreacion=" + fechaDeCreacion + ", tipoDeCuenta=" + tipoDeCuenta + ", numeroDeCuenta="
-				+ numeroDeCuenta + ", cbu=" + cbu + ", nombreCuenta=" + alias + ", saldo=" + saldo
-				+ ", getFechaDeCreacion()=" + getFechaDeCreacion() + ", getNumeroDeCuenta()=" + getNumeroDeCuenta()
-				+ ", getCbu()=" + getCbu() + ", getNombreCuenta()=" + getNombreCuenta() + ", getSaldo()=" + getSaldo()
-				+ ", getNombre()=" + "]";
+		return "Cuentas [idCuenta=" + idCuenta + ", fechaDeCreacion=" + fechaDeCreacion + ", cbu=" + cbu
+				+ ", numeroDeCuenta=" + numeroDeCuenta + ", alias=" + alias + ", saldo=" + saldo + ", activa=" + activa
+				+ ", tipoDeCuenta=" + tipoDeCuenta + "]";
 	}
 
 }

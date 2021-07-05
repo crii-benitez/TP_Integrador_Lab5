@@ -6,6 +6,7 @@
 	<display-name>TPIntegrador_Grupo9</display-name>
 	<welcome-file-list>
 		<welcome-file>IrALogin.html</welcome-file>
+		<!--   aca se podria hacer una peticion para que llame al controller, si quisieramos probar que se ejecute el initDB al iniciar el proyecto -->
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>sigesban</servlet-name>
