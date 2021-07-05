@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@page session="true" language="java"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -34,7 +34,7 @@
 
 <body>
 	<!-- Header -->
-	
+
 	<nav id="main_nav"
 		class="navbar navbar-expand-lg navbar-light bg-white shadow">
 	<div
@@ -54,7 +54,7 @@
 			class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
 			id="navbar-toggler-success">
 			<div class="flex-fill mx-xl-5 mb-2">
-			<!-- 	<ul
+				<!-- 	<ul
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
@@ -71,25 +71,25 @@
 
 				</ul> -->
 			</div>
-		<div class="flex-fill mx-xl-5 mb-2">
-<!-- 				<ul -->
-<!-- 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark"> -->
-<!-- 					<li class="nav-item"><a -->
-<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
-<!-- 						href="IrAAdd.html">PERFIL BANCO</a></li> -->
-				
-<!-- 					<li class="nav-item"><a -->
-<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
-<!-- 						href="IrAMisCuentas.html">PERFIL USUARIO</a></li> -->
+			<div class="flex-fill mx-xl-5 mb-2">
+				<!-- 				<ul -->
+				<!-- 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark"> -->
+				<!-- 					<li class="nav-item"><a -->
+				<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
+				<!-- 						href="IrAAdd.html">PERFIL BANCO</a></li> -->
 
-<!-- 				</ul> -->
+				<!-- 					<li class="nav-item"><a -->
+				<!-- 						class="nav-link btn-outline-primary rounded-pill px-3" -->
+				<!-- 						href="IrAMisCuentas.html">PERFIL USUARIO</a></li> -->
+
+				<!-- 				</ul> -->
 			</div>
 			<div class="navbar align-self-center d-flex">
-<!-- 				<a class="nav-link" href="IrALogin.html"><i -->
-<!-- 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a -->
-<!-- 					class="nav-link" href="IrALogin.html"><i -->
-<!-- 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link" -->
-<!-- 					href="IrALogin.html"><i class='bx bx-user-circle bx-sm text-primary'></i></a> -->
+				<!-- 				<a class="nav-link" href="IrALogin.html"><i -->
+				<!-- 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a -->
+				<!-- 					class="nav-link" href="IrALogin.html"><i -->
+				<!-- 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link" -->
+				<!-- 					href="IrALogin.html"><i class='bx bx-user-circle bx-sm text-primary'></i></a> -->
 			</div>
 		</div>
 	</div>
@@ -117,7 +117,8 @@
 							<a href="#" title="Recuperar contraseña">Olvido contraseña?</a>
 						</div>
 					</div>
-					<input type="submit" name="btnContinuar" value="continuar" class="enviarLG"/> 
+					<input type="submit" name="btnContinuar" value="Continuar"
+						class="enviarLG" />
 				</form>
 			</div>
 			<!--   <div class="contact-img col-lg-5 align-items-end col-md-4">

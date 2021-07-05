@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,7 +8,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
-
+<%
+if ((Integer) session.getAttribute("perfilUser") == 1) {
+	response.sendRedirect("IrALogin.html");
+} %>
 <head>
 <title>SiGesBan ABML Cuentas</title>
 <meta charset="utf-8">
@@ -70,7 +73,7 @@
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#">GMedina<i
+				<a class="nav-link" href="#"><%=session.getAttribute("nameUser") %><i
 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
 					class="nav-link" href="#"><i
 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link"

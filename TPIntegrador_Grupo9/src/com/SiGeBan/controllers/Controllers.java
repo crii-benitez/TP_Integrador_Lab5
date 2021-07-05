@@ -16,15 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.SiGeBan.models.commerce.NegMovimientos;
 import com.SiGeBan.models.dao.UsuariosDAO;
 import com.SiGeBan.models.dao.DaoMovimientos;
 import com.SiGeBan.models.entity.Movimientos;
 import com.SiGeBan.models.entity.Usuarios;
-import com.SiGeBan.models.services.IUsuariosService;
-import com.SiGeBan.models.services.UsuariosService;
-import com.SiGeBan.resources.ConfigBeans;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
@@ -71,11 +67,15 @@ public class Controllers {
 			
 		}else
 		{
+			mv.addObject("txtUsuario", User.getUsuario());
+			mv.addObject("txtPass", User.getPass());
+			mv.addObject("txtPerfil", User.getPerfil().getIdPerfil());
+			
 			if (User.getPerfil().getIdPerfil() == 2){
-				mv.setViewName("MisCuentas");
+				mv.setViewName("usuarioLogueado");
 			}else
 			{
-				mv.setViewName("addaccount");
+				mv.setViewName("usuarioLogueado");
 
 			}
 
