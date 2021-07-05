@@ -1,5 +1,6 @@
 package com.SiGeBan.controllers;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import javax.servlet.ServletConfig;
@@ -100,7 +101,7 @@ public class Controllers {
 */
 		
 		ObjectMapper mapper = new ObjectMapper();
-		List listMovement=(List)Movs.ListarMovimientos();
+		ArrayList<Movimientos> listMovement=(ArrayList<Movimientos>)Movs.ListarMovimientos();
 		ModelAndView model = new ModelAndView("movementhistory");
 		String json = "";
 		try 

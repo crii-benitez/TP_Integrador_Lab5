@@ -1,5 +1,7 @@
 package com.SiGeBan.models.dao;
 
+import java.util.ArrayList;
+
 //import java.util.List;
 
 import org.hibernate.Query;
@@ -38,13 +40,13 @@ public class DaoMovimientos {
 		return session.createQuery("select nombreDeTipoDeCuenta FROM TiposDeCuentas where idTipoDeCuenta=1").list().toString();
 		//return "Devuelto por DaoMovimientos Metodo prueba2";
 	}
-	public List ListarMovimientos() {
+	public ArrayList<Movimientos> ListarMovimientos() {
 		ConfigHibernate ch = new ConfigHibernate();
 		Session session = ch.abrirConexion();
 		session.beginTransaction();
 		System.out.println("En DaoMovimientos 'ListarMovimientos': antes de cargar el listado");
 		Query query=session.createQuery("FROM Movimientos");
-		List lm =(List) query.list();
+		ArrayList<Movimientos> lm =(ArrayList<Movimientos>) query.list();
 		System.out.println("En DaoMovimientos 'ListarMovimientos': " + lm.toString());
 		return lm;
 	}
