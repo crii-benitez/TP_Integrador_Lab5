@@ -3,26 +3,13 @@ package com.SiGeBan.controllers;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import javax.servlet.ServletConfig;
-
-import org.apache.catalina.connector.Request;
-import org.hibernate.mapping.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
-import com.SiGeBan.models.commerce.NegMovimientos;
 import com.SiGeBan.models.dao.UsuariosDAO;
 import com.SiGeBan.models.dao.DaoMovimientos;
 import com.SiGeBan.models.entity.Movimientos;
 import com.SiGeBan.models.entity.Usuarios;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class Controllers {

@@ -14,14 +14,39 @@ import com.SiGeBan.models.entity.Usuarios;
 
 public class UsuariosDAO {
 
-//	private Usuarios usuario;
-//	private ConfigHibernate ch;
-//	private Session session;
 	private HibernateTemplate hibernateTemplate = null;
-	
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+        this.hibernateTemplate = new HibernateTemplate(sessionFactory);
+    }
+
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void insertarUsuario(Usuarios usuario) {
+		this.hibernateTemplate.save(usuario);
+		
+	}
+
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-	public Usuarios obtenerUsuariosPorUsuario(String usser) {
-		return this.hibernateTemplate.get(Usuarios.class, usser);
+	public Usuarios obtenerUsuarioPorNombre(String usuario) {
+		return this.hibernateTemplate.get(Usuarios.class, usuario);
+	}
+
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public ArrayList<Usuarios> obtenerUsuarios() {
+		return (ArrayList<Usuarios>) this.hibernateTemplate.loadAll(Usuarios.class);
+	}
+
+	
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	public void eliminarUsuario(Long idUsuario) {
+		Usuarios user = new Usuarios();
+		user.setIdUsuario(idUsuario);
+		this.hibernateTemplate.delete(user);
+	}
+
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void actualizarUsuario(Usuarios persona) {
+		this.hibernateTemplate.update(persona);
 	}
 	
 	public Usuarios prueba1(String algo, String algoPass) {
