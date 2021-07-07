@@ -3,6 +3,7 @@ package com.SiGeBan.controllers;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,6 +11,8 @@ import com.SiGeBan.models.dao.UsuariosDAO;
 import com.SiGeBan.models.dao.DaoMovimientos;
 import com.SiGeBan.models.entity.Movimientos;
 import com.SiGeBan.models.entity.Usuarios;
+import com.SiGeBan.models.services.IUsuariosService;
+import com.SiGeBan.models.services.UsuariosService;
 
 @Controller
 public class Controllers {
@@ -19,11 +22,10 @@ public class Controllers {
 	@Qualifier("servicioMovimientos") 
 	private NegMovimientos negocioMovimiento;
 */
-//	@Autowired
-//	private IUsuariosService usuarioService;
-//
-
-
+	@Autowired
+	private UsuariosService usuarioService = null;
+	
+	
 	@RequestMapping("IrALogin.html")
 	public ModelAndView eventoRedireccionarLogin() {
 		ModelAndView mv = new ModelAndView();
@@ -47,8 +49,8 @@ public class Controllers {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		User = UserDao.prueba1(txtUsuario,txtPass);
-		
+//		User = UserDao.prueba1(txtUsuario,txtPass);
+		User = usuarioService.prueba1(txtUsuario, txtPass);
 		if (Objects.isNull(User)){
 			
 			mv.setViewName("login");
