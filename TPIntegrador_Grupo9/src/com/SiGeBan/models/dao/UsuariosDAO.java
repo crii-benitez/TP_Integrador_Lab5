@@ -1,5 +1,6 @@
 package com.SiGeBan.models.dao;
 
+
 import java.util.ArrayList;
 
 import org.hibernate.Query;
