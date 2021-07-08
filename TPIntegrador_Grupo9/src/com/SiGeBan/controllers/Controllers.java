@@ -22,7 +22,7 @@ public class Controllers {
 	@Qualifier("servicioMovimientos") 
 	private NegMovimientos negocioMovimiento;
 */
-	@Autowired
+//	@Autowired
 	private UsuariosService usuarioService = null;
 	
 	

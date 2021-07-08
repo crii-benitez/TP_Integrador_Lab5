@@ -23,13 +23,13 @@
 		transaction-manager="transactionManager" />
 
 	<!-- CREO EL SERVICIO PARA USUARIO -->
-	<bean id="serviceBean" class="com.SiGeBan.services.UsuarioService">
+	<bean id="serviceBean" class="com.SiGeBan.services.UsuariosService">
 		<property name="dataAccess" ref="dataAccessBean"></property>
 	</bean>
 
 
 	<!-- EL SERVICIO NECESITA EL DAO -->
-	<bean id="dataAccessBean" class="com.SiGeBan.services.UsuarioDAO"
+	<bean id="dataAccessBean" class="com.SiGeBan.services.UsuariosDAO"
 		scope="singleton">
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
