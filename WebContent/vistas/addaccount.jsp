@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
-if ((Integer) session.getAttribute("perfilUser") == 2) {
+if ((Integer) session.getAttribute("txtPerfil") == 1) {
 	response.sendRedirect("IrALogin.html");
 } %>
 <head>

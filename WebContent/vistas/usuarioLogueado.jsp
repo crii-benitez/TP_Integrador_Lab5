@@ -1,5 +1,5 @@
-<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- <%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1" --%>
+<%--     pageEncoding="ISO-8859-1"%>  --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,17 +8,17 @@
 </head>
 <body>
 <%
-session.setAttribute("nameUser", request.getAttribute("txtUsuario"));
-session.setAttribute("passUser", request.getAttribute("txtPass"));
-session.setAttribute("perfilUser", request.getAttribute("txtPerfil"));
+// session.setAttribute("nameUser", request.getAttribute("txtUsuario"));
+// session.setAttribute("passUser", request.getAttribute("txtPass"));
+// session.setAttribute("perfilUser", request.getAttribute("txtPerfil"));
 
-if ((Integer) request.getAttribute("txtPerfil") == 1) {
-	response.sendRedirect("IrAAddAccount.html");
-} else
-{
-	response.sendRedirect("IrAMisCuentas.html");
-}
-%>
-<%-- <h1>${txtUsuario}</h1><br><h1>${txtPrueba}</h1><br> --%>
+// if ((Integer) request.getAttribute("txtPerfil") == 1) {
+// 	response.sendRedirect("IrAAddAccount.html");
+// } else
+// {
+// 	response.sendRedirect("IrAMisCuentas.html");
+// }
+ %> 
+<h1>${txtUsuario}</h1>
 </body>
 </html>

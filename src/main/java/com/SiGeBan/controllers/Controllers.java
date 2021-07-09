@@ -42,13 +42,6 @@ public class Controllers {
 	@Autowired
 	private IUsuarioService iUsuarioService;
 
-//	public void init(ServletConfig config) {
-//		ApplicationContext ctx = WebApplicationContextUtils
-//				.getRequiredWebApplicationContext(config.getServletContext());
-//
-//		this.iUsuarioService = (IUsuarioService) ctx.getBean("serviceBean");
-//	}
-
 	@RequestMapping("IrALogin.html")
 	public ModelAndView eventoRedireccionarLogin() {
 		ModelAndView mv = new ModelAndView();
@@ -68,10 +61,17 @@ public class Controllers {
 	@RequestMapping(value = "AccionLoguear.html", method= { RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView accionLoguear(String txtUsuario, String txtPass) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("usuarioLogueado");
 		mv.addObject("txtUsuario", txtUsuario);
-		if (txtPass.trim().isEmpty() || !txtPass.equals(iUsuarioService.obtenerUnRegistro(txtUsuario).getPass()))
+		Usuario usuario = iUsuarioService.obtenerUnRegistro(txtUsuario);
+		mv.addObject("txtPerfil",usuario.getPerfil());
+		mv.addObject("txtPass",usuario.getPass());
+		if (txtPass.trim().isEmpty() || !txtPass.trim().equals(usuario.getPass()))
 			mv.setViewName("login");
+//		if(usuario.getPerfil().getIdPerfil()== 1)
+//			mv.setViewName("addaccount");
+//		else
+//			mv.setViewName("Cuentas");
+
 		return mv;
 	}
 
