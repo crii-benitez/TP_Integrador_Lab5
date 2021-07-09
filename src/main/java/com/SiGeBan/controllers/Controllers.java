@@ -61,6 +61,7 @@ public class Controllers {
 	@RequestMapping(value = "AccionLoguear.html", method= { RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView accionLoguear(String txtUsuario, String txtPass) {
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("usuarioLogueado"); //comentar esta linea para implementar navegacion
 		mv.addObject("txtUsuario", txtUsuario);
 		Usuario usuario = iUsuarioService.obtenerUnRegistro(txtUsuario);
 		mv.addObject("txtPerfil",usuario.getPerfil());
