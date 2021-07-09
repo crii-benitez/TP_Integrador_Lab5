@@ -34,6 +34,10 @@
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
 
+	<bean id="iCuentaDAOBean" class="main.java.com.SiGeBan.models.dao.CuentaDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
 	
 
 	<!-- Define un dataSource, en este bean se configura los parametros de la 
