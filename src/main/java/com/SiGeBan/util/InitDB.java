@@ -1,32 +1,63 @@
 package main.java.com.SiGeBan.util;
 
 import java.util.Date;
+
+
 import java.time.LocalDate;
 import java.sql.Timestamp;
 import java.time.*;
 
-
 import org.hibernate.Session;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 import main.java.com.SiGeBan.models.entity.*;
 
 public class InitDB {
+
+	private static SessionFactory sessionFactory;
+	private static Session session;
+	private static Configuration configuration = new Configuration();
+	
 	
 	public static void main(String[] args) {
-		iniciarBase();
+		configuration.configure();
+        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+		abrirConexion();
+        iniciarBase();
+		cerrarSession();
 	}
+	
+	public static Session abrirConexion()
+	{
+		session=sessionFactory.openSession();
+		return session;
+	}
+	
+	public static void cerrarSession()
+	{
+		session.close();
+		cerrarSessionFactory();
+	}
+	
+	
+	public static void cerrarSessionFactory()
+	{
+		sessionFactory.close();
+	}
+
 	public static void iniciarBase() {
-		
-		//seteo la fecha para movimientos
+
+		// seteo la fecha para movimientos
 		LocalDateTime ldt = LocalDateTime.now();
 		Timestamp fechaAhora = Timestamp.valueOf(ldt);
-		
+
 		Date fecha = new Date();
 
-		
-		ConfigHibernate ch = new ConfigHibernate();
-		Session session = ch.abrirConexion();
-		
 		session.beginTransaction();
 
 		/*
@@ -157,17 +188,17 @@ public class InitDB {
 		session.save(cuenta10);
 
 		/* DATASET = Usuario */
-		Usuario user01 = new Usuario("usuarioCliente01", "claveCliente", perfil02,true);
-		Usuario user02 = new Usuario("usuarioCliente02", "claveCliente", perfil02,true);
-		Usuario user03 = new Usuario("usuarioCliente03", "claveCliente", perfil02,true);
-		Usuario user04 = new Usuario("usuarioCliente04", "claveCliente", perfil02,true);
-		Usuario user05 = new Usuario("usuarioCliente05", "claveCliente", perfil02,true);
-		Usuario user06 = new Usuario("usuarioCliente06", "claveCliente", perfil02,true);
-		Usuario user07 = new Usuario("usuarioCliente07", "claveCliente", perfil02,true);
-		Usuario user08 = new Usuario("usuarioCliente08", "claveCliente", perfil02,true);
-		Usuario user09 = new Usuario("usuarioCliente09", "claveCliente", perfil02,true);
-		Usuario user10 = new Usuario("usuarioCliente10", "claveCliente", perfil02,true);
-		Usuario user11 = new Usuario("administrador", "claveBanco", perfil01,true);
+		Usuario user01 = new Usuario("usuarioCliente01", "claveCliente", perfil02, true);
+		Usuario user02 = new Usuario("usuarioCliente02", "claveCliente", perfil02, true);
+		Usuario user03 = new Usuario("usuarioCliente03", "claveCliente", perfil02, true);
+		Usuario user04 = new Usuario("usuarioCliente04", "claveCliente", perfil02, true);
+		Usuario user05 = new Usuario("usuarioCliente05", "claveCliente", perfil02, true);
+		Usuario user06 = new Usuario("usuarioCliente06", "claveCliente", perfil02, true);
+		Usuario user07 = new Usuario("usuarioCliente07", "claveCliente", perfil02, true);
+		Usuario user08 = new Usuario("usuarioCliente08", "claveCliente", perfil02, true);
+		Usuario user09 = new Usuario("usuarioCliente09", "claveCliente", perfil02, true);
+		Usuario user10 = new Usuario("usuarioCliente10", "claveCliente", perfil02, true);
+		Usuario user11 = new Usuario("administrador", "claveBanco", perfil01, true);
 		session.save(user01);
 		session.save(user02);
 		session.save(user03);
@@ -181,18 +212,17 @@ public class InitDB {
 		session.save(user11);
 
 		/* DATASET = Movimientos */
-		
+
 		// Getting system timezone
-//		ZoneId systemTimeZone = ZoneId.systemDefault();
-//		
-//		// converting LocalDateTime to ZonedDateTime with the system timezone
-//		ZonedDateTime zonedDateTime = fechaLocal.atStartOfDay(systemTimeZone);
-//		
-//		// converting ZonedDateTime to Date using Date.from() and ZonedDateTime.toInstant()
-//		Date fechaAhora = Date.from(zonedDateTime.toInstant());
-		
-		
-		
+		// ZoneId systemTimeZone = ZoneId.systemDefault();
+		//
+		// // converting LocalDateTime to ZonedDateTime with the system timezone
+		// ZonedDateTime zonedDateTime = fechaLocal.atStartOfDay(systemTimeZone);
+		//
+		// // converting ZonedDateTime to Date using Date.from() and
+		// ZonedDateTime.toInstant()
+		// Date fechaAhora = Date.from(zonedDateTime.toInstant());
+
 		Movimientos movimiento01 = new Movimientos("Transferencia", 8000.00, fechaAhora, cuenta01, cuenta02);
 		Movimientos movimiento02 = new Movimientos("Transferencia", 20.00, fechaAhora, cuenta02, cuenta03);
 		Movimientos movimiento03 = new Movimientos("Transferencia", 720.00, fechaAhora, cuenta03, cuenta04);
@@ -215,29 +245,29 @@ public class InitDB {
 		session.save(movimiento10);
 
 		/* DATASET = Personas */
-		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fecha, "Miguel Angel 393",
-				localidad01, provincia01, pais01, genero01, user01);
-		Personas persona02 = new Personas(31632067, "Pablo", "Maciel",  fecha, "Joseph 663", localidad02,
-				provincia01, pais01, genero01, user02);
-		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli",  fecha, "Tribulato 4612", localidad02,
+		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fecha, "Miguel Angel 393", localidad01,
+				provincia01, pais01, genero01, user01);
+		Personas persona02 = new Personas(31632067, "Pablo", "Maciel", fecha, "Joseph 663", localidad02, provincia01,
+				pais01, genero01, user02);
+		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli", fecha, "Tribulato 4612", localidad02,
 				provincia01, pais01, genero01, user03);
 		Personas persona04 = new Personas(31456998, "German", "Medina", fecha, "Del Carril 23", localidad02,
 				provincia01, pais01, genero01, user04);
-		Personas persona05 = new Personas(37987112, "Cristian", "Benitez",  fecha, "Siempreviva 123", localidad02,
+		Personas persona05 = new Personas(37987112, "Cristian", "Benitez", fecha, "Siempreviva 123", localidad02,
 				provincia01, pais01, genero01, user05);
-		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", fecha, "Guadalajara 8897",
-				localidad01, provincia01, pais01, genero01, user06);
-		Personas persona07 = new Personas(26123887, "Ricardo", "Fort",  fecha, "Comandante 2525", localidad01,
+		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", fecha, "Guadalajara 8897", localidad01,
+				provincia01, pais01, genero01, user06);
+		Personas persona07 = new Personas(26123887, "Ricardo", "Fort", fecha, "Comandante 2525", localidad01,
 				provincia01, pais01, genero01, user07);
-		Personas persona08 = new Personas(8984621, "Victor", "Sueiro",  fecha, "De las Luces 666", localidad01,
+		Personas persona08 = new Personas(8984621, "Victor", "Sueiro", fecha, "De las Luces 666", localidad01,
 				provincia01, pais01, genero01, user08);
-		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", fecha, "Tupungato 333", localidad01,
-				provincia01, pais01, genero01, user09);
-		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui",  fecha, "Montañeses 99", localidad01,
+		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", fecha, "Tupungato 333", localidad01, provincia01,
+				pais01, genero01, user09);
+		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui", fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user10);
 		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
-		Personas persona12 = new Personas(98475695, "Tomas", "Profesor",  fecha, "Montañeses 99", localidad01,
+		Personas persona12 = new Personas(98475695, "Tomas", "Profesor", fecha, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
 		session.save(persona01);
 		session.save(persona02);
@@ -252,9 +282,9 @@ public class InitDB {
 		session.save(persona11);
 		session.save(persona12);
 
-		// cierre de transacciones 
+		// cierre de transacciones
 		session.getTransaction().commit();
-		ch.cerrarSession();
+
 	}
 
 	public InitDB() {
