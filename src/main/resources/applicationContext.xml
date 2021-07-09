@@ -29,6 +29,11 @@
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
 
+	<bean id="iMovimientoDAOBean" class="main.java.com.SiGeBan.models.dao.MovimientoDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+
 	<!-- Define un dataSource, en este bean se configura los parametros de la 
 		db -->
 	<bean id="dataSourceBean"
