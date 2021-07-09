@@ -17,7 +17,7 @@
 	<servlet-mapping>
 		<servlet-name>sigeban</servlet-name>
 		<url-pattern>*.html</url-pattern>		<!-- <url-pattern>/</url-pattern> -->
-		<url-pattern>/</url-pattern>
+		<!--<url-pattern>/</url-pattern>-->
 	</servlet-mapping>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
