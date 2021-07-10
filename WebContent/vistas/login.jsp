@@ -5,7 +5,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<%//session.invalidate();
+session.setAttribute("perfilUser", -1);
+%>
 <head>
 <title>SiGesBan LOGIN</title>
 <meta charset="utf-8">

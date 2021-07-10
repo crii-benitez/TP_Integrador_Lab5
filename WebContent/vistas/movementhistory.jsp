@@ -14,6 +14,13 @@ if ((Integer) session.getAttribute("perfilUser") != 2) {
 } 
 %>
 <head>
+<script>
+function checkIt() {
+  if (confirm('Desea cerrar sesion?')) {
+	  location.href = "IrALogin.html";
+  }
+}
+</script>
 <title>SiGesBan ABML Cuentas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +52,7 @@ if ((Integer) session.getAttribute("perfilUser") != 2) {
 		class="navbar navbar-expand-lg navbar-light bg-white shadow">
 	<div
 		class="container d-flex justify-content-between align-items-center">
-		<a class="navbar-brand h1" href="IrALogin.html"> <i
+		<a class="navbar-brand h1" href="#"> <i
 			class='bx bx-buildings bx-sm text-dark'></i> <span
 			class="text-dark h4">SiGeBan</span> <span class="text-primary h4">LAB5</span>
 		</a>
@@ -74,7 +81,7 @@ if ((Integer) session.getAttribute("perfilUser") != 2) {
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="#"><%=session.getAttribute("nameUser") %><i
+				<a class="nav-link" href="javascript:checkIt()"><%=session.getAttribute("nameUser") %><i
 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
 					class="nav-link" href="#"><i
 					class='bx bx-cog bx-sm text-primary'></i></a> <a class="nav-link"
