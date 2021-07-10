@@ -9,9 +9,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
 <%
-//if ((Integer) session.getAttribute("perfilUser") == 1) {
-//	response.sendRedirect("IrALogin.html");
-//} 
+if ((Integer) session.getAttribute("perfilUser") != 2) {
+	response.sendRedirect("IrALogin.html");
+} 
 %>
 <head>
 <title>SiGesBan ABML Cuentas</title>

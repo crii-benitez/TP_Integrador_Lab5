@@ -8,17 +8,20 @@
 </head>
 <body>
 <%
-// session.setAttribute("nameUser", request.getAttribute("txtUsuario"));
-// session.setAttribute("passUser", request.getAttribute("txtPass"));
-// session.setAttribute("perfilUser", request.getAttribute("txtPerfil"));
+ session.setAttribute("nameUser", request.getAttribute("txtUsuario"));
+ session.setAttribute("passUser", request.getAttribute("txtPass"));
+ session.setAttribute("perfilUser", request.getAttribute("txtPerfil"));
 
-// if ((Integer) request.getAttribute("txtPerfil") == 1) {
-// 	response.sendRedirect("IrAAddAccount.html");
-// } else
-// {
-// 	response.sendRedirect("IrAMisCuentas.html");
-// }
+ if ((Integer) request.getAttribute("txtPerfil") == 1) {
+ 	response.sendRedirect("IrAAddAccount.html");
+ } else if ((Integer) request.getAttribute("txtPerfil") == 2)
+ {
+ 	response.sendRedirect("IrAMisCuentas.html");
+} else
+{
+	response.sendRedirect("IrALogin.html");
+	}
  %> 
-<h1>${txtUsuario}</h1>
+<%-- <h1>${txtUsuario}</h1> --%>
 </body>
 </html>

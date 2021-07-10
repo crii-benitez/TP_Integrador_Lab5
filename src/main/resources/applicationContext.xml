@@ -49,7 +49,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/SiGeBan?createDatabaseIfNotExist=true" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="ROOT" />
 	</bean>
 
 	<!-- Session factory de Hibernate -->

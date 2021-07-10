@@ -29,8 +29,6 @@ import main.java.com.SiGeBan.models.entity.Usuario;
 import main.java.com.SiGeBan.models.services.IUsuarioService;
 import main.java.com.SiGeBan.models.services.UsuarioService;
 
-
-
 @Controller
 public class Controllers {
 
@@ -64,7 +62,14 @@ public class Controllers {
 		mv.setViewName("usuarioLogueado"); //comentar esta linea para implementar navegacion
 		mv.addObject("txtUsuario", txtUsuario);
 		Usuario usuario = iUsuarioService.obtenerUnRegistro(txtUsuario);
-		mv.addObject("txtPerfil",usuario.getPerfil());
+		
+		if (Objects.isNull(usuario)){
+			
+			mv.setViewName("login");
+		}else
+		{
+		
+		mv.addObject("txtPerfil",usuario.getPerfil().getIdPerfil());
 		mv.addObject("txtPass",usuario.getPass());
 		if (txtPass.trim().isEmpty() || !txtPass.trim().equals(usuario.getPass()))
 			mv.setViewName("login");
@@ -72,7 +77,7 @@ public class Controllers {
 //			mv.setViewName("addaccount");
 //		else
 //			mv.setViewName("Cuentas");
-
+		}
 		return mv;
 	}
 
