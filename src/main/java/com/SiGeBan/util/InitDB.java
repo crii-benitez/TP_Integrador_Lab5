@@ -153,40 +153,7 @@ public class InitDB {
 		Perfiles perfil02 = new Perfiles("cliente");
 		session.save(perfil01);
 		session.save(perfil02);
-
-		/* DATASET = Cuentas */
-		Cuentas cuenta01 = new Cuentas("0150964302000000142382", "096402000142384", "gapavi", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta02 = new Cuentas("0110599520000001235579", "302700000389926", "pamaci", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta03 = new Cuentas("0170508920000000000417", "334700000004960", "liotye", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta04 = new Cuentas("0170508926000000000499", "188111456558486", "germe", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta05 = new Cuentas("0340100800100586333009", "204566543326881", "criibe", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta06 = new Cuentas("0340100809100586333008", "236522813569050", "rogobo", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		Cuentas cuenta07 = new Cuentas("2850347730000000049606", "334700000004960", "rickyfort", LocalDate.now(),
-				10000.00, tipoDeCuenta01);
-		Cuentas cuenta08 = new Cuentas("0070117020000003965944", "206588665470987", "vickysueiro", LocalDate.now(),
-				10000.00, tipoDeCuenta01);
-		Cuentas cuenta09 = new Cuentas("2590046210320129410056", "259965549872249", "tinitini", LocalDate.now(),
-				10000.00, tipoDeCuenta01);
-		Cuentas cuenta10 = new Cuentas("0650020701000001040561", "589944987111686", "sensei", LocalDate.now(), 10000.00,
-				tipoDeCuenta01);
-		session.save(cuenta01);
-		session.save(cuenta02);
-		session.save(cuenta03);
-		session.save(cuenta04);
-		session.save(cuenta05);
-		session.save(cuenta06);
-		session.save(cuenta07);
-		session.save(cuenta08);
-		session.save(cuenta08);
-		session.save(cuenta09);
-		session.save(cuenta10);
-
+		
 		/* DATASET = Usuario */
 		Usuario user01 = new Usuario("usuarioCliente01", "claveCliente", perfil02, true);
 		Usuario user02 = new Usuario("usuarioCliente02", "claveCliente", perfil02, true);
@@ -210,40 +177,7 @@ public class InitDB {
 		session.save(user09);
 		session.save(user10);
 		session.save(user11);
-
-		/* DATASET = Movimientos */
-
-		// Getting system timezone
-		// ZoneId systemTimeZone = ZoneId.systemDefault();
-		//
-		// // converting LocalDateTime to ZonedDateTime with the system timezone
-		// ZonedDateTime zonedDateTime = fechaLocal.atStartOfDay(systemTimeZone);
-		//
-		// // converting ZonedDateTime to Date using Date.from() and
-		// ZonedDateTime.toInstant()
-		// Date fechaAhora = Date.from(zonedDateTime.toInstant());
-
-		Movimientos movimiento01 = new Movimientos("Transferencia", 8000.00, fechaAhora, cuenta01, cuenta02);
-		Movimientos movimiento02 = new Movimientos("Transferencia", 20.00, fechaAhora, cuenta02, cuenta03);
-		Movimientos movimiento03 = new Movimientos("Transferencia", 720.00, fechaAhora, cuenta03, cuenta04);
-		Movimientos movimiento04 = new Movimientos("Transferencia", 1030.00, fechaAhora, cuenta04, cuenta05);
-		Movimientos movimiento05 = new Movimientos("Transferencia", 1220.00, fechaAhora, cuenta05, cuenta06);
-		Movimientos movimiento06 = new Movimientos("Transferencia", 3002.00, fechaAhora, cuenta06, cuenta07);
-		Movimientos movimiento07 = new Movimientos("Transferencia", 10000.00, fechaAhora, cuenta07, cuenta08);
-		Movimientos movimiento08 = new Movimientos("Transferencia", 11000.00, fechaAhora, cuenta08, cuenta09);
-		Movimientos movimiento09 = new Movimientos("Transferencia", 100.00, fechaAhora, cuenta09, cuenta10);
-		Movimientos movimiento10 = new Movimientos("Transferencia", 5000.00, fechaAhora, cuenta10, cuenta01);
-		session.save(movimiento01);
-		session.save(movimiento02);
-		session.save(movimiento03);
-		session.save(movimiento04);
-		session.save(movimiento05);
-		session.save(movimiento06);
-		session.save(movimiento07);
-		session.save(movimiento08);
-		session.save(movimiento09);
-		session.save(movimiento10);
-
+		
 		/* DATASET = Personas */
 		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fecha, "Miguel Angel 393", localidad01,
 				provincia01, pais01, genero01, user01);
@@ -281,6 +215,74 @@ public class InitDB {
 		session.save(persona10);
 		session.save(persona11);
 		session.save(persona12);
+
+
+		/* DATASET = Cuentas */
+		Cuentas cuenta01 = new Cuentas("0150964302000000142382", "096402000142384", "gapavi", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona01);
+		Cuentas cuenta02 = new Cuentas("0110599520000001235579", "302700000389926", "pamaci", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona02);
+		Cuentas cuenta03 = new Cuentas("0170508920000000000417", "334700000004960", "liotye", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona03);
+		Cuentas cuenta04 = new Cuentas("0170508926000000000499", "188111456558486", "germe", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona04);
+		Cuentas cuenta05 = new Cuentas("0340100800100586333009", "204566543326881", "criibe", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona05);
+		Cuentas cuenta06 = new Cuentas("0340100809100586333008", "236522813569050", "rogobo", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona06);
+		Cuentas cuenta07 = new Cuentas("2850347730000000049606", "334700000004960", "rickyfort", LocalDate.now(),
+				10000.00, tipoDeCuenta01, persona07);
+		Cuentas cuenta08 = new Cuentas("0070117020000003965944", "206588665470987", "vickysueiro", LocalDate.now(),
+				10000.00, tipoDeCuenta01, persona08);
+		Cuentas cuenta09 = new Cuentas("2590046210320129410056", "259965549872249", "tinitini", LocalDate.now(),
+				10000.00, tipoDeCuenta01, persona09);
+		Cuentas cuenta10 = new Cuentas("0650020701000001040561", "589944987111686", "sensei", LocalDate.now(), 10000.00,
+				tipoDeCuenta01, persona10);
+		session.save(cuenta01);
+		session.save(cuenta02);
+		session.save(cuenta03);
+		session.save(cuenta04);
+		session.save(cuenta05);
+		session.save(cuenta06);
+		session.save(cuenta07);
+		session.save(cuenta08);
+		session.save(cuenta08);
+		session.save(cuenta09);
+		session.save(cuenta10);
+
+
+		/* DATASET = Movimientos */
+
+		// Getting system timezone
+		// ZoneId systemTimeZone = ZoneId.systemDefault();
+		//
+		// // converting LocalDateTime to ZonedDateTime with the system timezone
+		// ZonedDateTime zonedDateTime = fechaLocal.atStartOfDay(systemTimeZone);
+		//
+		// // converting ZonedDateTime to Date using Date.from() and
+		// ZonedDateTime.toInstant()
+		// Date fechaAhora = Date.from(zonedDateTime.toInstant());
+
+		Movimientos movimiento01 = new Movimientos("Transferencia", 8000.00, fechaAhora, cuenta01, cuenta02);
+		Movimientos movimiento02 = new Movimientos("Transferencia", 20.00, fechaAhora, cuenta02, cuenta03);
+		Movimientos movimiento03 = new Movimientos("Transferencia", 720.00, fechaAhora, cuenta03, cuenta04);
+		Movimientos movimiento04 = new Movimientos("Transferencia", 1030.00, fechaAhora, cuenta04, cuenta05);
+		Movimientos movimiento05 = new Movimientos("Transferencia", 1220.00, fechaAhora, cuenta05, cuenta06);
+		Movimientos movimiento06 = new Movimientos("Transferencia", 3002.00, fechaAhora, cuenta06, cuenta07);
+		Movimientos movimiento07 = new Movimientos("Transferencia", 10000.00, fechaAhora, cuenta07, cuenta08);
+		Movimientos movimiento08 = new Movimientos("Transferencia", 11000.00, fechaAhora, cuenta08, cuenta09);
+		Movimientos movimiento09 = new Movimientos("Transferencia", 100.00, fechaAhora, cuenta09, cuenta10);
+		Movimientos movimiento10 = new Movimientos("Transferencia", 5000.00, fechaAhora, cuenta10, cuenta01);
+		session.save(movimiento01);
+		session.save(movimiento02);
+		session.save(movimiento03);
+		session.save(movimiento04);
+		session.save(movimiento05);
+		session.save(movimiento06);
+		session.save(movimiento07);
+		session.save(movimiento08);
+		session.save(movimiento09);
+		session.save(movimiento10);
 
 		// cierre de transacciones
 		session.getTransaction().commit();

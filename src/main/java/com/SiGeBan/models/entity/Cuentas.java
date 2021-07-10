@@ -29,19 +29,24 @@ public class Cuentas implements Serializable {
 	@ManyToOne(cascade= {CascadeType.ALL})
 	@JoinColumn(name="tipoDeCuenta")
 	private TiposDeCuentas tipoDeCuenta;
-
+	
+	@ManyToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="idPersona")
+	private Personas persona;
+	
 	// Constructor
 	public Cuentas() {
 	}
 
 	public Cuentas(String cbu, String numeroDeCuenta, String alias, LocalDate fechaDeCreacion,
-			double saldo, TiposDeCuentas tipoDeCuenta) {
+			double saldo, TiposDeCuentas tipoDeCuenta, Personas persona) {
 		this.fechaDeCreacion = fechaDeCreacion;
 		this.numeroDeCuenta = numeroDeCuenta;
 		this.cbu = cbu;
 		this.alias = alias;
 		this.saldo = saldo;
 		this.tipoDeCuenta = tipoDeCuenta;
+		this.persona = persona;
 	}
 
 	// metodos
@@ -117,11 +122,19 @@ public class Cuentas implements Serializable {
 		this.activa = activa;
 	}
 
+	public Personas getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Personas persona) {
+		this.persona = persona;
+	}
+
 	@Override
 	public String toString() {
 		return "Cuentas [idCuenta=" + idCuenta + ", fechaDeCreacion=" + fechaDeCreacion + ", cbu=" + cbu
 				+ ", numeroDeCuenta=" + numeroDeCuenta + ", alias=" + alias + ", saldo=" + saldo + ", activa=" + activa
-				+ ", tipoDeCuenta=" + tipoDeCuenta + "]";
+				+ ", tipoDeCuenta=" + tipoDeCuenta + ", persona=" + persona + "]";
 	}
 
 }
