@@ -4,6 +4,9 @@
 <html>
 
 <!DOCTYPE html>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
 <%
 if ((Integer) session.getAttribute("perfilUser") != 2) {
@@ -113,59 +116,105 @@ function checkIt() {
 						de Cuentas</h1>
 					<p>
 				
-					<table id="example"
+<!-- 					<table id="example" -->
+<!-- 						class="container table table-striped table-bordered"> -->
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th>Número de Cuenta</th> -->
+<!-- 								<th>Nombre de Cuenta</th> -->
+<!-- 								<th>Tipo de Cuenta</th> -->
+<!-- 								<th>CBU</th> -->
+<!-- 								<th>Fecha Creacion</th> -->
+<!-- 								<th>Saldo</th> -->
+<!-- 								<th></th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<!-- 							<tr> -->
+<!-- 								<td>Brielle Williamson</td> -->
+<!-- 								<td>Integration Specialist</td> -->
+<!-- 								<td>Caja de ahorro - Pesos</td> -->
+<!-- 								<td>61</td> -->
+<!-- 								<td>2012/12/02</td> -->
+<!-- 								<td>$37200,000</td> -->
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>Herrod Chandler</td> -->
+<!-- 								<td>Sales Assistant</td> -->
+<!-- 								<td>Caja de ahorro - Pesos</td> -->
+<!-- 								<td>59</td> -->
+<!-- 								<td>2012/08/06</td> -->
+<!-- 								<td>$13007,500</td> -->
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>Rhona Davidson</td> -->
+<!-- 								<td>Integration Specialist</td> -->
+<!-- 								<td>Caja de ahorro - Dolares</td> -->
+<!-- 								<td>55</td> -->
+<!-- 								<td>2010/10/14</td> -->
+<!-- 								<td>$32007,900</td> -->
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>Colleen Hurst</td> -->
+<!-- 								<td>Javascript Developer</td> -->
+<!-- 								<td>Caja de ahorro - Pesos</td> -->
+<!-- 								<td>39</td> -->
+<!-- 								<td>2009/09/15</td> -->
+<!-- 								<td>$20500,500</td> -->
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+							
+							
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+						<table id="tableta"
 						class="container table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th>Número de Cuenta</th>
-								<th>Nombre de Cuenta</th>
-								<th>Tipo de Cuenta</th>
-								<th>CBU</th>
-								<th>Fecha Creacion</th>
-								<th>Saldo</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Brielle Williamson</td>
-								<td>Integration Specialist</td>
-								<td>Caja de ahorro - Pesos</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-								<td>$37200,000</td>
-						
-							</tr>
-							<tr>
-								<td>Herrod Chandler</td>
-								<td>Sales Assistant</td>
-								<td>Caja de ahorro - Pesos</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-								<td>$13007,500</td>
-								
-							</tr>
-							<tr>
-								<td>Rhona Davidson</td>
-								<td>Integration Specialist</td>
-								<td>Caja de ahorro - Dolares</td>
-								<td>55</td>
-								<td>2010/10/14</td>
-								<td>$32007,900</td>
-								
-							</tr>
-							<tr>
-								<td>Colleen Hurst</td>
-								<td>Javascript Developer</td>
-								<td>Caja de ahorro - Pesos</td>
-								<td>39</td>
-								<td>2009/09/15</td>
-								<td>$20500,500</td>
-								
-							</tr>
-							
-							
-						</tbody>
+				            <thead>
+				            <tr>
+				               	<td>Número de Cuenta</td>
+								<td>Alias de Cuenta</td>
+								<td>Tipo de Cuenta</td>
+								<td>CBU</td>
+								<td>Fecha Creacion</td>
+								<td>Saldo</td>
+					
+				            </tr>
+				            </thead>
+						    <tbody>
+				            <c:forEach var="mov" items="${listcuentas}">
+				                <tr>
+				                    <td>${mov.numeroDeCuenta}</td>
+ 				                    <td>${mov.alias}</td> 
+				                    <td>${mov.tipoDeCuenta.nombreDeTipoDeCuenta}</td>
+ 				                    <td>${mov.cbu}</td> 
+ 				                    <td>${mov.fechaDeCreacion}</td> 
+				                    <td>${mov.saldo}</td> 
+				                </tr>
+				            </c:forEach>
+				           	</tbody>
 					</table>
 				</div>
 			</div>
