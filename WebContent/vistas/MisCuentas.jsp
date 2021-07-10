@@ -134,12 +134,7 @@ function checkIt() {
 								<td>61</td>
 								<td>2012/12/02</td>
 								<td>$37200,000</td>
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
+						
 							</tr>
 							<tr>
 								<td>Herrod Chandler</td>
@@ -148,12 +143,7 @@ function checkIt() {
 								<td>59</td>
 								<td>2012/08/06</td>
 								<td>$13007,500</td>
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
+								
 							</tr>
 							<tr>
 								<td>Rhona Davidson</td>
@@ -162,12 +152,7 @@ function checkIt() {
 								<td>55</td>
 								<td>2010/10/14</td>
 								<td>$32007,900</td>
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
+								
 							</tr>
 							<tr>
 								<td>Colleen Hurst</td>
@@ -176,12 +161,7 @@ function checkIt() {
 								<td>39</td>
 								<td>2009/09/15</td>
 								<td>$20500,500</td>
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
+								
 							</tr>
 							
 							
