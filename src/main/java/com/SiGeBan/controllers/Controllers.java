@@ -141,7 +141,7 @@ public class Controllers {
 	public ModelAndView abrirUsuarios() {
 
 		ModelAndView model = new ModelAndView();
-		model.setViewName("Usuario");
+		model.setViewName("Usuarios");
 		return model;
 
 	}
