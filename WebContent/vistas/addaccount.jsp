@@ -113,19 +113,35 @@ function checkIt() {
 				</select> <input type="text" class="form-control border border-secondary"
 					title="NombCuenta" placeholder="Fecha Creacion" /> <input
 					type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="CBU" /> <span
-					class="input-group-text border border-secondary">Monto en $</span> </br>
+					title="NombCuenta" placeholder="CBU" /> 
+					 <input type="text" class="form-control border border-secondary" required title="Monto" placeholder="Monto en $" /></br>
 
 				<div class="text-white bg-dark">Datos del Cliente</div>
 
-				<input type="text" class="form-control border border-secondary"
+				<!--  <input type="text" class="form-control border border-secondary"
 					required title="DNI" placeholder="DNI" /> <span
 					class="input-group-text border border-secondary">Fernando
 					Flego</span> <span class="input-group-text border border-secondary">Av.
 					Presidente Peron 4785</span> <span
 					class="input-group-text border border-secondary">San Miguel</span>
 				<span class="input-group-text border border-secondary">Buenos
-					Aires</span> </br>
+					Aires</span> </br>-->
+					
+					
+				     <input type="text" class="form-control border border-secondary" required title="DNI" placeholder="DNI" />
+					
+					 <input  type="text" class="form-control border border-secondary"required title="Nombre_Apellido" placeholder="Nombre y Apellido" />
+					
+					 <input  type="text" class="form-control border border-secondary"required title="Direccion" placeholder="Direccion" />
+					 
+					 <input  type="text" class="form-control border border-secondary"required title="localidad" placeholder="Localidad" />
+					 
+					 <input  type="text" class="form-control border border-secondary"required title="Provincia" placeholder="Provincia" />
+				
+					 </br>
+
+
+
 
 				<button type="button" class="btn btn-primary">Ingresar
 					Cuenta</button>
