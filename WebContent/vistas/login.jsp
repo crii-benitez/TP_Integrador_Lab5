@@ -104,7 +104,7 @@
 				a nuestro Home Banking</h1>
 			<div class="loginLG">
 				<div class="tituloLG">SiGeBan</div>
-				<form action="AccionLoguear.html" method="get">
+				<form action="AccionLoguear.html" method="post">
 					<input type="text" name="txtUsuario" required title="Usuario"
 						placeholder="Usuario" data-icon="U"> <input
 						type="password" name="txtPass" required title="Contraseña"

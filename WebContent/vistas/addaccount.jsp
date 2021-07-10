@@ -6,10 +6,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
-if ((Integer) session.getAttribute("txtPerfil") != 2) {
+if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
-} 
-%>
+}%>
 <head>
 <title>SiGesBan ABML Cuentas</title>
 <meta charset="utf-8">
