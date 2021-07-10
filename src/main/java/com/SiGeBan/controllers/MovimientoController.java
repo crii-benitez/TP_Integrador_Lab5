@@ -12,6 +12,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
 import main.java.com.SiGeBan.models.entity.Movimientos;
+import main.java.com.SiGeBan.models.entity.Usuario;
 import main.java.com.SiGeBan.models.services.IMovimientoService;
 import main.java.com.SiGeBan.models.services.MovimientoService;
 

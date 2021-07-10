@@ -48,13 +48,13 @@ public class Controllers {
 
 	}
 
-	@RequestMapping("IrAMisCuentas.html")
-	public ModelAndView eventoRedireccionarMisCuentas() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("MisCuentas");
-		return mv;
-
-	}
+//	@RequestMapping("IrAMisCuentas.html")
+//	public ModelAndView eventoRedireccionarMisCuentas() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("MisCuentas");
+//		return mv;
+//
+//	}
 
 	@RequestMapping(value = "AccionLoguear.html", method= { RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView accionLoguear(String txtUsuario, String txtPass) {
