@@ -28,4 +28,19 @@ public class UsuarioController {
 	 return model;
 	
 	 }
+	 
+	
+	 @RequestMapping("IrAAdd.html")
+		public ModelAndView abrirAdd() {
+		 ArrayList<Personas> _LPersonas=(ArrayList<Personas>) iPersonaService.obtenerPersonas();
+			ModelAndView model = new ModelAndView();
+			
+			model.setViewName("add");
+
+			 model.addObject("listpersonas", _LPersonas);
+			return model;
+
+		}
+
 }
+

@@ -5,6 +5,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
@@ -189,87 +192,120 @@ function checkIt() {
 
 					</br>
 
-					<table id="example"
-						class="container table table-striped table-bordered">
-						<thead>
-							<tr>
-								<th>Nombre</th>
-								<th>Apellido</th>
-								<th>DNI</th>
-								<th>Sexo</th>
-								<th>Pais</th>
-								<th>Provincia</th>
-								<th>Localidad</th>
-								<th>Fecha de nacimiento</th>
-								<!--	<th>Calle</th>
-								<th>Numero</th>
-								<th>Dto</th> -->
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Cristian</td>
-								<td>Benitez</td>
-								<td>32548777</td>
-								<td>Masculino</td>
-								<td>Argentina</td>
-								<td>Buenos Aires</td>
-								<td>San Miguel</td>
-								<td>01/01/1986</td>
-								<!--<td>Arenales</td>
-								<td>2276</td>
-								<td>-</td>-->
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
-							</tr>
-							<tr>
-								<td>Germnan</td>
-								<td>Medina</td>
-								<td>32520857</td>
-								<td>Masculino</td>
-								<td>Argentina</td>
-								<td>Buenos Aires</td>
-								<td>Jose c. Paz</td>
-								<td>01/09/1986</td>
-								<!--	<td>Girondo</td>
-								<td>1076</td>
-								<td>-</td> -->
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
-							</tr>
-							<tr>
-								<td>Pablo</td>
-								<td>Maciel</td>
-								<td>32548777</td>
-								<td>Masculino</td>
-								<td>Argentina</td>
-								<td>Buenos Aires</td>
-								<td>San Miguel</td>
-								<td>12/07/1984</td>
-								<!--		<td>Peron</td>
-								<td>1045</td>
-								<td>-</td> -->
-								<td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td>
-							</tr>
-							<tr>
-								<td colspan="9" align="right">1... 1</td>
+<!-- 					<table id="example" -->
+<!-- 						class="container table table-striped table-bordered"> -->
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th>Nombre</th> -->
+<!-- 								<th>Apellido</th> -->
+<!-- 								<th>DNI</th> -->
+<!-- 								<th>Sexo</th> -->
+<!-- 								<th>Pais</th> -->
+<!-- 								<th>Provincia</th> -->
+<!-- 								<th>Localidad</th> -->
+<!-- 								<th>Fecha de nacimiento</th> -->
+<!-- 									<th>Calle</th>
+<!-- 								<th>Numero</th> -->
+<!-- 								<th>Dto</th> --> 
+<!-- 								<th></th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<!-- 							<tr> -->
+<!-- 								<td>Cristian</td> -->
+<!-- 								<td>Benitez</td> -->
+<!-- 								<td>32548777</td> -->
+<!-- 								<td>Masculino</td> -->
+<!-- 								<td>Argentina</td> -->
+<!-- 								<td>Buenos Aires</td> -->
+<!-- 								<td>San Miguel</td> -->
+<!-- 								<td>01/01/1986</td> -->
+<!-- 								<td>Arenales</td>
+<!-- 								<td>2276</td> -->
+<!-- 								<td>-</td>--> 
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>Germnan</td> -->
+<!-- 								<td>Medina</td> -->
+<!-- 								<td>32520857</td> -->
+<!-- 								<td>Masculino</td> -->
+<!-- 								<td>Argentina</td> -->
+<!-- 								<td>Buenos Aires</td> -->
+<!-- 								<td>Jose c. Paz</td> -->
+<!-- 								<td>01/09/1986</td> -->
+<!-- 									<td>Girondo</td>
+<!-- 								<td>1076</td> -->
+<!-- 								<td>-</td> --> 
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>Pablo</td> -->
+<!-- 								<td>Maciel</td> -->
+<!-- 								<td>32548777</td> -->
+<!-- 								<td>Masculino</td> -->
+<!-- 								<td>Argentina</td> -->
+<!-- 								<td>Buenos Aires</td> -->
+<!-- 								<td>San Miguel</td> -->
+<!-- 								<td>12/07/1984</td> -->
+<!-- 										<td>Peron</td>
+<!-- 								<td>1045</td> -->
+<!-- 								<td>-</td> --> 
+<!-- 								<td><button type="button" class="btn btn-primary"> -->
+<!-- 										<i class="fas fa-edit"></i> -->
+<!-- 									</button> -->
+<!-- 									<button type="button" class="btn btn-danger"> -->
+<!-- 										<i class="fas fa-trash-alt"></i> -->
+<!-- 									</button></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td colspan="9" align="right">1... 1</td> -->
 
-							</tr>
-						</tbody>
+<!-- 							</tr> -->
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+				<table id="tableta"
+						class="container table table-striped table-bordered">
+				            <thead>
+				            <tr>
+				               	<td>Nombre</td>
+								<td>Apellido</td>
+								<td>DNI</td>
+								<td>Sexo</td>
+								<td>Pais</td>
+								<td>Provincia</td>
+								<td>Localidad</td> 
+								<td>Direccion</td>
+								<td>Usuario</td>
+<!-- 								<td>Fecha de nacimiento</td> -->
+				            </tr>
+				            </thead>
+						    <tbody>
+				            <c:forEach var="mov" items="${listpersonas}">
+				                <tr>
+				                    <td>${mov.nombre}</td>
+ 				                    <td>${mov.apellido}</td> 
+				                    <td>${mov.DNI}</td>
+ 				                    <td>${mov.genero.genero}</td> 
+ 				                    <td>${mov.pais.pais}</td> 
+				                    <td>${mov.provincia.provincia}</td> 
+ 				                    <td>${mov.localidad.localidad}</td>
+				                    <td>${mov.direccion}</td>
+				                    <td>${mov.usuario.usuario}</td>
+<%-- 				                    <td>${mov.fechaNacimiento}</td> --%>
+				                </tr>
+				            </c:forEach>
+				           	</tbody>
 					</table>
 				</div>
 			</div>
@@ -299,16 +335,51 @@ function checkIt() {
 	</footer>
 	<!-- End Footer -->
 </body>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#example').DataTable();
-	});
-</script>
+
 <!-- Bootstrap -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Templatemo -->
 <script src="assets/js/templatemo.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#tableta').DataTable({
+        paging: true,
+        lengthChange: true,
+        pageLength: 25,
+        searching: true,
+        ordering: true,
+        stateSave: true,
+        autoWidth: true,
+        scrollx: true,
+        scrollY: 430,
+        scrollCollapse: true,
+        language:
+        {
+            searchPlaceholder: "Que desea buscar?",
+            "emptyTable": "No hay datos para mostrar.",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+            "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+            "infoFiltered": "(filtrados de _MAX_ registros totales)",
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros que coincidan con las condiciones de busqueda especficadas",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Proxima",
+                "previous": "Previa"
+            }
+        }
+
+    });
+
+});
+</script>
 <!-- Custom -->
 <script src="assets/js/custom.js"></script>
 </html>

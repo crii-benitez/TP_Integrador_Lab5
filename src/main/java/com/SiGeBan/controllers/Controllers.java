@@ -108,14 +108,14 @@ public class Controllers {
 	//
 	// }
 
-	@RequestMapping("IrAAdd.html")
-	public ModelAndView abrirAdd() {
-
-		ModelAndView model = new ModelAndView();
-		model.setViewName("add");
-		return model;
-
-	}
+//	@RequestMapping("IrAAdd.html")
+//	public ModelAndView abrirAdd() {
+//
+//		ModelAndView model = new ModelAndView();
+//		model.setViewName("add");
+//		return model;
+//
+//	}
 
 //	@RequestMapping("IrAUsuarios.html")
 //	public ModelAndView abrirUsuarios() {
