@@ -51,11 +51,11 @@ public class Localidades implements Serializable {
 		this.provincia = provincia;
 	}
 
-	public String getCiudad() {
+	public String getLocalidad() {
 		return localidad;
 	}
 
-	public void setCiudad(String ciudad) {
+	public void setLocalidad(String ciudad) {
 		this.localidad = ciudad;
 	}
 

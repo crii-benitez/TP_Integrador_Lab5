@@ -1,33 +1,13 @@
 package main.java.com.SiGeBan.controllers;
 
-import java.util.ArrayList;
 import java.util.Objects;
-import java.util.List;
-import java.util.Map;
-
-import javax.persistence.Convert;
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.util.WebUtils;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import org.hibernate.exception.spi.ConversionContext;
-
-import main.java.com.SiGeBan.models.dao.DaoMovimientos;
-import main.java.com.SiGeBan.models.dao.UsuarioDAO;
-import main.java.com.SiGeBan.models.entity.Movimientos;
 import main.java.com.SiGeBan.models.entity.Usuario;
 import main.java.com.SiGeBan.models.services.IUsuarioService;
-import main.java.com.SiGeBan.models.services.UsuarioService;
 
 @Controller
 public class Controllers {
@@ -137,14 +117,14 @@ public class Controllers {
 
 	}
 
-	@RequestMapping("IrAUsuarios.html")
-	public ModelAndView abrirUsuarios() {
-
-		ModelAndView model = new ModelAndView();
-		model.setViewName("Usuarios");
-		return model;
-
-	}
+//	@RequestMapping("IrAUsuarios.html")
+//	public ModelAndView abrirUsuarios() {
+//
+//		ModelAndView model = new ModelAndView();
+//		model.setViewName("Usuarios");
+//		return model;
+//
+//	}
 
 	@RequestMapping("IrACuentas.html")
 	public ModelAndView abrirCuentas() {
