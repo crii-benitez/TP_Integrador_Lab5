@@ -1,7 +1,7 @@
 package main.java.com.SiGeBan.models.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ public class Cuentas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCuenta;
-	private LocalDate fechaDeCreacion;
+	private Date fechaDeCreacion;
 	private String cbu;
 	private String numeroDeCuenta;
 	private String alias;
@@ -38,7 +38,7 @@ public class Cuentas implements Serializable {
 	public Cuentas() {
 	}
 
-	public Cuentas(String cbu, String numeroDeCuenta, String alias, LocalDate fechaDeCreacion,
+	public Cuentas(String cbu, String numeroDeCuenta, String alias, Date fechaDeCreacion,
 			double saldo, TiposDeCuentas tipoDeCuenta, Personas persona) {
 		this.fechaDeCreacion = fechaDeCreacion;
 		this.numeroDeCuenta = numeroDeCuenta;
@@ -73,11 +73,11 @@ public class Cuentas implements Serializable {
 	public TiposDeCuentas getTipoDeCuenta() {
 		return tipoDeCuenta;
 	}
-	public LocalDate getFechaDeCreacion() {
+	public Date getFechaDeCreacion() {
 		return fechaDeCreacion;
 	}
 
-	public void setFechaDeCreacion(LocalDate fechaDeCreacion) {
+	public void setFechaDeCreacion(Date fechaDeCreacion) {
 		this.fechaDeCreacion = fechaDeCreacion;
 	}
 

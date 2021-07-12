@@ -12,6 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Personas implements Serializable {
@@ -25,6 +29,9 @@ public class Personas implements Serializable {
 	private int DNI;
 	private String nombre;
 	private String apellido;
+	
+	//@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 	private String direccion;
 
