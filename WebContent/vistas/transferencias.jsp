@@ -118,10 +118,14 @@ function checkIt() {
 				</br>
 				<div class="text-white bg-dark">Datos de la Cuenta Destino</div>
 
-				<input type="text" class="form-control border border-secondary"
-					required title="CBU" placeholder="CBU" /> <span
-					class="input-group-text border border-secondary">Maximiliano
-					Dario Guiol</span> <span class="input-group-text border border-secondary">$25000.00</span>
+<!-- 				<input type="text" class="form-control border border-secondary" required title="CBU" placeholder="CBU" />  -->
+				<select name="CBU" class="form-control border border-secondary" placeholder="CBU ClienteS">
+					<c:forEach var="cli" items="${datoscuentas}">
+				    	<option value="${cli.idPersona}">${cli.nombre} ${cli.apellido} </option>            
+				    </c:forEach>
+				</select> 
+				<span class="input-group-text border border-secondary">Maximiliano Dario Guiol</span> 
+				<span class="input-group-text border border-secondary">$25000.00</span>
 				</br>
 
 				<div class="text-white bg-dark">Monto a Transferir</div>

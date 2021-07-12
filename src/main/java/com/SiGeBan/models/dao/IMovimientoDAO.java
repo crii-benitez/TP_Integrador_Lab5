@@ -3,6 +3,7 @@ package main.java.com.SiGeBan.models.dao;
 import java.util.ArrayList;
 
 import main.java.com.SiGeBan.models.entity.Movimientos;
+import main.java.com.SiGeBan.models.entity.Personas;
 
 public interface IMovimientoDAO {
 	//Alta de Movimiento

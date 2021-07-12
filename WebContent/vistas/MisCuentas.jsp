@@ -99,15 +99,13 @@ function checkIt() {
 			<form class="table table-bordered bg-light" action="#" method="post">
 				
 				<div class="text-white bg-dark">Datos del Cliente</div>
-
-				 <span
-					class="input-group-text border border-secondary">32.128.258</span> <span
-					class="input-group-text border border-secondary">Fernando
-					Flego</span> <span class="input-group-text border border-secondary">Av.
-					Presidente Peron 4785</span> <span
-					class="input-group-text border border-secondary">San Miguel</span>
-				<span class="input-group-text border border-secondary">Buenos
-					Aires</span> 
+				<c:forEach var="dat" items="${datospersonales}">
+					<span class="input-group-text border border-secondary">${dat.dni}</span> 
+					<span class="input-group-text border border-secondary">${dat.nombre} ${dat.apellido}</span> 
+					<span class="input-group-text border border-secondary">${dat.direccion}</span> 
+					<span class="input-group-text border border-secondary">${dat.localidad}</span>
+					<span class="input-group-text border border-secondary">${dat.provincia}</span>
+				</c:forEach> 
 
 			</form>
 			<div class="bg-lingh">

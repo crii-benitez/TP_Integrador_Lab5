@@ -12,6 +12,7 @@ import main.java.com.SiGeBan.models.entity.Localidades;
 import main.java.com.SiGeBan.models.entity.Paises;
 import main.java.com.SiGeBan.models.entity.Personas;
 import main.java.com.SiGeBan.models.entity.Provincias;
+import main.java.com.SiGeBan.models.services.IGeneroService;
 import main.java.com.SiGeBan.models.services.ILocalidadService;
 import main.java.com.SiGeBan.models.services.IPaisService;
 import main.java.com.SiGeBan.models.services.IPersonaService;
@@ -29,6 +30,8 @@ public class UsuarioController {
 	private IProvinciaService iProvinciaService;
 	@Autowired
 	private ILocalidadService ilocalidadService;
+	@Autowired
+	private IGeneroService iGeneroService;
 	
 	 @RequestMapping("IrAUsuarios.html")
 	 public ModelAndView abrirUsuarios() {

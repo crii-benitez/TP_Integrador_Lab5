@@ -34,7 +34,22 @@ public class PersonaDAO implements IPersonaDAO{
 			return null;
 		}
 	}
-	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public ArrayList<Personas> ObtenerDatosPersonales(String usuario) {
+		// TODO Auto-generated method stub
+		try {
+		return (ArrayList<Personas>) this.hibernateTemplate.find("SELECT p.DNI, p.nombre, p.apellido, p.direccion, l.localidad, pr.provincia" + 
+				"FROM Personas as p " + 
+				"inner join Usuario as u on u.idUsuario=p.usuario" + 
+				"inner join Localidades as l on l.idLocalidad=p.localidad" + 
+				"inner join Provincias as pr on pr.idProvincia=p.provincia" + 
+				"where u.usuario = ?",usuario).get(0);
+		}
+		catch (Exception E) {
+			return null;
+		}
+	}
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public ArrayList<Personas> obtenerPersonas() {

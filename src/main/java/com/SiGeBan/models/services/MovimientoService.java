@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import main.java.com.SiGeBan.models.dao.IMovimientoDAO;
 import main.java.com.SiGeBan.models.entity.Movimientos;
+import main.java.com.SiGeBan.models.entity.Personas;
 @Service
 public class MovimientoService implements IMovimientoService {
 	@Autowired
@@ -49,5 +50,6 @@ public class MovimientoService implements IMovimientoService {
 		// TODO Auto-generated method stub
 		iMovimientoDAO.actualizarMovimiento(Movimiento);
 	}
+
 
 }

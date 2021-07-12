@@ -70,7 +70,10 @@
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
 	
-
+	<bean id="iGeneroDAOBean" class="main.java.com.SiGeBan.models.dao.GeneroDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
 	<!-- Session factory de Hibernate -->
 	<bean id="sessionFactoryBean"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

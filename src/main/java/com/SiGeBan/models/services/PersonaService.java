@@ -38,6 +38,12 @@ public class PersonaService implements IPersonaService{
 	}
 
 	@Override
+	public ArrayList<Personas> ObtenerDatosPersonales(String usuario) {
+		// TODO Auto-generated method stub
+		return iPersonaDAO.ObtenerDatosPersonales(usuario);
+	}
+	
+	@Override
 	public void insertarPersona(Personas persona) {
 		 iPersonaDAO.insertarPersona(persona);
 		

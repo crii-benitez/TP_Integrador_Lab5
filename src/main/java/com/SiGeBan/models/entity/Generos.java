@@ -16,6 +16,13 @@ public class Generos implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idGenero;
 	
+	public int getIdGenero() {
+		return idGenero;
+	}
+	public void setIdGenero(int idGenero) {
+		this.idGenero = idGenero;
+	}
+
 	private String genero;
 	
 	public Generos()

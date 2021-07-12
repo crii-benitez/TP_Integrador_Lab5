@@ -8,7 +8,10 @@ import main.java.com.SiGeBan.models.entity.Personas;
 public interface IPersonaDAO {
 	//Alta de persona
 	public void insertarPersona(Personas persona);
-
+	
+	//Obtener Datos Personales
+	public ArrayList<Personas> ObtenerDatosPersonales(String usuario);
+	
 	//Obtiene una persona por dni
 	public Personas obtenerPersonaPorUsuario(String txtDNI);
 

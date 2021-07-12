@@ -144,15 +144,6 @@ public class Controllers {
 
 	}*/
 
-	@RequestMapping("IrATransferencias.html")
-	public ModelAndView abrirTransferencias() {
-
-		ModelAndView model = new ModelAndView("transferencias");
-		// model.setViewName("transferencias");
-		return model;
-
-	}
-
 	/*
 	 * public Controllers() { // TODO Auto-generated constructor stub }
 	 */

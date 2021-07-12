@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
+import main.java.com.SiGeBan.models.entity.Cuentas;
 import main.java.com.SiGeBan.models.entity.Movimientos;
 import main.java.com.SiGeBan.models.entity.Usuario;
+import main.java.com.SiGeBan.models.services.ICuentaService;
 import main.java.com.SiGeBan.models.services.IMovimientoService;
 import main.java.com.SiGeBan.models.services.MovimientoService;
 
@@ -31,6 +33,7 @@ public class MovimientoController {
 	*/
 	@Autowired
 	private IMovimientoService iMovimientoService;
+	private ICuentaService iCuentaService;
 	
 	 @RequestMapping("IrAMovimientos.html")
 	 public ModelAndView listMovement() {
@@ -42,4 +45,17 @@ public class MovimientoController {
 	 return model;
 	
 	 }
+	 
+		@RequestMapping("IrATransferencias.html")
+		public ModelAndView abrirTransferencias() {
+			
+			//Cuentas _c= (Cuentas) iCuentaService.obtenerCuentaPorNumeroDeCuenta("10");
+
+			ModelAndView model = new ModelAndView();
+			//model.addObject("datoscuentas", _c);
+			model.setViewName("transferencias");
+			return model;
+
+		}
+
 }

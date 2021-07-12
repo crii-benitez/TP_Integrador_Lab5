@@ -13,6 +13,7 @@ import main.java.com.SiGeBan.models.entity.Cuentas;
 import main.java.com.SiGeBan.models.entity.Personas;
 import main.java.com.SiGeBan.models.entity.TiposDeCuentas;
 import main.java.com.SiGeBan.models.services.ICuentaService;
+import main.java.com.SiGeBan.models.services.IPersonaService;
 
 @Controller
 public class CuentaController {
@@ -20,15 +21,19 @@ public class CuentaController {
 	private double saldoInicial=10000;
 	@Autowired
 	private ICuentaService iCuentaService;
+	private IPersonaService iPersonaService;
 	
 	 @RequestMapping("IrAMisCuentas.html")
 	 public ModelAndView abrirCuentas() {
+		 
+		 //ArrayList<Personas> _Dpersonales =(ArrayList<Personas>) iPersonaService.ObtenerDatosPersonales("usuarioCliente04");
 	
-	 ArrayList<Cuentas> _Lcuentas=(ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
-	 ModelAndView model = new ModelAndView("MisCuentas");
+		 ArrayList<Cuentas> _Lcuentas=(ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+		 ModelAndView model = new ModelAndView("MisCuentas");
 	
-	 model.addObject("listcuentas", _Lcuentas);
-	 return model;
+		 //model.addObject("datospersonales",_Dpersonales);
+		 model.addObject("listcuentas", _Lcuentas);
+		 return model;
 	
 	 }
 	 

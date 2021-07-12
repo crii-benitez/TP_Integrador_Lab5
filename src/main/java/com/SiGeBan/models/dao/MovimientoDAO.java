@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import main.java.com.SiGeBan.models.entity.Movimientos;
+import main.java.com.SiGeBan.models.entity.Personas;
 
 public class MovimientoDAO implements IMovimientoDAO {
 	private HibernateTemplate hibernateTemplate = null;
@@ -27,7 +28,15 @@ public class MovimientoDAO implements IMovimientoDAO {
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public ArrayList<Movimientos> obtenerMovimientosPornumeroDeCuentaOrigen(String numeroDeCuentaOrigen) {
 		// TODO Auto-generated method stub
-		return (ArrayList<Movimientos>) this.hibernateTemplate.find("FROM Movimientos m WHERE m.numeroDeCuentaOrigen = ?",numeroDeCuentaOrigen).get(0);
+		return (ArrayList<Movimientos>) this.hibernateTemplate.find("SELECT m.detalle, m.importe, co.cbu as 'cbu origen', co.numeroDeCuenta as 'numeroCuentaOrigen', co.saldo as 'saldo origen' " + 
+				", co.cbu as 'cbu destino', cd.numeroDeCuenta as 'numeroCuentaDestino', cd.saldo as 'saldo destino'  FROM sigeban.movimientos as m " + 
+				"inner join sigeban.cuentas as co on co.idCuenta=m.numeroCuentaOrigen " + 
+				"inner join sigeban.cuentas as cd on cd.idCuenta=m.numeroCuentaDestino " + 
+				"inner join sigeban.personas as p on p.idPersona=co.idPersona " + 
+				"inner join sigeban.usuario as u on u.idUsuario=p.usuario " + 
+				"where u.usuario = ? " + 
+				"group by m.detalle, m.importe,'cbu origen','numeroCuentaOrigen', 'saldo origen' " + 
+				", 'cbu destino', 'numeroCuentaDestino', 'saldo destino'",numeroDeCuentaOrigen).get(0);
 	}
 
 	@Override
