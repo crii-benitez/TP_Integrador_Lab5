@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import main.java.com.SiGeBan.models.entity.Cuentas;
+import main.java.com.SiGeBan.models.entity.Personas;
 import main.java.com.SiGeBan.models.services.ICuentaService;
 
 @Controller
@@ -35,7 +36,10 @@ public class CuentaController {
 	 
 	 model.setViewName("addaccount");
 	 
-	
+	 //agregado crii
+	 ArrayList<Personas> _LPersonas=(ArrayList<Personas>) iCuentaService.obtenerPersonas();
+	 model.addObject("listpersonas", _LPersonas);
+	 //fin agregado
 	
 	 model.addObject("listcuentas", _Lcuentas);
 	 return model;

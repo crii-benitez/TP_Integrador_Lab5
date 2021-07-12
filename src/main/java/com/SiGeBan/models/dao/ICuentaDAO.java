@@ -3,6 +3,7 @@ package main.java.com.SiGeBan.models.dao;
 import java.util.ArrayList;
 
 import main.java.com.SiGeBan.models.entity.Cuentas;
+import main.java.com.SiGeBan.models.entity.Personas;
 
 public interface ICuentaDAO {
 	//Alta de Cuenta
@@ -19,5 +20,7 @@ public interface ICuentaDAO {
 
 	//Actualiza los datos de una Cuenta
 	public void actualizarCuenta(Cuentas cuenta);
+	
+	public ArrayList<Personas> obtenerPersonas();
 	
 }

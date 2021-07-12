@@ -11,7 +11,13 @@
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
-}%>
+}
+
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat ("yyyy-MM-dd");
+java.util.Date currentTime = new java.util.Date (); // Obtener la hora actual del sistema
+String str_date1 = formatter.format (currentTime); // format datetime
+String str_date2 = str_date1.toString (); // Convertir fecha y hora en forma de cadena
+%>
 <head>
 <script>
 function checkIt() {
@@ -107,17 +113,16 @@ function checkIt() {
 					type="text" class="form-control border border-secondary"
 					title="NombCuenta" placeholder="Nombre de Cuenta" /> </br>
 				<div class="text-white bg-dark">Datos de apertura</div>
-				<select name="pais" class="form-control border border-secondary"
+				<select name="tipoCuenta" class="form-control border border-secondary"
 					placeholder="Tipo de Cuenta">
 					<option value="1">Caja de ahorro - Pesos</option>
 					<option value="2">Caja de ahorro - Dolares</option>
 					<option value="3">Cuenta corriente - Pesos</option>
 					<option value="4">Cuenta corriente - Dolares</option>
-				</select> <input type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="Fecha Creacion" /> <input
-					type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="CBU" /> 
-					 <input type="text" class="form-control border border-secondary" required title="Monto" placeholder="Monto en $" /></br>
+				</select> 
+				<input type="date" class="form-control border border-secondary" title="fecha" placeholder="<%=str_date2%>" />  
+				<input type="text" class="form-control border border-secondary" title="NombCuenta" placeholder="CBU" /> 
+				<input type="text" class="form-control border border-secondary" required title="Monto" placeholder="Monto en $" /></br>
 
 				<div class="text-white bg-dark">Datos del Cliente</div>
 
@@ -130,16 +135,23 @@ function checkIt() {
 				<span class="input-group-text border border-secondary">Buenos
 					Aires</span> </br>-->
 					
+				<select name="clientes" class="form-control border border-secondary" placeholder="Clientes">
+					<c:forEach var="cli" items="${listpersonas}">
+				    	<option value="${cli.DNI}">${cli.nombre} ${cli.apellido} </option>            
+				    </c:forEach>
 					
-				     <input type="text" class="form-control border border-secondary" required title="DNI" placeholder="DNI" />
+
+				</select> 
 					
-					 <input  type="text" class="form-control border border-secondary"required title="Nombre_Apellido" placeholder="Nombre y Apellido" />
+<!-- 			Se comenta ya que ahora se seleccionara el cliente desde un combo	     <input type="text" class="form-control border border-secondary" required title="DNI" placeholder="DNI" /> -->
 					
-					 <input  type="text" class="form-control border border-secondary"required title="Direccion" placeholder="Direccion" />
+<!-- 					 <input  type="text" class="form-control border border-secondary"required title="Nombre_Apellido" placeholder="Nombre y Apellido" /> -->
+					
+<!-- 					 <input  type="text" class="form-control border border-secondary"required title="Direccion" placeholder="Direccion" /> -->
 					 
-					 <input  type="text" class="form-control border border-secondary"required title="localidad" placeholder="Localidad" />
+<!-- 					 <input  type="text" class="form-control border border-secondary"required title="localidad" placeholder="Localidad" /> -->
 					 
-					 <input  type="text" class="form-control border border-secondary"required title="Provincia" placeholder="Provincia" />
+<!-- 					 <input  type="text" class="form-control border border-secondary"required title="Provincia" placeholder="Provincia" /> -->
 				
 					 </br>
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import main.java.com.SiGeBan.models.dao.ICuentaDAO;
 import main.java.com.SiGeBan.models.entity.Cuentas;
+import main.java.com.SiGeBan.models.entity.Personas;
 @Service
 public class CuentaService implements ICuentaService {
 	@Autowired
@@ -48,6 +49,11 @@ public class CuentaService implements ICuentaService {
 	public void actualizarCuenta(Cuentas cuenta) {
 		// TODO Auto-generated method stub
 		iCuentaoDAO.actualizarCuenta(cuenta);
+	}
+	
+	@Override
+	public ArrayList<Personas> obtenerPersonas() {
+		return iCuentaoDAO.obtenerPersonas();
 	}
 
 }

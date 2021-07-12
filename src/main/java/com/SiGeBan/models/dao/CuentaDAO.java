@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import main.java.com.SiGeBan.models.entity.Cuentas;
+import main.java.com.SiGeBan.models.entity.Personas;
 
 public class CuentaDAO implements ICuentaDAO {
 
@@ -53,6 +54,12 @@ public class CuentaDAO implements ICuentaDAO {
 	public void actualizarCuenta(Cuentas cuenta) {
 		// TODO Auto-generated method stub
 		this.hibernateTemplate.update(cuenta);
+	}
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public ArrayList<Personas> obtenerPersonas() {
+		return (ArrayList<Personas>) this.hibernateTemplate.loadAll(Personas.class);
 	}
 
 }
