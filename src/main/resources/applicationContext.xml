@@ -74,6 +74,11 @@
 		scope="singleton">
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
+
+	<bean id="iPerfilDAOBean" class="main.java.com.SiGeBan.models.dao.PerfilDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
 	<!-- Session factory de Hibernate -->
 	<bean id="sessionFactoryBean"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
