@@ -39,8 +39,8 @@ public class Localidades implements Serializable {
 		return idLocalidad;
 	}
 
-	public void setIdLocalidad(int idLocalidad) {
-		this.idLocalidad = idLocalidad;
+	public void setIdLocalidad(Integer txtLocalidad) {
+		this.idLocalidad = txtLocalidad;
 	}
 
 	public Provincias getProvincia() {

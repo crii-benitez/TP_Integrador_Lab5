@@ -8,7 +8,7 @@ public interface ILocalidadService {
 
 	ArrayList<Localidades> obtenerLocalidades();
 
-	Localidades obtenerUnLocalidad(String nombre);
+	Localidades obtenerUnLocalidad(Integer ID);
 
 	void insertarLocalidad(Localidades localidad);
 

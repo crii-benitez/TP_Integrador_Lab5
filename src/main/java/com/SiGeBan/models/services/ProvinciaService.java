@@ -30,8 +30,8 @@ public class ProvinciaService implements IProvinciaService{
 	}
 
 	@Override
-	public Provincias obtenerUnProvincia(String txtProvincia) {
-		return iProvinciaDAO.obtenerProvinciaPorNombre(txtProvincia);
+	public Provincias obtenerUnProvincia(Integer txtProvincia) {
+		return iProvinciaDAO.obtenerProvinciaPorID(txtProvincia);
 	}
 
 	@Override 

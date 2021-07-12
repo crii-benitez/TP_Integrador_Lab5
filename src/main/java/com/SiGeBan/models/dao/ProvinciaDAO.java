@@ -28,9 +28,9 @@ public class ProvinciaDAO implements IProvinciaDAO{
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-	public Provincias obtenerProvinciaPorNombre(String txtProvincia) {
+	public Provincias obtenerProvinciaPorID(Integer txtProvincia) {
 		try {
-		return (Provincias) this.hibernateTemplate.find("FROM Provincias u WHERE u.provincia = ?",txtProvincia).get(0);
+		return (Provincias) this.hibernateTemplate.find("FROM Provincias u WHERE u.idProvincia = ?",txtProvincia).get(0);
 		}
 		catch (Exception E) {
 			return null;

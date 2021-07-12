@@ -9,7 +9,7 @@ public interface IProvinciaDAO {
 	public void insertarProvincia(Provincias Provincia);
 
 	//Obtiene una persona por dni
-	public Provincias obtenerProvinciaPorNombre(String txtProvincia);
+	public Provincias obtenerProvinciaPorID(Integer txtProvincia);
 
 	//Obtiene todas las presonas
 	public ArrayList<Provincias> obtenerProvincias();

@@ -35,8 +35,8 @@ public class PaisService implements IPaisService{
 	}
 
 	@Override
-	public Paises obtenerUnPais(String txtPais) {
-		return iPaisDAO.obtenerPaisPorNombre(txtPais);
+	public Paises obtenerUnPais(Integer txtPais) {
+		return iPaisDAO.obtenerPaisPorID(txtPais);
 	}
 
 	@Override

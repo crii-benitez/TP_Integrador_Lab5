@@ -31,8 +31,8 @@ public class LocalidadService implements ILocalidadService{
 	}
 
 	@Override
-	public Localidades obtenerUnLocalidad(String txtLocalidad) {
-		return iLocalidadDAO.obtenerLocalidadPorNombre(txtLocalidad);
+	public Localidades obtenerUnLocalidad(Integer txtLocalidad) {
+		return iLocalidadDAO.obtenerLocalidadPorID(txtLocalidad);
 	}
 
 	@Override

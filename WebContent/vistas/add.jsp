@@ -107,6 +107,14 @@ function checkIt() {
 				Nuevo Usuario</h1>
 			<form class="table table-bordered bg-light" action="agregarUsuario.html"
 				method="get">
+					<p class="form-control">
+					Seleccione Perfil de usuario
+					<select name="txtPerfil" class="text-control border border-secondary" placeholder="Perfil">
+					<c:forEach var="per" items="${listperfiles}">
+				    	<option value="${per.idPerfil}">${per.perfil}</option>            
+				    </c:forEach>
+					</select>
+				<p />
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese nombre" type="text" name="txtNombre">
 				<input class="form-control border border-secondary"
@@ -114,8 +122,8 @@ function checkIt() {
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese DNI" type="text" name="txtDNI">
 				<p class="form-control">
-					Seleccione Pais de residencia 
-					<select name="sexo" class="text-control border border-secondary" placeholder="Sexo">
+					Seleccione genero
+					<select name="txtSexo" class="text-control border border-secondary" placeholder="Sexo">
 					<c:forEach var="sex" items="${listgeneros}">
 				    	<option value="${sex.idGenero}">${sex.genero}</option>            
 				    </c:forEach>
@@ -126,7 +134,7 @@ function checkIt() {
 					
 				<p class="form-control">
 					Seleccione Pais de residencia 
-					<select name="pais" class="text-control border border-secondary" placeholder="Paises">
+					<select name="txtPais" class="text-control border border-secondary" placeholder="Paises">
 					<c:forEach var="pai" items="${listpaises}">
 				    	<option value="${pai.idPais}">${pai.pais}</option>            
 				    </c:forEach>
@@ -151,7 +159,7 @@ function checkIt() {
 					
 					 &nbsp &nbsp &nbsp Seleccione Provincia 
 					 
-					 	<select class="text-control border border-secondary" name="provincia" placeholder="Provincia">
+					 	<select class="text-control border border-secondary" name="txtProvincia" placeholder="Provincia">
 					<c:forEach var="pro" items="${listprovincias}">
 				    	<option value="${pro.idProvincia}">${pro.provincia}</option>            
 				    </c:forEach>
@@ -175,7 +183,7 @@ function checkIt() {
 					
 					 &nbsp &nbsp &nbsp Seleccione Localidad 
 					 
-					 	<select class="text-control border border-secondary"  name="localidad" placeholder="Localidad">
+					 	<select class="text-control border border-secondary"  name="txtLocalidad" placeholder="Localidad">
 					<c:forEach var="loc" items="${listlocalidades}">
 				    	<option value="${loc.idLocalidad}">${loc.localidad}</option>            
 				    </c:forEach>
@@ -198,19 +206,19 @@ function checkIt() {
 <!-- 					</select> -->
 				<p />
 
-				<input type="date" class="form-control border border-secondary" name="Fecha" placeholder="<%=str_date2%>" />  
+				<input type="date" class="form-control border border-secondary" name="txtFecha" placeholder="<%=str_date2%>" />  
 
 				<p class="form-control">
 					Ingrese su direccion: <input
 						class="text-control border border-secondary" placeholder="Calle"
-						type="text" name="calle"> <input
+						type="text" name="txtCalle"> <input
 						class="text-control border border-secondary" placeholder="Numero"
-						type="text" name="numero"> <input
+						type="text" name="txtNumero"> <input
 						class="text-control border border-secondary" placeholder="Dto"
-						type="text" name="dto">
+						type="text" name="txtDto">
 				</p>
 				</br>
-				<button type="button" class="btn btn-primary">Ingresar
+				<button type="submit" class="btn btn-primary">Ingresar
 					Usuario</button>
 
 			</form>

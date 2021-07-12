@@ -8,7 +8,7 @@ public interface IPaisService {
 
 	ArrayList<Paises> obtenerPaises();
 
-	Paises obtenerUnPais(String nombre);
+	Paises obtenerUnPais(Integer ID);
 
 	void insertarPais(Paises pais);
 

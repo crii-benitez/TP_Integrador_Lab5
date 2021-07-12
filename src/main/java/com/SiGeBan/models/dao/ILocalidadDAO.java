@@ -9,7 +9,7 @@ public interface ILocalidadDAO {
 	public void insertarLocalidad(Localidades Localidad);
 
 	//Obtiene una persona por dni
-	public Localidades obtenerLocalidadPorNombre(String txtLocalidad);
+	public Localidades obtenerLocalidadPorID(Integer txtLocalidad);
 
 	//Obtiene todas las presonas
 	public ArrayList<Localidades> obtenerLocalidades();

@@ -9,7 +9,7 @@ public interface IPaisDAO {
 	public void insertarPais(Paises pais);
 
 	//Obtiene una persona por dni
-	public Paises obtenerPaisPorNombre(String txtPais);
+	public Paises obtenerPaisPorID(Integer txtPais);
 
 	//Obtiene todas las presonas
 	public ArrayList<Paises> obtenerPaises();

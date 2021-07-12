@@ -27,9 +27,9 @@ public class PaisDAO implements IPaisDAO{
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-	public Paises obtenerPaisPorNombre(String txtPais) {
+	public Paises obtenerPaisPorID(Integer txtPais) {
 		try {
-		return (Paises) this.hibernateTemplate.find("FROM Paises u WHERE u.pais = ?",txtPais).get(0);
+		return (Paises) this.hibernateTemplate.find("FROM Paises u WHERE u.idPais = ?",txtPais).get(0);
 		}
 		catch (Exception E) {
 			return null;

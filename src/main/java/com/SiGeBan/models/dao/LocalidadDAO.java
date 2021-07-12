@@ -27,9 +27,9 @@ public class LocalidadDAO implements ILocalidadDAO{
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-	public Localidades obtenerLocalidadPorNombre(String txtLocalidad) {
+	public Localidades obtenerLocalidadPorID(Integer txtLocalidad) {
 		try {
-		return (Localidades) this.hibernateTemplate.find("FROM Localidades u WHERE u.localidad = ?",txtLocalidad).get(0);
+		return (Localidades) this.hibernateTemplate.find("FROM Localidades u WHERE u.idLocalidad = ?",txtLocalidad).get(0);
 		}
 		catch (Exception E) {
 			return null;

@@ -8,7 +8,7 @@ public interface IProvinciaService {
 
 	ArrayList<Provincias> obtenerProvincias();
 
-	Provincias obtenerUnProvincia(String nombre);
+	Provincias obtenerUnProvincia(Integer ID);
 
 	void insertarProvincia(Provincias provincia);
 

@@ -88,7 +88,7 @@ public class InitDB {
 
 		/* DATASET = Provincias */
 		Provincias provincia01 = new Provincias("Buenos Aires", pais01);
-		Provincias provincia02 = new Provincias("Ciudad Autonoma de Buenos Aires", pais01);
+		Provincias provincia02 = new Provincias("CABA", pais01);
 		Provincias provincia03 = new Provincias("Santa Fe", pais01);
 		Provincias provincia04 = new Provincias("Cordoba", pais01);
 		Provincias provincia05 = new Provincias("Jujuy", pais01);
