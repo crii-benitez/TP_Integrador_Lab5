@@ -461,7 +461,7 @@ function checkIt() {
 								<td>CBU</td>
 								<td>Creacion</td>
 								<td>Saldo</td>
-								<td></td>
+								<td style="width:  90px;"></td>
 								
 				            </tr>
 				            </thead>
@@ -469,10 +469,10 @@ function checkIt() {
 				            <c:forEach var="mov" items="${listcuentas}">
 				                <tr>
 				                    <td>${mov.numeroDeCuenta}</td>
- 				                    <td style="width:  50px;">${mov.alias}</td> 
+ 				                    <td >${mov.alias}</td> 
 				                    <td>${mov.tipoDeCuenta.nombreDeTipoDeCuenta}</td>
  				                    <td>${mov.cbu}</td> 
- 				                    <td style="width:  70px;">${mov.fechaDeCreacion}</td> 
+ 				                    <td>${mov.fechaDeCreacion}</td> 
 				                    <td>${mov.saldo}</td>
 				                     <td><button type="button" class="btn btn-primary">
 										<i class="fas fa-edit"></i>

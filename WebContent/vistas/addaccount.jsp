@@ -520,7 +520,7 @@ function checkIt() {
 								<td>CBU</td>
 								<td>Creacion</td>
 								<td>Saldo</td>
-								<td></td>
+								<td style="width:  90px;"></td>
 				            </tr>
 				            </thead>
 						    <tbody>
