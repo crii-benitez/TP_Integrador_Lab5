@@ -103,15 +103,15 @@ function checkIt() {
 	<div class="bg-light">
 		<div class="container table py-4">
 
-			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Creacion
-				de Cuenta</h1>
-			<form class="table table-bordered bg-light" action="#" method="post">
+			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Creacion de Cuenta</h1>
+			<br/>
+			${mensaje}
+			<br/>
+			<form class="table table-bordered bg-light" action="crearCuenta.html" method="post">
 				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
 				<div class="text-white  bg-dark">Datos de la Cuenta</div>
-				<input type="text" class="form-control border border-secondary"
-					title="NumCuenta" placeholder="Número de Cuenta" /> <input
-					type="text" class="form-control border border-secondary"
-					title="NombCuenta" placeholder="Nombre de Cuenta" /> </br>
+				<input type="text" class="form-control border border-secondary"	name="NumCuenta" placeholder="Número de Cuenta" /> 
+				<input type="text" class="form-control border border-secondary" name="Alias" placeholder="Alias" /> </br>
 				<div class="text-white bg-dark">Datos de apertura</div>
 				<select name="tipoCuenta" class="form-control border border-secondary"
 					placeholder="Tipo de Cuenta">
@@ -120,9 +120,9 @@ function checkIt() {
 					<option value="3">Cuenta corriente - Pesos</option>
 					<option value="4">Cuenta corriente - Dolares</option>
 				</select> 
-				<input type="date" class="form-control border border-secondary" title="fecha" placeholder="<%=str_date2%>" />  
-				<input type="text" class="form-control border border-secondary" title="NombCuenta" placeholder="CBU" /> 
-				<input type="text" class="form-control border border-secondary" required title="Monto" placeholder="Monto en $" /></br>
+				<input type="date" class="form-control border border-secondary" name="Fecha" placeholder="<%=str_date2%>" />  
+				<input type="text" class="form-control border border-secondary" name="Cbu" placeholder="CBU" /> 
+				<input type="text" class="form-control border border-secondary" required name="Monto" placeholder="Monto en $" /></br>
 
 				<div class="text-white bg-dark">Datos del Cliente</div>
 
@@ -135,9 +135,9 @@ function checkIt() {
 				<span class="input-group-text border border-secondary">Buenos
 					Aires</span> </br>-->
 					
-				<select name="clientes" class="form-control border border-secondary" placeholder="Clientes">
+				<select name="Cliente" class="form-control border border-secondary" placeholder="Clientes">
 					<c:forEach var="cli" items="${listpersonas}">
-				    	<option value="${cli.DNI}">${cli.nombre} ${cli.apellido} </option>            
+				    	<option value="${cli.idPersona}">${cli.nombre} ${cli.apellido} </option>            
 				    </c:forEach>
 					
 
@@ -154,12 +154,7 @@ function checkIt() {
 <!-- 					 <input  type="text" class="form-control border border-secondary"required title="Provincia" placeholder="Provincia" /> -->
 				
 					 </br>
-
-
-
-
-				<button type="button" class="btn btn-primary">Ingresar
-					Cuenta</button>
+				<input type="submit" class="btn btn-primary" name="btnCrearCuenta" value="Ingresar Cuenta" />
 
 			</form>
 			<div class="bg-lingh">
