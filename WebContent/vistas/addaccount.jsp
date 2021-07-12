@@ -520,6 +520,7 @@ function checkIt() {
 								<td>CBU</td>
 								<td>Creacion</td>
 								<td>Saldo</td>
+								<td></td>
 				            </tr>
 				            </thead>
 						    <tbody>
@@ -567,16 +568,51 @@ function checkIt() {
 	</footer>
 	<!-- End Footer -->
 </body>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#example').DataTable();
-	});
-</script>
+
 <!-- Bootstrap -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <!-- Templatemo -->
 <script src="assets/js/templatemo.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#tableta').DataTable({
+        paging: true,
+        lengthChange: true,
+        pageLength: 25,
+        searching: true,
+        ordering: true,
+        stateSave: true,
+        autoWidth: true,
+        scrollx: true,
+        scrollY: 430,
+        scrollCollapse: true,
+        language:
+        {
+            searchPlaceholder: "Que desea buscar?",
+            "emptyTable": "No hay datos para mostrar.",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+            "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+            "infoFiltered": "(filtrados de _MAX_ registros totales)",
+            "lengthMenu": "Mostrar _MENU_ registros",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "No se encontraron registros que coincidan con las condiciones de busqueda especficadas",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Proxima",
+                "previous": "Previa"
+            }
+        }
+
+    });
+
+});
+</script>
 <!-- Custom -->
 <script src="assets/js/custom.js"></script>
 </html>

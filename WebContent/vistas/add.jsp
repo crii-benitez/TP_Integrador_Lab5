@@ -99,14 +99,14 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar
 				Nuevo Usuario</h1>
-			<form class="table table-bordered bg-light" action="add.jsp"
+			<form class="table table-bordered bg-light" action="agregarUsuario.html"
 				method="get">
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese nombre" type="text" name="txtNombre">
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese apellido" type="text" name="txtApellido">
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese DNI" type="text" name="txtNombre">
+					placeholder="Ingrese DNI" type="text" name="txtDNI">
 				<p class="form-control">
 					Seleccione Sexo: Masculino <input type="radio" name="Sexo"
 						value="Masc" checked> Femenino <input type="radio"
@@ -130,7 +130,7 @@ function checkIt() {
 						<option value="11">Uruguay</option>
 						<option value="12">Suriname</option>
 					</select> &nbsp &nbsp &nbsp Seleccione Provincia <select
-						class="text-control border border-secondary" name="pais">
+						class="text-control border border-secondary" name="provincia">
 						<option value="1">Buenos aires</option>
 						<option value="2">Jujuy</option>
 						<option value="3">Salta</option>
@@ -144,7 +144,7 @@ function checkIt() {
 						<option value="11">Cordoba</option>
 						<option value="12">San Luis</option>
 					</select> &nbsp &nbsp &nbsp Seleccione Localidad <select
-						class="text-control border border-secondary" name="pais">
+						class="text-control border border-secondary" name="localidad">
 						<option value="1">Jose C Paz</option>
 						<option value="2">San Miguel</option>
 						<option value="3">Moreno</option>
