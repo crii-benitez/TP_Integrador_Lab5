@@ -50,7 +50,7 @@ public class PersonaService implements IPersonaService{
 	}
 
 	@Override
-	public void eliminarPersona(int dni) {
+	public void eliminarPersona(String dni) {
 		iPersonaDAO.eliminarPersona(dni);
 		
 	}

@@ -26,7 +26,7 @@ public class Personas implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPersona;
 
-	private int DNI;
+	private String DNI;
 	private String nombre;
 	private String apellido;
 	
@@ -60,7 +60,7 @@ public class Personas implements Serializable {
 
 	}
 
-	public Personas(int dNI, String nombre, String apellido, Date fechaNacimiento, String direccion,
+	public Personas(String dNI, String nombre, String apellido, Date fechaNacimiento, String direccion,
 			Localidades localidad, Provincias provincia, Paises pais, Generos genero, Usuario usuario) {
 		super();
 		DNI = dNI;
@@ -76,11 +76,11 @@ public class Personas implements Serializable {
 	}
 
 	// metodos
-	public int getDNI() {
+	public String getDNI() {
 		return DNI;
 	}
 
-	public void setDNI(int dNI) {
+	public void setDNI(String dNI) {
 		DNI = dNI;
 	}
 

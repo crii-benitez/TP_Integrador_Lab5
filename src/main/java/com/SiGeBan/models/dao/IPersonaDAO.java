@@ -19,7 +19,7 @@ public interface IPersonaDAO {
 	public ArrayList<Personas> obtenerPersonas();
 
 	//Elimina una presona a aprtir del dni
-	public void eliminarPersona(int dni);
+	public void eliminarPersona(String dni);
 
 	//Actualiza los datos de una persona
 	public void actualizarPersona(Personas persona);

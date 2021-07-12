@@ -75,7 +75,7 @@ public class UsuarioController {
 		}
 	 
 	 @RequestMapping("agregarUsuario.html")
-		public ModelAndView agregarUser(String txtNombre, String txtApellido,Integer txtPerfil, String txtFecha, Integer txtDNI, Integer txtSexo, Integer txtPais, Integer txtProvincia, Integer txtLocalidad, String txtCalle, String txtNumero, String txtDto) {
+		public ModelAndView agregarUser(String txtNombre, String txtApellido,Integer txtPerfil, String txtFecha, String txtDNI, Integer txtSexo, Integer txtPais, Integer txtProvincia, Integer txtLocalidad, String txtCalle, String txtNumero, String txtDto) {
 		 ArrayList<Paises> _LPaises=(ArrayList<Paises>) iPaisService.obtenerPaises();
 		 ArrayList<Provincias> _LProvincias=(ArrayList<Provincias>) iProvinciaService.obtenerProvincias();
 		 ArrayList<Localidades> _LLocalidades=(ArrayList<Localidades>) ilocalidadService.obtenerLocalidades();
@@ -109,7 +109,7 @@ public class UsuarioController {
 		 usuario.setActivo(true);
 		 usuario.setPerfil(perfil);
 		 usuario.setPass("1234");
-		 usuario.setUsuario(txtNombre.substring(0,1)+txtApellido.substring(0,5));
+		 usuario.setUsuario(txtNombre.substring(0,3)+txtApellido.substring(0,3));
 		 
 		 persona.setNombre(txtNombre);
 		 persona.setApellido(txtApellido);

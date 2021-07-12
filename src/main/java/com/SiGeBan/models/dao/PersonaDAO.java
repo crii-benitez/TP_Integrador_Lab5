@@ -58,7 +58,7 @@ public class PersonaDAO implements IPersonaDAO{
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
-	public void eliminarPersona(int dni) {
+	public void eliminarPersona(String dni) {
 		Personas persona = new Personas();
 		persona.setDNI(dni);
 		this.hibernateTemplate.delete(persona);

@@ -13,7 +13,7 @@ public interface IPersonaService {
 
 	void insertarPersona(Personas persona);
 
-    void eliminarPersona(int dni) ;
+    void eliminarPersona(String dni) ;
 
 	void actualizarPersona(Personas persona);
 	
