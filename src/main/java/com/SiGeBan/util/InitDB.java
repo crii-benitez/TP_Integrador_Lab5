@@ -57,7 +57,19 @@ public class InitDB {
 		Timestamp fechaAhora = Timestamp.valueOf(ldt);
 
 		Date fecha = new Date();
+		
+		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
 
+		String currentTime = sdf.format(fecha);
+		
+//		java.sql.Date date2 = new java.sql.Date(fecha.getTime());
+//		
+//		java.util.Date d = new java.util.Date();  
+//		plantilla = new SimpleDateFormat("dd/MM/yyyy");
+//		String tiempo = plantilla.format(d);
+		
+		Date fechaCrea = new java.sql.Date(fecha.getYear(),fecha.getMonth(),fecha.getDate());
+		
 		session.beginTransaction();
 
 		/*
@@ -177,31 +189,31 @@ public class InitDB {
 		session.save(user09);
 		session.save(user10);
 		session.save(user11);
-		
+		 
 		/* DATASET = Personas */
-		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fecha, "Miguel Angel 393", localidad01,
+		Personas persona01 = new Personas(30639961, "Gustavo", "Pavichevich", fechaCrea, "Miguel Angel 393", localidad01,
 				provincia01, pais01, genero01, user01);
-		Personas persona02 = new Personas(31632067, "Pablo", "Maciel", fecha, "Joseph 663", localidad02, provincia01,
+		Personas persona02 = new Personas(31632067, "Pablo", "Maciel", fechaCrea, "Joseph 663", localidad02, provincia01,
 				pais01, genero01, user02);
-		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli", fecha, "Tribulato 4612", localidad02,
+		Personas persona03 = new Personas(32555496, "Leonardo", "Yermoli", fechaCrea, "Tribulato 4612", localidad02,
 				provincia01, pais01, genero01, user03);
-		Personas persona04 = new Personas(31456998, "German", "Medina", fecha, "Del Carril 23", localidad02,
+		Personas persona04 = new Personas(31456998, "German", "Medina", fechaCrea, "Del Carril 23", localidad02,
 				provincia01, pais01, genero01, user04);
-		Personas persona05 = new Personas(37987112, "Cristian", "Benitez", fecha, "Siempreviva 123", localidad02,
+		Personas persona05 = new Personas(37987112, "Cristian", "Benitez", fechaCrea, "Siempreviva 123", localidad02,
 				provincia01, pais01, genero01, user05);
-		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", fecha, "Guadalajara 8897", localidad01,
+		Personas persona06 = new Personas(25111858, "Roberto", "Gomez Bolanio", fechaCrea, "Guadalajara 8897", localidad01,
 				provincia01, pais01, genero01, user06);
-		Personas persona07 = new Personas(26123887, "Ricardo", "Fort", fecha, "Comandante 2525", localidad01,
+		Personas persona07 = new Personas(26123887, "Ricardo", "Fort", fechaCrea, "Comandante 2525", localidad01,
 				provincia01, pais01, genero01, user07);
-		Personas persona08 = new Personas(8984621, "Victor", "Sueiro", fecha, "De las Luces 666", localidad01,
+		Personas persona08 = new Personas(8984621, "Victor", "Sueiro", fechaCrea, "De las Luces 666", localidad01,
 				provincia01, pais01, genero01, user08);
-		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", fecha, "Tupungato 333", localidad01, provincia01,
+		Personas persona09 = new Personas(40489156, "Tini", "Stoesel", fechaCrea, "Tupungato 333", localidad01, provincia01,
 				pais01, genero01, user09);
-		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui", fecha, "Montañeses 99", localidad01,
+		Personas persona10 = new Personas(98475695, "Ernesto", "Mishagui", fechaCrea, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user10);
-		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", fecha, "Montañeses 99", localidad01,
+		Personas persona11 = new Personas(98475695, "Ramiro", "Profeso", fechaCrea, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
-		Personas persona12 = new Personas(98475695, "Tomas", "Profesor", fecha, "Montañeses 99", localidad01,
+		Personas persona12 = new Personas(98475695, "Tomas", "Profesor", fechaCrea, "Montañeses 99", localidad01,
 				provincia01, pais01, genero01, user11);
 		session.save(persona01);
 		session.save(persona02);
@@ -218,25 +230,25 @@ public class InitDB {
 
 
 		/* DATASET = Cuentas */
-		Cuentas cuenta01 = new Cuentas("0150964302000000142382", "096402000142384", "gapavi", LocalDate.now(), 10000.00,
+		Cuentas cuenta01 = new Cuentas("0150964302000000142382", "096402000142384", "gapavi", fecha, 10000.00,
 				tipoDeCuenta01, persona01);
-		Cuentas cuenta02 = new Cuentas("0110599520000001235579", "302700000389926", "pamaci", LocalDate.now(), 10000.00,
+		Cuentas cuenta02 = new Cuentas("0110599520000001235579", "302700000389926", "pamaci", fecha, 10000.00,
 				tipoDeCuenta01, persona02);
-		Cuentas cuenta03 = new Cuentas("0170508920000000000417", "334700000004960", "liotye", LocalDate.now(), 10000.00,
+		Cuentas cuenta03 = new Cuentas("0170508920000000000417", "334700000004960", "liotye", fecha, 10000.00,
 				tipoDeCuenta01, persona03);
-		Cuentas cuenta04 = new Cuentas("0170508926000000000499", "188111456558486", "germe", LocalDate.now(), 10000.00,
+		Cuentas cuenta04 = new Cuentas("0170508926000000000499", "188111456558486", "germe", fecha, 10000.00,
 				tipoDeCuenta01, persona04);
-		Cuentas cuenta05 = new Cuentas("0340100800100586333009", "204566543326881", "criibe", LocalDate.now(), 10000.00,
+		Cuentas cuenta05 = new Cuentas("0340100800100586333009", "204566543326881", "criibe", fecha, 10000.00,
 				tipoDeCuenta01, persona05);
-		Cuentas cuenta06 = new Cuentas("0340100809100586333008", "236522813569050", "rogobo", LocalDate.now(), 10000.00,
+		Cuentas cuenta06 = new Cuentas("0340100809100586333008", "236522813569050", "rogobo", fecha, 10000.00,
 				tipoDeCuenta01, persona06);
-		Cuentas cuenta07 = new Cuentas("2850347730000000049606", "334700000004960", "rickyfort", LocalDate.now(),
+		Cuentas cuenta07 = new Cuentas("2850347730000000049606", "334700000004960", "rickyfort", fecha,
 				10000.00, tipoDeCuenta01, persona07);
-		Cuentas cuenta08 = new Cuentas("0070117020000003965944", "206588665470987", "vickysueiro", LocalDate.now(),
+		Cuentas cuenta08 = new Cuentas("0070117020000003965944", "206588665470987", "vickysueiro", fecha,
 				10000.00, tipoDeCuenta01, persona08);
-		Cuentas cuenta09 = new Cuentas("2590046210320129410056", "259965549872249", "tinitini", LocalDate.now(),
+		Cuentas cuenta09 = new Cuentas("2590046210320129410056", "259965549872249", "tinitini", fecha,
 				10000.00, tipoDeCuenta01, persona09);
-		Cuentas cuenta10 = new Cuentas("0650020701000001040561", "589944987111686", "sensei", LocalDate.now(), 10000.00,
+		Cuentas cuenta10 = new Cuentas("0650020701000001040561", "589944987111686", "sensei", fecha, 10000.00,
 				tipoDeCuenta01, persona10);
 		session.save(cuenta01);
 		session.save(cuenta02);
