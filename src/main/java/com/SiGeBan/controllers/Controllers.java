@@ -126,7 +126,7 @@ public class Controllers {
 //
 //	}
 
-	@RequestMapping("IrACuentas.html")
+	/*@RequestMapping("IrACuentas.html")
 	public ModelAndView abrirCuentas() {
 
 		ModelAndView model = new ModelAndView();
@@ -142,7 +142,7 @@ public class Controllers {
 		model.setViewName("addaccount");
 		return model;
 
-	}
+	}*/
 
 	@RequestMapping("IrATransferencias.html")
 	public ModelAndView abrirTransferencias() {

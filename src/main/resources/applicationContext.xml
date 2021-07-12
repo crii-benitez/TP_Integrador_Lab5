@@ -24,10 +24,7 @@
 
 
 	<!-- EL SERVICIO NECESITA EL DAO -->
-	<bean id="iUsuarioDAOBean" class="main.java.com.SiGeBan.models.dao.UsuarioDAO"
-		scope="singleton">
-		<property name="sessionFactory" ref="sessionFactoryBean"></property>
-	</bean>
+	
 
 	<bean id="iMovimientoDAOBean" class="main.java.com.SiGeBan.models.dao.MovimientoDAO"
 		scope="singleton">
@@ -49,7 +46,15 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/SiGeBan?createDatabaseIfNotExist=true" />
 		<property name="username" value="root" />
-		<property name="password" value="ROOT" />
+		<property name="password" value="root" />
+	</bean>
+	<bean id="iPersonaDAOBean" class="main.java.com.SiGeBan.models.dao.PersonaDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+	<bean id="iUsuarioDAOBean" class="main.java.com.SiGeBan.models.dao.UsuarioDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
 
 	<!-- Session factory de Hibernate -->

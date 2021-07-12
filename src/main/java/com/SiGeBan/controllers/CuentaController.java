@@ -26,4 +26,32 @@ public class CuentaController {
 	 return model;
 	
 	 }
+	 
+	 @RequestMapping("IrAAddAccount.html")
+	 public ModelAndView abrirAgregarCuenta() {
+	
+	 ArrayList<Cuentas> _Lcuentas=(ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+	 ModelAndView model = new ModelAndView();
+	 
+	 model.setViewName("addaccount");
+	 
+	
+	
+	 model.addObject("listcuentas", _Lcuentas);
+	 return model;
+	 }
+	 
+	  @RequestMapping("IrACuentas.html")
+	 public ModelAndView abrirIrACuentas() {
+	
+	 ArrayList<Cuentas> _Lcuentas=(ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+	 ModelAndView model = new ModelAndView();
+	 
+	 model.setViewName("Cuentas");
+	 
+	
+	
+	 model.addObject("listcuentas", _Lcuentas);
+	 return model;
+	 }
 }

@@ -4,6 +4,10 @@
 <html>
 
 <!DOCTYPE html>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <html lang="en">
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
@@ -99,7 +103,7 @@ function checkIt() {
 					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
 						de Cuentas</h1>
 					<p>
-						Buscar: <input class="text-control border border-secondary"
+				<!-- 		Buscar: <input class="text-control border border-secondary"
 							placeholder="Ingrese detalle a buscar" type="text" name="buscar">
 						<button type="button" class="btn btn-primary">Filtrar</button>
 					</p>
@@ -446,7 +450,42 @@ function checkIt() {
 
 							</tr>
 						</tbody>
+					</table>  -->
+					<table id="tableta"
+						class="container table table-striped table-bordered">
+				            <thead>
+				            <tr>
+				               	<td>Número de Cuenta</td>
+								<td>Alias</td>
+								<td>Tipo de Cuenta</td>
+								<td>CBU</td>
+								<td>Creacion</td>
+								<td>Saldo</td>
+								
+				            </tr>
+				            </thead>
+						    <tbody>
+				            <c:forEach var="mov" items="${listcuentas}">
+				                <tr>
+				                    <td>${mov.numeroDeCuenta}</td>
+ 				                    <td style="width:  50px;">${mov.alias}</td> 
+				                    <td>${mov.tipoDeCuenta.nombreDeTipoDeCuenta}</td>
+ 				                    <td>${mov.cbu}</td> 
+ 				                    <td style="width:  70px;">${mov.fechaDeCreacion}</td> 
+				                    <td>${mov.saldo}</td>
+				                     <td><button type="button" class="btn btn-primary">
+										<i class="fas fa-edit"></i>
+									</button>
+									<button type="button" class="btn btn-danger">
+										<i class="fas fa-trash-alt"></i>
+									</button></td> 
+				                </tr>
+				               
+				            </c:forEach>
+				           	</tbody>
 					</table>
+				</div>
+			</div>
 				</div>
 			</div>
 	
