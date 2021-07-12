@@ -56,6 +56,20 @@
 		scope="singleton">
 		<property name="sessionFactory" ref="sessionFactoryBean"></property>
 	</bean>
+	<bean id="iPaisDAOBean" class="main.java.com.SiGeBan.models.dao.PaisDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+		<bean id="iProvinciaDAOBean" class="main.java.com.SiGeBan.models.dao.ProvinciaDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+	
+		<bean id="iLocalidadDAOBean" class="main.java.com.SiGeBan.models.dao.LocalidadDAO"
+		scope="singleton">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+	
 
 	<!-- Session factory de Hibernate -->
 	<bean id="sessionFactoryBean"

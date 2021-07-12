@@ -11,7 +11,13 @@
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
-} %>
+}
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat ("yyyy-MM-dd");
+java.util.Date currentTime = new java.util.Date (); // Obtener la hora actual del sistema
+String str_date1 = formatter.format (currentTime); // format datetime
+String str_date2 = str_date1.toString (); // Convertir fecha y hora en forma de cadena
+
+%>
 <head>
 <script>
 function checkIt() {
@@ -108,61 +114,92 @@ function checkIt() {
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese DNI" type="text" name="txtDNI">
 				<p class="form-control">
-					Seleccione Sexo: Masculino <input type="radio" name="Sexo"
-						value="Masc" checked> Femenino <input type="radio"
-						name="Sexo" value="Feme">
-				<p />
-
-
-				<p class="form-control">
-					Seleccione Pais de residencia <select
-						class="text-control border border-secondary" name="pais">
-						<option value="1">Argentina</option>
-						<option value="2">Colombia</option>
-						<option value="3">Chile</option>
-						<option value="4">Perú</option>
-						<option value="5">México</option>
-						<option value="6">Brazil</option>
-						<option value="7">Paraguay</option>
-						<option value="8">Venezuela</option>
-						<option value="9">Ecuador</option>
-						<option value="10">Guyana</option>
-						<option value="11">Uruguay</option>
-						<option value="12">Suriname</option>
-					</select> &nbsp &nbsp &nbsp Seleccione Provincia <select
-						class="text-control border border-secondary" name="provincia">
-						<option value="1">Buenos aires</option>
-						<option value="2">Jujuy</option>
-						<option value="3">Salta</option>
-						<option value="4">Tucuman</option>
-						<option value="5">Formosa</option>
-						<option value="6">Misiones</option>
-						<option value="7">Corrientes</option>
-						<option value="8">Entre Rios</option>
-						<option value="9">La Pampa</option>
-						<option value="10">Santa Fe</option>
-						<option value="11">Cordoba</option>
-						<option value="12">San Luis</option>
-					</select> &nbsp &nbsp &nbsp Seleccione Localidad <select
-						class="text-control border border-secondary" name="localidad">
-						<option value="1">Jose C Paz</option>
-						<option value="2">San Miguel</option>
-						<option value="3">Moreno</option>
-						<option value="4">Tigre</option>
-						<option value="5">Pilar</option>
-						<option value="6">Caba</option>
-						<option value="7">Vicente Lopes</option>
-						<option value="8">Zarate</option>
-						<option value="9">San Martin</option>
-						<option value="10"># de Febrero</option>
-						<option value="11">Merlo</option>
-						<option value="12">Ramo Mejia</option>
+					Seleccione Pais de residencia 
+					<select name="sexo" class="text-control border border-secondary" placeholder="Sexo">
+					<c:forEach var="sex" items="${listgeneros}">
+				    	<option value="${sex.idGenero}">${sex.genero}</option>            
+				    </c:forEach>
 					</select>
 				<p />
 
-				<input class="form-control border border-secondary"
-					placeholder="Ingrese su Fecha de nacimiento" type="text"
-					name="txtNombre">
+		
+					
+				<p class="form-control">
+					Seleccione Pais de residencia 
+					<select name="pais" class="text-control border border-secondary" placeholder="Paises">
+					<c:forEach var="pai" items="${listpaises}">
+				    	<option value="${pai.idPais}">${pai.pais}</option>            
+				    </c:forEach>
+					</select>
+					
+					
+<!-- 					<select -->
+<!-- 						class="text-control border border-secondary" name="pais"> -->
+<!-- 						<option value="1">Argentina</option> -->
+<!-- 						<option value="2">Colombia</option> -->
+<!-- 						<option value="3">Chile</option> -->
+<!-- 						<option value="4">Perú</option> -->
+<!-- 						<option value="5">México</option> -->
+<!-- 						<option value="6">Brazil</option> -->
+<!-- 						<option value="7">Paraguay</option> -->
+<!-- 						<option value="8">Venezuela</option> -->
+<!-- 						<option value="9">Ecuador</option> -->
+<!-- 						<option value="10">Guyana</option> -->
+<!-- 						<option value="11">Uruguay</option> -->
+<!-- 						<option value="12">Suriname</option> -->
+<!-- 					</select> -->
+					
+					 &nbsp &nbsp &nbsp Seleccione Provincia 
+					 
+					 	<select class="text-control border border-secondary" name="provincia" placeholder="Provincia">
+					<c:forEach var="pro" items="${listprovincias}">
+				    	<option value="${pro.idProvincia}">${pro.provincia}</option>            
+				    </c:forEach>
+					</select>
+					 
+<!-- 					 <select -->
+<!-- 						class="text-control border border-secondary" name="provincia"> -->
+<!-- 						<option value="1">Buenos aires</option> -->
+<!-- 						<option value="2">Jujuy</option> -->
+<!-- 						<option value="3">Salta</option> -->
+<!-- 						<option value="4">Tucuman</option> -->
+<!-- 						<option value="5">Formosa</option> -->
+<!-- 						<option value="6">Misiones</option> -->
+<!-- 						<option value="7">Corrientes</option> -->
+<!-- 						<option value="8">Entre Rios</option> -->
+<!-- 						<option value="9">La Pampa</option> -->
+<!-- 						<option value="10">Santa Fe</option> -->
+<!-- 						<option value="11">Cordoba</option> -->
+<!-- 						<option value="12">San Luis</option> -->
+<!-- 					</select> -->
+					
+					 &nbsp &nbsp &nbsp Seleccione Localidad 
+					 
+					 	<select class="text-control border border-secondary"  name="localidad" placeholder="Localidad">
+					<c:forEach var="loc" items="${listlocalidades}">
+				    	<option value="${loc.idLocalidad}">${loc.localidad}</option>            
+				    </c:forEach>
+					</select>
+					 
+<!-- 					 <select -->
+<!-- 						class="text-control border border-secondary" name="localidad"> -->
+<!-- 						<option value="1">Jose C Paz</option> -->
+<!-- 						<option value="2">San Miguel</option> -->
+<!-- 						<option value="3">Moreno</option> -->
+<!-- 						<option value="4">Tigre</option> -->
+<!-- 						<option value="5">Pilar</option> -->
+<!-- 						<option value="6">Caba</option> -->
+<!-- 						<option value="7">Vicente Lopes</option> -->
+<!-- 						<option value="8">Zarate</option> -->
+<!-- 						<option value="9">San Martin</option> -->
+<!-- 						<option value="10"># de Febrero</option> -->
+<!-- 						<option value="11">Merlo</option> -->
+<!-- 						<option value="12">Ramo Mejia</option> -->
+<!-- 					</select> -->
+				<p />
+
+				<input type="date" class="form-control border border-secondary" name="Fecha" placeholder="<%=str_date2%>" />  
+
 				<p class="form-control">
 					Ingrese su direccion: <input
 						class="text-control border border-secondary" placeholder="Calle"
