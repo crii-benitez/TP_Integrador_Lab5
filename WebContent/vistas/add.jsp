@@ -111,7 +111,7 @@ function checkIt() {
 					Seleccione Perfil de usuario
 					<select name="txtPerfil" class="text-control border border-secondary" placeholder="Perfil">
 					<c:forEach var="per" items="${listperfiles}">
-				    	<option value="${per.idPerfil}">${per.perfil}</option>            
+				    	<option selected="selected" value="${per.idPerfil}">${per.perfil}</option>            
 				    </c:forEach>
 					</select>
 				<p />
@@ -125,7 +125,7 @@ function checkIt() {
 					Seleccione genero
 					<select name="txtSexo" class="text-control border border-secondary" placeholder="Sexo">
 					<c:forEach var="sex" items="${listgeneros}">
-				    	<option value="${sex.idGenero}">${sex.genero}</option>            
+				    	<option selected="selected" value="${sex.idGenero}">${sex.genero}</option>            
 				    </c:forEach>
 					</select>
 				<p />
@@ -136,7 +136,7 @@ function checkIt() {
 					Seleccione Pais de residencia 
 					<select name="txtPais" class="text-control border border-secondary" placeholder="Paises">
 					<c:forEach var="pai" items="${listpaises}">
-				    	<option value="${pai.idPais}">${pai.pais}</option>            
+				    	<option selected="selected" value="${pai.idPais}">${pai.pais}</option>            
 				    </c:forEach>
 					</select>
 					
@@ -161,7 +161,7 @@ function checkIt() {
 					 
 					 	<select class="text-control border border-secondary" name="txtProvincia" placeholder="Provincia">
 					<c:forEach var="pro" items="${listprovincias}">
-				    	<option value="${pro.idProvincia}">${pro.provincia}</option>            
+				    	<option selected="selected" value="${pro.idProvincia}">${pro.provincia}</option>            
 				    </c:forEach>
 					</select>
 					 
@@ -185,7 +185,7 @@ function checkIt() {
 					 
 					 	<select class="text-control border border-secondary"  name="txtLocalidad" placeholder="Localidad">
 					<c:forEach var="loc" items="${listlocalidades}">
-				    	<option value="${loc.idLocalidad}">${loc.localidad}</option>            
+				    	<option selected="selected" value="${loc.idLocalidad}">${loc.localidad}</option>            
 				    </c:forEach>
 					</select>
 					 
