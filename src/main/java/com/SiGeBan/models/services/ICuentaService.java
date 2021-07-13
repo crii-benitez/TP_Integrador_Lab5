@@ -24,4 +24,6 @@ public interface ICuentaService {
 	void actualizarCuenta(Cuentas cuenta);
 
 	Cuentas obtenerCuentaPorId(Long idCuenta);
+	
+	Integer obtenerCantCuentas(int idPersona);
 }
