@@ -9,8 +9,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
 <%
+String url = "IrAMisCuentas.html"+"?UserName="+session.getAttribute("nameUser");
 if ((Integer) session.getAttribute("perfilUser") != 2) {
 	response.sendRedirect("IrALogin.html");
+	
 } 
 %>
 <head>
@@ -66,12 +68,13 @@ function checkIt() {
 		<div
 			class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
 			id="navbar-toggler-success">
+			
 			<div class="flex-fill mx-xl-5 mb-2">
 			<ul
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAMisCuentas.html">Cuentas</a></li>
+						href="<%=url%>">Cuentas</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
 						href="IrAMovimientos.html">Movimientos</a></li>
@@ -99,13 +102,13 @@ function checkIt() {
 			<form class="table table-bordered bg-light" action="#" method="post">
 				
 				<div class="text-white bg-dark">Datos del Cliente</div>
-				<c:forEach var="dat" items="${datospersonales}">
-					<span class="input-group-text border border-secondary">${dat.dni}</span> 
-					<span class="input-group-text border border-secondary">${dat.nombre} ${dat.apellido}</span> 
-					<span class="input-group-text border border-secondary">${dat.direccion}</span> 
-					<span class="input-group-text border border-secondary">${dat.localidad}</span>
-					<span class="input-group-text border border-secondary">${dat.provincia}</span>
-				</c:forEach> 
+<%-- 				<c:forEach var="dat" items="${datospersona}"> --%>
+					<span class="input-group-text border border-secondary">${datospersona.DNI}</span> 
+ 					<span class="input-group-text border border-secondary">${datospersona.apellido} ${datospersona.apellido}</span> 
+					<span class="input-group-text border border-secondary">${datospersona.fechaNacimiento}</span>  
+ 					<span class="input-group-text border border-secondary">${datospersona.direccion}</span> 
+<%-- 					<span class="input-group-text border border-secondary">${datospersona.provincia}</span> --%>
+<%-- 				</c:forEach>  --%>
 
 			</form>
 			<div class="bg-lingh">

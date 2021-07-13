@@ -9,6 +9,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html lang="en">
 <%
+String url = "IrAMisCuentas.html"+"?UserName="+session.getAttribute("nameUser");
 if ((Integer) session.getAttribute("perfilUser") != 2) {
 	response.sendRedirect("IrALogin.html");
 } 
@@ -71,7 +72,7 @@ function checkIt() {
 					class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAMisCuentas.html">Cuentas</a></li>
+							href="<%=url%>">Cuentas</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
 						href="IrAMovimientos.html">Movimientos</a></li>

@@ -13,6 +13,9 @@ public interface ICuentaDAO {
 	//Obtener Cuenta por numeroDeCuenta
 	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta);
 	
+	//Obtener Cuenta por numeroDeCuenta
+	public ArrayList<Cuentas> obtenerMisCuentas(String usuario);
+	
 	// Obtiene Tipos de cuentas por id
 	TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta);
 

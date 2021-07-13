@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,15 +37,19 @@ public class CuentaController {
 	private IMovimientoService iMovimientoService;
 
 	@RequestMapping("IrAMisCuentas.html")
-	public ModelAndView abrirCuentas() {
+	public ModelAndView abrirCuentas(String UserName) {
 
 		// ArrayList<Personas> _Dpersonales =(ArrayList<Personas>)
 		// iPersonaService.ObtenerDatosPersonales("usuarioCliente04");
+		Personas persona = new Personas();
+	
+		persona = iPersonaService.ObtenerDatosPersonales(UserName);
 
-		ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+		ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaService.obtenerMisCuentas(UserName);
 		ModelAndView model = new ModelAndView("MisCuentas");
 
 		// model.addObject("datospersonales",_Dpersonales);
+		model.addObject("datospersona", persona);
 		model.addObject("listcuentas", _Lcuentas);
 		return model;
 
@@ -70,9 +75,9 @@ public class CuentaController {
 
 		ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
 		ModelAndView model = new ModelAndView();
-
+		
 		model.setViewName("Cuentas");
-
+		
 		model.addObject("listcuentas", _Lcuentas);
 		return model;
 	}

@@ -47,6 +47,11 @@ public class CuentaService implements ICuentaService {
 		// TODO Auto-generated method stub
 		return iCuentaoDAO.obtenerCuentas();
 	}
+	
+	public ArrayList<Cuentas> obtenerMisCuentas(String usuario) {
+		// TODO Auto-generated method stub
+		return iCuentaoDAO.obtenerMisCuentas(usuario);
+	}
 
 	@Override
 	public void eliminarCuenta(Long idCuenta) {

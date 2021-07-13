@@ -44,6 +44,16 @@ public class CuentaDAO implements ICuentaDAO {
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public ArrayList<Cuentas> obtenerMisCuentas(String usuario) {
+		// TODO Auto-generated method stub		
+	//	System.out.println("Ingreso en CuentaDAO obtenerCuentaPorNumeroDeCuenta, Valor numeroDeCuenta=" + numeroDeCuenta);
+
+		return	(ArrayList<Cuentas>) this.hibernateTemplate.find("FROM Cuentas c WHERE c.persona.usuario.usuario = ?",usuario);
+		
+	}
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta) {	
 		System.out.println("Ingreso en CuentaDAO obtenerTipoCuentaPorID, Valor idTipoDeCuenta=" + idTipoDeCuenta);
 		try {

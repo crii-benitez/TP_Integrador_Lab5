@@ -10,7 +10,7 @@ public interface IPersonaDAO {
 	public void insertarPersona(Personas persona);
 	
 	//Obtener Datos Personales
-	public ArrayList<Personas> ObtenerDatosPersonales(String usuario);
+	public Personas ObtenerDatosPersonales(String usuario);
 	
 	//Obtiene una persona por dni
 	public Personas obtenerPersonaPorUsuario(String txtDNI);

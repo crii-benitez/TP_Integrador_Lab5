@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import main.java.com.SiGeBan.models.entity.Personas;
 
 public interface IPersonaService {
-	ArrayList<Personas> ObtenerDatosPersonales(String usuario);
+	Personas ObtenerDatosPersonales(String usuario);
 
 	ArrayList<Personas> obtenerPersonas();
 

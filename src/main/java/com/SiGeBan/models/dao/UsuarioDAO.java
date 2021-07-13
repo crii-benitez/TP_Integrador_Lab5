@@ -28,7 +28,7 @@ public class UsuarioDAO implements IUsuarioDAO{
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public Usuario obtenerUsuarioPorNombre(String txtUsuario) {
 		try {
-		return (Usuario) this.hibernateTemplate.find("FROM Usuario u WHERE u.usuario = ?",txtUsuario).get(0);
+		return (Usuario) this.hibernateTemplate.find("FROM Usuario u WHERE u.activo = true and u.usuario = ?",txtUsuario).get(0);
 		}
 		catch (Exception E) {
 			return null;

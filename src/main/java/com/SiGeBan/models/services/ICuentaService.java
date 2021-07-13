@@ -11,6 +11,8 @@ public interface ICuentaService {
 
 	Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta);
 	
+	ArrayList<Cuentas> obtenerMisCuentas(String usuario);
+	
 	TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta);
 
 	ArrayList<Cuentas> obtenerCuentas();

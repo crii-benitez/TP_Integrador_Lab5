@@ -28,7 +28,7 @@ public class PersonaDAO implements IPersonaDAO{
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public Personas obtenerPersonaPorUsuario(String txtDNI) {
 		try {
-		return (Personas) this.hibernateTemplate.find("FROM Personas p WHERE p.DNI = ?",txtDNI).get(0);
+		return (Personas) this.hibernateTemplate.find("FROM Personas p WHERE p.usuario.activo = true and p.DNI = ?",txtDNI).get(0);
 		}
 		catch (Exception E) {
 			return null;
@@ -36,24 +36,22 @@ public class PersonaDAO implements IPersonaDAO{
 	}
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-	public ArrayList<Personas> ObtenerDatosPersonales(String usuario) {
+	public Personas ObtenerDatosPersonales(String usuario) {
 		// TODO Auto-generated method stub
 		try {
-		return (ArrayList<Personas>) this.hibernateTemplate.find("SELECT p.DNI, p.nombre, p.apellido, p.direccion, l.localidad, pr.provincia" + 
-				"FROM Personas as p " + 
-				"inner join Usuario as u on u.idUsuario=p.usuario" + 
-				"inner join Localidades as l on l.idLocalidad=p.localidad" + 
-				"inner join Provincias as pr on pr.idProvincia=p.provincia" + 
-				"where u.usuario = ?",usuario).get(0);
+			return (Personas) this.hibernateTemplate.find("FROM Personas p WHERE p.usuario.activo = true and p.usuario.usuario = ?",usuario).get(0);
 		}
 		catch (Exception E) {
 			return null;
 		}
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public ArrayList<Personas> obtenerPersonas() {
-		return (ArrayList<Personas>) this.hibernateTemplate.loadAll(Personas.class);
+		return (ArrayList<Personas>) this.hibernateTemplate.find("FROM Personas p WHERE p.usuario.activo = true");
+				
+				//.loadAll(Personas.class);
 	}
 
 	@Override
