@@ -55,37 +55,9 @@ public class UsuarioDAO implements IUsuarioDAO{
 		this.hibernateTemplate.update(usuario);
 	}
 	
-//	public Usuario prueba1(String algo, String algoPass) {
-//		Usuario usuario = new Usuario();
-//		ConfigHibernate ch = new ConfigHibernate();
-//		Session session = ch.abrirConexion();
-//		session.beginTransaction();
-//		try {
-//		usuario = (Usuario) session.createQuery("FROM Usuario u WHERE u.usuario = " + "'"+algo+"'" + " and u.pass = " + "'"+algoPass+"'").uniqueResult();
-//		
-//		}
-//		catch (Exception e) {
-//			usuario.setUsuario("-1");
-//		}
-//		//System.out.println(usuario.toString());
-////		return session.createQuery("FROM Usuario u WHERE u.usuario = " + "'"+algo+"'").list().toString();
-//		//return (Usuario) session.createQuery("FROM Usuario u WHERE u.usuario = " + "'"+algo+"'");
-//		return usuario;
-//		
-//		
-//		
-//	}
-
-
-//	public Usuario obtenerUsuariosPorUsuario(String usser) {
-//		usuario = new Usuario();
-//		ch = new ConfigHibernate();
-//		session = ch.abrirConexion();
-//		session.beginTransaction();
-//		usuario = (Usuario) session.createQuery("FROM Usuario u WHERE u.usuario = " + "'" + usser + "'")
-//				.uniqueResult();
-//		System.out.println(usuario.toString());
-//		ch.cerrarSession();
-//		return usuario;
-//	}
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public void borrarLogicamente(Usuario usuario) {
+		this.hibernateTemplate.update(usuario);
+	}
 }

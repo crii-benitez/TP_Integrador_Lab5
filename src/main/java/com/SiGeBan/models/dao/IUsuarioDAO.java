@@ -19,5 +19,7 @@ public interface IUsuarioDAO {
 
 	//Actualiza los datos de una persona
 	public void actualizarUsuario(Usuario usuario);
-	
+
+	//Elimina logicamente un usuario
+	void borrarLogicamente(Usuario uuario);
 }

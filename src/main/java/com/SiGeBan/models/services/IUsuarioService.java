@@ -15,5 +15,6 @@ public interface IUsuarioService {
     void eliminarUsuario(Long idUsuario) ;
 
 	void actualizarUsuario(Usuario usuario);
-	
+
+	void borrarLogicamente(Usuario usuario);
 }

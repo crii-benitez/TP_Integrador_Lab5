@@ -1,36 +1,35 @@
-<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page session="true" language="java"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-	<script type="text/javascript">
-				
-			    var msg = "${mensaje}";
-			    if (msg) alert(msg);
-			</script>
+<script type="text/javascript">
+	var msg = "${mensaje}";
+	if (msg)
+		alert(msg);
+</script>
 <%
-if ((Integer) session.getAttribute("perfilUser") != 1) {
-	response.sendRedirect("IrALogin.html");
-}
-java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat ("yyyy-MM-dd");
-java.util.Date currentTime = new java.util.Date (); // Obtener la hora actual del sistema
-String str_date1 = formatter.format (currentTime); // format datetime
-String str_date2 = str_date1.toString (); // Convertir fecha y hora en forma de cadena
-
+	if ((Integer) session.getAttribute("perfilUser") != 1) {
+		response.sendRedirect("IrALogin.html");
+	}
+	java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+	java.util.Date currentTime = new java.util.Date(); // Obtener la hora actual del sistema
+	String str_date1 = formatter.format(currentTime); // format datetime
+	String str_date2 = str_date1.toString(); // Convertir fecha y hora en forma de cadena
 %>
 <head>
 <script>
-function checkIt() {
-  if (confirm('Desea cerrar sesion?')) {
-	  location.href = "IrALogin.html";
-  }
-}
+	function checkIt() {
+		if (confirm('Desea cerrar sesion?')) {
+			location.href = "IrALogin.html";
+		}
+	}
 </script>
 <title>SiGesBan ABML Usuarios</title>
 <meta charset="utf-8">
@@ -95,8 +94,8 @@ function checkIt() {
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">
-				<a class="nav-link" href="javascript:checkIt()"><%=session.getAttribute("nameUser") %> <i
-					class='bx bx-user-circle bx-sm text-primary'></i></a> <a
+				<a class="nav-link" href="javascript:checkIt()"><%=session.getAttribute("nameUser")%>
+					<i class='bx bx-user-circle bx-sm text-primary'></i></a> <a
 					class="nav-link" href="#"><i
 					class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a> <a
 					class="nav-link" href="#"><i
@@ -111,21 +110,15 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar
 				Nuevo Usuario</h1>
-				<br/> 
-				
-				
-				
-				
-			
-		 <br/>
-			<form class="table table-bordered bg-light" action="agregarUsuario.html"
-				method="get">
-					<p class="form-control">
-					Seleccione Perfil de usuario (*)
-					<select name="txtPerfil" class="text-control border border-secondary" placeholder="Perfil">
-					<c:forEach var="per" items="${listperfiles}">
-				    	<option selected="selected" value="${per.idPerfil}">${per.perfil}</option>            
-				    </c:forEach>
+			<br /> <br />
+			<form class="table table-bordered bg-light"
+				action="agregarUsuario.html" method="get">
+				<p class="form-control">
+					Seleccione Perfil de usuario (*) <select name="txtPerfil"
+						class="text-control border border-secondary" placeholder="Perfil">
+						<c:forEach var="per" items="${listperfiles}">
+							<option selected="selected" value="${per.idPerfil}">${per.perfil}</option>
+						</c:forEach>
 					</select>
 				<p />
 				<input class="form-control border border-secondary"
@@ -135,46 +128,40 @@ function checkIt() {
 				<input class="form-control border border-secondary"
 					placeholder="Ingrese DNI (*)" type="text" name="txtDNI">
 				<p class="form-control">
-					Seleccione genero
-					<select name="txtSexo" class="text-control border border-secondary" placeholder="Sexo">
-					<c:forEach var="sex" items="${listgeneros}">
-				    	<option selected="selected" value="${sex.idGenero}">${sex.genero}</option>            
-				    </c:forEach>
+					Seleccione genero <select name="txtSexo"
+						class="text-control border border-secondary" placeholder="Sexo">
+						<c:forEach var="sex" items="${listgeneros}">
+							<option selected="selected" value="${sex.idGenero}">${sex.genero}</option>
+						</c:forEach>
 					</select>
 				<p />
 
-		
-					
+
+
 				<p class="form-control">
-					Seleccione Pais de residencia 
-					<select name="txtPais" class="text-control border border-secondary" placeholder="Paises">
-					<c:forEach var="pai" items="${listpaises}">
-				    	<option selected="selected" value="${pai.idPais}">${pai.pais}</option>            
-				    </c:forEach>
+					Seleccione Pais de residencia <select name="txtPais"
+						class="text-control border border-secondary" placeholder="Paises">
+						<c:forEach var="pai" items="${listpaises}">
+							<option selected="selected" value="${pai.idPais}">${pai.pais}</option>
+						</c:forEach>
+					</select> &nbsp &nbsp &nbsp Seleccione Provincia <select
+						class="text-control border border-secondary" name="txtProvincia"
+						placeholder="Provincia">
+						<c:forEach var="pro" items="${listprovincias}">
+							<option selected="selected" value="${pro.idProvincia}">${pro.provincia}</option>
+						</c:forEach>
+					</select> &nbsp &nbsp &nbsp Seleccione Localidad <select
+						class="text-control border border-secondary" name="txtLocalidad"
+						placeholder="Localidad">
+						<c:forEach var="loc" items="${listlocalidades}">
+							<option selected="selected" value="${loc.idLocalidad}">${loc.localidad}</option>
+						</c:forEach>
 					</select>
-					
-					 &nbsp &nbsp &nbsp Seleccione Provincia 
-					 
-					 	<select class="text-control border border-secondary" name="txtProvincia" placeholder="Provincia">
-					<c:forEach var="pro" items="${listprovincias}">
-				    	<option selected="selected" value="${pro.idProvincia}">${pro.provincia}</option>            
-				    </c:forEach>
-					</select>
-					 
-
-					
-					 &nbsp &nbsp &nbsp Seleccione Localidad 
-					 
-					 	<select class="text-control border border-secondary"  name="txtLocalidad" placeholder="Localidad">
-					<c:forEach var="loc" items="${listlocalidades}">
-				    	<option selected="selected" value="${loc.idLocalidad}">${loc.localidad}</option>            
-				    </c:forEach>
-					</select>
-					 
-
 				<p />
 
-				<input type="date" class="form-control border border-secondary" name="txtFecha" placeholder="Ingrese su fecha de nacimiento en el siguiente formato:   <%=str_date2%>" />  
+				<input type="date" class="form-control border border-secondary"
+					name="txtFecha"
+					placeholder="Ingrese su fecha de nacimiento en el siguiente formato:   <%=str_date2%>" />
 
 				<p class="form-control">
 					Ingrese su direccion: <input
@@ -192,45 +179,54 @@ function checkIt() {
 			</form>
 
 
-		 
-				<table id="tableta"
-						class="container table table-striped table-bordered">
-				            <thead>
-				            <tr>
-				               	<td>Nombre</td>
-								<td>Apellido</td>
-								<td>DNI</td>
-<!-- 								<td>Sexo</td> -->
-								<td>Pais</td>
-								<td>Provincia</td>
-								<td>Localidad</td> 
-<!-- 								<td>Direccion</td> -->
-								<td>Usuario</td>
-								<td>Perfil</td>
-								<td>Fecha de nacimiento</td> 
-				            </tr>
-				            </thead>
-						    <tbody>
-				            <c:forEach var="mov" items="${listpersonas}">
-				                <tr>
-				                    <td>${mov.nombre}</td>
- 				                    <td>${mov.apellido}</td> 
-				                    <td>${mov.DNI}</td>
-<%--  				                    <td>${mov.genero.genero}</td>  --%>
- 				                    <td>${mov.pais.pais}</td> 
-				                    <td>${mov.provincia.provincia}</td> 
- 				                    <td>${mov.localidad.localidad}</td>
-<%-- 				                    <td>${mov.direccion}</td> --%>
-				                    <td>${mov.usuario.usuario}</td>
-				                     <td>${mov.usuario.perfil.perfil}</td>
- 				                    <td>${mov.fechaNacimiento}</td> 
-				                </tr>
-				            </c:forEach>
-				           	</tbody>
-					</table>
-				</div>
-			</div>
+
+			<table id="tableta"
+				class="container table table-striped table-bordered">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Apellido</td>
+						<td>DNI</td>
+						<!-- 								<td>Sexo</td> -->
+						<td>Pais</td>
+						<td>Provincia</td>
+						<td>Localidad</td>
+						<!-- 								<td>Direccion</td> -->
+						<td>Usuario</td>
+						<td>Perfil</td>
+						<td>Fecha de nacimiento</td>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="mov" items="${listpersonas}">
+						<tr>
+							<td>${mov.nombre}</td>
+							<td>${mov.apellido}</td>
+							<td>${mov.DNI}</td>
+							<%--  				                    <td>${mov.genero.genero}</td>  --%>
+							<td>${mov.pais.pais}</td>
+							<td>${mov.provincia.provincia}</td>
+							<td>${mov.localidad.localidad}</td>
+							<%-- 				                    <td>${mov.direccion}</td> --%>
+							<td>${mov.usuario.usuario}</td>
+							<td>${mov.usuario.perfil.perfil}</td>
+							<td>${mov.fechaNacimiento}</td>
+							<span hidden="hidden">${mov.idPersona}</span>
+							<td><a name="btnModificar" class="btn btn-primary"
+								href="modificaUsuarios.html?usuario=${mov.usuario.usuario}">
+									<i class="fas fa-trash-alt"></i>
+							</a></td>
+							<td><a name="btnEliminar" class="btn btn-danger"
+								href="bajaUsuarios.html?usuario=${mov.usuario.usuario}">
+									<i class="fas fa-trash-alt"></i>
+							</a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 		</div>
+	</div>
+	</div>
 	</div>
 
 
@@ -262,44 +258,48 @@ function checkIt() {
 <!-- Templatemo -->
 <script src="assets/js/templatemo.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function () {
-    $('#tableta').DataTable({
-        paging: true,
-        lengthChange: true,
-        pageLength: 25,
-        searching: true,
-        ordering: true,
-        stateSave: true,
-        autoWidth: true,
-        scrollx: true,
-        scrollY: 430,
-        scrollCollapse: true,
-        language:
-        {
-            searchPlaceholder: "Que desea buscar?",
-            "emptyTable": "No hay datos para mostrar.",
-            "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-            "infoEmpty": "Mostrando 0 a 0 de 0 registros",
-            "infoFiltered": "(filtrados de _MAX_ registros totales)",
-            "lengthMenu": "Mostrar _MENU_ registros",
-            "loadingRecords": "Cargando...",
-            "processing": "Procesando...",
-            "search": "Buscar:",
-            "zeroRecords": "No se encontraron registros que coincidan con las condiciones de busqueda especficadas",
-            "paginate": {
-                "first": "Primero",
-                "last": "Ultimo",
-                "next": "Proxima",
-                "previous": "Previa"
-            }
-        }
+	$(document)
+			.ready(
+					function() {
+						$('#tableta')
+								.DataTable(
+										{
+											paging : true,
+											lengthChange : true,
+											pageLength : 25,
+											searching : true,
+											ordering : true,
+											stateSave : true,
+											autoWidth : true,
+											scrollx : true,
+											scrollY : 430,
+											scrollCollapse : true,
+											language : {
+												searchPlaceholder : "Que desea buscar?",
+												"emptyTable" : "No hay datos para mostrar.",
+												"info" : "Mostrando _START_ a _END_ de _TOTAL_ registros",
+												"infoEmpty" : "Mostrando 0 a 0 de 0 registros",
+												"infoFiltered" : "(filtrados de _MAX_ registros totales)",
+												"lengthMenu" : "Mostrar _MENU_ registros",
+												"loadingRecords" : "Cargando...",
+												"processing" : "Procesando...",
+												"search" : "Buscar:",
+												"zeroRecords" : "No se encontraron registros que coincidan con las condiciones de busqueda especficadas",
+												"paginate" : {
+													"first" : "Primero",
+													"last" : "Ultimo",
+													"next" : "Proxima",
+													"previous" : "Previa"
+												}
+											}
 
-    });
+										});
 
-});
+					});
 </script>
 <!-- Custom -->
 <script src="assets/js/custom.js"></script>
