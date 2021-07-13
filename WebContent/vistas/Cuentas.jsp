@@ -461,7 +461,7 @@ function checkIt() {
 								<td>CBU</td>
 								<td>Creacion</td>
 								<td>Saldo</td>
-								<td style="width:  90px;"></td>
+<!-- 								<td style="width:  90px;"></td> -->
 								
 				            </tr>
 				            </thead>
@@ -474,15 +474,15 @@ function checkIt() {
  				                    <td>${mov.cbu}</td> 
  				                    <td>${mov.fechaDeCreacion}</td> 
 				                    <td>${mov.saldo}</td>
-							<span hidden="hidden">${mov.idCuenta}</span>
-							<td><a name="btnModificar" class="btn btn-primary"
-								href="modificaCuentas.html?idCuenta=${mov.idCuenta}">
-									<i class="fas fa-trash-alt"></i>
-							</a></td>
-							<td><a name="btnEliminar" class="btn btn-danger"
-								href="bajaCuentas.html?idCuenta=${mov.idCuenta}">
-									<i class="fas fa-trash-alt"></i>
-							</a></td>
+<%-- 							<span hidden="hidden">${mov.idCuenta}</span> --%>
+<!-- 							<td><a name="btnModificar" class="btn btn-primary" -->
+<%-- 								href="modificaCuentas.html?idCuenta=${mov.idCuenta}"> --%>
+<!-- 									<i class="fas fa-trash-alt"></i> -->
+<!-- 							</a></td> -->
+<!-- 							<td><a name="btnEliminar" class="btn btn-danger" -->
+<%-- 								href="bajaCuentas.html?idCuenta=${mov.idCuenta}"> --%>
+<!-- 									<i class="fas fa-trash-alt"></i> -->
+<!-- 							</a></td> -->
 				                </tr>
 				               
 				            </c:forEach>

@@ -25,5 +25,5 @@ public interface ICuentaService {
 
 	Cuentas obtenerCuentaPorId(Long idCuenta);
 	
-	Integer obtenerCantCuentas(int idPersona);
+//	Integer obtenerCantCuentas(int idPersona);
 }

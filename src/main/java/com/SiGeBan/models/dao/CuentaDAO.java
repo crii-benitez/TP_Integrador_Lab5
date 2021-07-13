@@ -48,6 +48,7 @@ public class CuentaDAO implements ICuentaDAO {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
 	public ArrayList<Cuentas> obtenerMisCuentas(String usuario) {
@@ -60,20 +61,21 @@ public class CuentaDAO implements ICuentaDAO {
 
 	}
 
-	@Override
-	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-	public TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta) {
-		System.out.println("Ingreso en CuentaDAO obtenerTipoCuentaPorID, Valor idTipoDeCuenta=" + idTipoDeCuenta);
-		try {
-			TiposDeCuentas _c = (TiposDeCuentas) this.hibernateTemplate
-					.find("FROM TiposDeCuentas tip WHERE tip.idTipoDeCuenta = ?", idTipoDeCuenta).get(0);
-			System.out.println(_c.toString());
-			return _c;
-		} catch (Exception E) {
-			return null;
-		}
-	}
+//	@Override
+//	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+//	public TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta) {
+//		System.out.println("Ingreso en CuentaDAO obtenerTipoCuentaPorID, Valor idTipoDeCuenta=" + idTipoDeCuenta);
+//		try {
+//			TiposDeCuentas _c = (TiposDeCuentas) this.hibernateTemplate
+//					.find("FROM TiposDeCuentas tip WHERE tip.idTipoDeCuenta = ?", idTipoDeCuenta).get(0);
+//			System.out.println(_c.toString());
+//			return _c;
+//		} catch (Exception E) {
+//			return null;
+//		}
+//	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true)
 	public ArrayList<Cuentas> obtenerCuentas() {

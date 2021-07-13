@@ -541,9 +541,9 @@ function checkIt() {
 							<span hidden="hidden">${mov.idCuenta}</span>
 							<td><a name="btnModificar" class="btn btn-primary"
 								href="modificaCuentas.html?idCuenta=${mov.idCuenta}">
-									<i class="fas fa-trash-alt"></i>
-							</a></td>
-							<td><a name="btnEliminar" class="btn btn-danger"
+									<i class="fas fa-edit"></i>
+							</a>
+							<a name="btnEliminar" class="btn btn-danger"
 								href="bajaCuentas.html?idCuenta=${mov.idCuenta}">
 									<i class="fas fa-trash-alt"></i>
 							</a></td>
