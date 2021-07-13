@@ -151,10 +151,10 @@ public class UsuarioController {
 		
 			 
 		} catch (Exception e) {
-			mensaje = "No se pudo generar el usuario.";
+			mensaje = e.toString();
 			
 		}
-		 showMessageDialog(null, mensaje);
+		 //showMessageDialog(null, mensaje);
 		 
 		 ArrayList<Personas> ListaPersonas2=(ArrayList<Personas>) iPersonaService.obtenerPersonas();
 		 ModelAndView model = new ModelAndView();
@@ -165,6 +165,7 @@ public class UsuarioController {
 				model.addObject("listlocalidades", _LLocalidades);
 				model.addObject("listgeneros", _LGeneros);
 				model.addObject("listperfiles", _LPerfiles);
+				model.addObject("mensaje", mensaje);
 			return model;
 
 		}

@@ -99,16 +99,16 @@ public class InitDB {
 		session.save(pais10);
 
 		/* DATASET = Provincias */
-		Provincias provincia01 = new Provincias("Buenos Aires"); //, pais01
-		Provincias provincia02 = new Provincias("CABA");
-		Provincias provincia03 = new Provincias("Santa Fe");
-		Provincias provincia04 = new Provincias("Cordoba");
-		Provincias provincia05 = new Provincias("Jujuy");
-		Provincias provincia06 = new Provincias("Chaco");
-		Provincias provincia07 = new Provincias("Misiones");
-		Provincias provincia08 = new Provincias("Santa Cruz");
-		Provincias provincia09 = new Provincias("Rio Negro");
-		Provincias provincia10 = new Provincias("Mendoza");
+		Provincias provincia01 = new Provincias("Buenos Aires", pais01); //
+		Provincias provincia02 = new Provincias("CABA", pais01);
+		Provincias provincia03 = new Provincias("Santa Fe", pais01);
+		Provincias provincia04 = new Provincias("Cordoba", pais01);
+		Provincias provincia05 = new Provincias("Jujuy", pais01);
+		Provincias provincia06 = new Provincias("Chaco", pais01);
+		Provincias provincia07 = new Provincias("Misiones", pais01);
+		Provincias provincia08 = new Provincias("Santa Cruz", pais01);
+		Provincias provincia09 = new Provincias("Rio Negro", pais01);
+		Provincias provincia10 = new Provincias("Mendoza", pais01);
 		session.save(provincia01);
 		session.save(provincia02);
 		session.save(provincia03);
@@ -121,16 +121,16 @@ public class InitDB {
 		session.save(provincia10);
 
 		/* DATASET = Localidades */
-		Localidades localidad01 = new Localidades("Moreno");
-		Localidades localidad02 = new Localidades("Jose C Paz");
-		Localidades localidad03 = new Localidades("Posadas");
-		Localidades localidad04 = new Localidades("Mendoza");
-		Localidades localidad05 = new Localidades("Resistencia");
-		Localidades localidad06 = new Localidades("San Salvador de Jujuy");
-		Localidades localidad07 = new Localidades("Rafaela");
-		Localidades localidad08 = new Localidades("Rio Gallegos");
-		Localidades localidad09 = new Localidades("Bariloche");
-		Localidades localidad10 = new Localidades("Cordoba");
+		Localidades localidad01 = new Localidades("Moreno",provincia01);
+		Localidades localidad02 = new Localidades("Jose C Paz",provincia01);
+		Localidades localidad03 = new Localidades("Posadas",provincia06);
+		Localidades localidad04 = new Localidades("Mendoza",provincia06);
+		Localidades localidad05 = new Localidades("Resistencia",provincia06);
+		Localidades localidad06 = new Localidades("San Salvador de Jujuy",provincia05);
+		Localidades localidad07 = new Localidades("Rafaela",provincia10);
+		Localidades localidad08 = new Localidades("Rio Gallegos",provincia09);
+		Localidades localidad09 = new Localidades("Bariloche",provincia09);
+		Localidades localidad10 = new Localidades("Cordoba",provincia04);
 		session.save(localidad01);
 		session.save(localidad02);
 		session.save(localidad03);

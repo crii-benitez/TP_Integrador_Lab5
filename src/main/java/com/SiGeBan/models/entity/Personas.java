@@ -51,7 +51,7 @@ public class Personas implements Serializable {
 	@JoinColumn(name = "provincia")
 	private Provincias provincia;
 
-	@OneToOne(cascade = { CascadeType.DETACH })
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "usuario")
 	private Usuario usuario;
 

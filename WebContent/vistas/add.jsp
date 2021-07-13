@@ -105,6 +105,7 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar
 				Nuevo Usuario</h1>
+				<br/> ${mensaje} <br/>
 			<form class="table table-bordered bg-light" action="agregarUsuario.html"
 				method="get">
 					<p class="form-control">

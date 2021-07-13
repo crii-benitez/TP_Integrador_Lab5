@@ -2,6 +2,7 @@ package main.java.com.SiGeBan.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,19 +20,19 @@ public class Provincias implements Serializable{
 	private int idProvincia;
 	private String provincia;
 
-//	@ManyToOne
-//	@JoinColumn(name="pais")
-//	private Paises pais;
+	@ManyToOne(cascade = { CascadeType.DETACH })
+	@JoinColumn(name="pais")
+	private Paises pais;
 
 
 	// constructor
 	public Provincias() {
 	}
 
-	public Provincias(String provincia) { //, Paises pais
+	public Provincias(String provincia, Paises pais) { 
 		super();
 		this.provincia = provincia;
-		//this.pais = pais;
+		this.pais = pais;
 	}
 
 	public String getProvincia() {
@@ -50,12 +51,12 @@ public class Provincias implements Serializable{
 		this.provincia = provincia;
 	}
 
-//	public Paises getPais() {
-//		return pais;
-//	}
-//
-//	public void setPais(Paises pais) {
-//		this.pais = pais;
-//	}
+	public Paises getPais() {
+		return pais;
+	}
+
+	public void setPais(Paises pais) {
+		this.pais = pais;
+	}
 
 }
