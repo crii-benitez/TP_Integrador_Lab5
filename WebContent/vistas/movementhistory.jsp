@@ -99,7 +99,7 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Movimientos
 				Históricos</h1>
-			<form class="table table-bordered bg-light" action="<%=url2%>" method="post">
+			<form class="table table-bordered bg-light" action="<%=urlMovimientos%>" method="post">
 				<div class="text-white  bg-dark">Datos de Busqueda</div>
 				<table class="container table table-bordered">
 					<tr>
