@@ -10,13 +10,11 @@ import main.java.com.SiGeBan.models.dao.UsuarioDAO;
 import main.java.com.SiGeBan.models.entity.Usuario;
 
 @Service
-public class UsuarioService implements IUsuarioService{
-	
+public class UsuarioService implements IUsuarioService {
+
 	@Autowired
 	private IUsuarioDAO iUsuarioDAO = null;
 
-	
-	
 	public IUsuarioDAO getiUsuarioDAO() {
 		return iUsuarioDAO;
 	}
@@ -37,20 +35,23 @@ public class UsuarioService implements IUsuarioService{
 
 	@Override
 	public void insertarUsuario(Usuario usuario) {
-		 iUsuarioDAO.insertarUsuario(usuario);
-		
+		iUsuarioDAO.insertarUsuario(usuario);
+
 	}
 
 	@Override
 	public void eliminarUsuario(Long idUsuario) {
 		iUsuarioDAO.eliminarUsuario(idUsuario);
-		
+
 	}
 
 	@Override
 	public void actualizarUsuario(Usuario usuario) {
 		iUsuarioDAO.actualizarUsuario(usuario);
-		
 	}
 
+	@Override
+	public void borrarLogicamente(Usuario usuario) {
+		iUsuarioDAO.borrarLogicamente(usuario);
+	}
 }
