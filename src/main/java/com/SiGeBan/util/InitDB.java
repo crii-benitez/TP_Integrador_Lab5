@@ -231,25 +231,25 @@ public class InitDB {
 
 		/* DATASET = Cuentas */
 		Cuentas cuenta01 = new Cuentas("0150964302000000142382", "096402000142384", "gapavi", fecha, 10000.00,
-				tipoDeCuenta01, persona01);
+				tipoDeCuenta01, persona01,true);
 		Cuentas cuenta02 = new Cuentas("0110599520000001235579", "302700000389926", "pamaci", fecha, 10000.00,
-				tipoDeCuenta01, persona02);
+				tipoDeCuenta01, persona02,true);
 		Cuentas cuenta03 = new Cuentas("0170508920000000000417", "334700000004960", "liotye", fecha, 10000.00,
-				tipoDeCuenta01, persona03);
+				tipoDeCuenta01, persona03,true);
 		Cuentas cuenta04 = new Cuentas("0170508926000000000499", "188111456558486", "germe", fecha, 10000.00,
-				tipoDeCuenta01, persona04);
+				tipoDeCuenta01, persona04,true);
 		Cuentas cuenta05 = new Cuentas("0340100800100586333009", "204566543326881", "criibe", fecha, 10000.00,
-				tipoDeCuenta01, persona05);
+				tipoDeCuenta01, persona05,true);
 		Cuentas cuenta06 = new Cuentas("0340100809100586333008", "236522813569050", "rogobo", fecha, 10000.00,
-				tipoDeCuenta01, persona06);
+				tipoDeCuenta01, persona06,true);
 		Cuentas cuenta07 = new Cuentas("2850347730000000049606", "334700000004960", "rickyfort", fecha,
-				10000.00, tipoDeCuenta01, persona07);
+				10000.00, tipoDeCuenta01, persona07,true);
 		Cuentas cuenta08 = new Cuentas("0070117020000003965944", "206588665470987", "vickysueiro", fecha,
-				10000.00, tipoDeCuenta01, persona08);
+				10000.00, tipoDeCuenta01, persona08,true);
 		Cuentas cuenta09 = new Cuentas("2590046210320129410056", "259965549872249", "tinitini", fecha,
-				10000.00, tipoDeCuenta01, persona09);
+				10000.00, tipoDeCuenta01, persona09,true);
 		Cuentas cuenta10 = new Cuentas("0650020701000001040561", "589944987111686", "sensei", fecha, 10000.00,
-				tipoDeCuenta01, persona10);
+				tipoDeCuenta01, persona10,true);
 		session.save(cuenta01);
 		session.save(cuenta02);
 		session.save(cuenta03);

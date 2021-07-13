@@ -39,7 +39,7 @@ public class Cuentas implements Serializable {
 	}
 
 	public Cuentas(String cbu, String numeroDeCuenta, String alias, Date fechaDeCreacion,
-			double saldo, TiposDeCuentas tipoDeCuenta, Personas persona) {
+			double saldo, TiposDeCuentas tipoDeCuenta, Personas persona,Boolean  activa) {
 		this.fechaDeCreacion = fechaDeCreacion;
 		this.numeroDeCuenta = numeroDeCuenta;
 		this.cbu = cbu;
@@ -47,8 +47,20 @@ public class Cuentas implements Serializable {
 		this.saldo = saldo;
 		this.tipoDeCuenta = tipoDeCuenta;
 		this.persona = persona;
+		this.activa=activa;
 	}
-
+	public Cuentas(Long idCuenta, String cbu, String numeroDeCuenta, String alias, Date fechaDeCreacion,
+			double saldo, TiposDeCuentas tipoDeCuenta, Personas persona,Boolean  activa) {
+		this.idCuenta = idCuenta;
+		this.fechaDeCreacion = fechaDeCreacion;
+		this.numeroDeCuenta = numeroDeCuenta;
+		this.cbu = cbu;
+		this.alias = alias;
+		this.saldo = saldo;
+		this.tipoDeCuenta = tipoDeCuenta;
+		this.persona = persona;
+		this.activa=activa;
+	}
 	// metodos
 	public Long getIdCuenta() {
 		return idCuenta;

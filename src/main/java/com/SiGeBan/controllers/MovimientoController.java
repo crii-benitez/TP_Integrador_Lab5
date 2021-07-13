@@ -64,25 +64,36 @@ public class MovimientoController {
 		 @RequestMapping(value = "RegistrarTransferencia.html", method= { RequestMethod.GET, RequestMethod.POST})
 		 public ModelAndView RegistrarTransferencia(String detalle, Double importe, String numeroCuentaDestino, String numeroCuentaOrigen )
 		 {
-			ModelAndView model = new ModelAndView();
-			Movimientos movimiento = new Movimientos();
 			
+			ModelAndView model = new ModelAndView();
+			
+			/*Datos para insert de transferencia bancario*/
+			Movimientos movimiento = new Movimientos();
 			LocalDateTime ldt = LocalDateTime.now();
 			Timestamp fechaDeMovimiento= Timestamp.valueOf(ldt);
-			
 			movimiento.setDetalle(detalle);
 			movimiento.setImporte(importe);
 			movimiento.setFechaDeMovimiento(fechaDeMovimiento);
 			Cuentas cd=(Cuentas) iCuentaServiceD.obtenerCuentaPorNumeroDeCuenta(numeroCuentaDestino);
 			movimiento.setNumeroDecuentaDestino(cd);
-			
 			Cuentas co=(Cuentas) iCuentaServiceO.obtenerCuentaPorNumeroDeCuenta(numeroCuentaOrigen);
 			movimiento.setNumeroDecuentaOrigen(co);
+			
+			
+			/*Datos para Update de saldos por cada cuenta*/
+			Cuentas cuentaDestinoUpdate = new Cuentas(cd.getIdCuenta(),cd.getCbu(), cd.getNumeroDeCuenta(), cd.getAlias(), cd.getFechaDeCreacion(), cd.getSaldo()+movimiento.getImporte(),
+					cd.getTipoDeCuenta(), cd.getPersona(), cd.getActiva());
+			
+			Cuentas cuentaOrigenUpdate = new Cuentas(co.getIdCuenta(),co.getCbu(), co.getNumeroDeCuenta(), co.getAlias(), co.getFechaDeCreacion(), co.getSaldo()-movimiento.getImporte(),
+					co.getTipoDeCuenta(), co.getPersona(),co.getActiva());
 			
 			 String mensaje ="";
 			 
 			 try {
 				 iMovimientoService.insertarMovimiento(movimiento);
+				 iCuentaServiceD.actualizarCuenta(cuentaDestinoUpdate);
+				 iCuentaServiceO.actualizarCuenta(cuentaOrigenUpdate);
+
 				 mensaje = "transferencia Creada";
 				
 			} catch (Exception e) {
