@@ -20,18 +20,18 @@ public class Localidades implements Serializable {
 	private int idLocalidad;
 	private String localidad;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "provincia")
-	private Provincias provincia;
+//	@ManyToOne(cascade = { CascadeType.ALL })
+//	@JoinColumn(name = "provincia")
+//	private Provincias provincia;
 
 	// constructor
 	public Localidades() {
 	}
 
-	public Localidades(String localidad,Provincias provincia) {
+	public Localidades(String localidad) { //,Provincias provincia
 		super();
 		this.localidad = localidad;
-		this.provincia = provincia;
+		//this.provincia = provincia;
 	}
 
 	// metodos
@@ -43,13 +43,13 @@ public class Localidades implements Serializable {
 		this.idLocalidad = txtLocalidad;
 	}
 
-	public Provincias getProvincia() {
-		return provincia;
-	}
-
-	public void setProvincia(Provincias provincia) {
-		this.provincia = provincia;
-	}
+//	public Provincias getProvincia() {
+//		return provincia;
+//	}
+//
+//	public void setProvincia(Provincias provincia) {
+//		this.provincia = provincia;
+//	}
 
 	public String getLocalidad() {
 		return localidad;

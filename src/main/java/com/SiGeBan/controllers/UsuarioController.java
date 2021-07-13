@@ -1,6 +1,9 @@
 package main.java.com.SiGeBan.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -105,7 +108,24 @@ public class UsuarioController {
 		 
 		genero = igeneroService.obtenerGeneroPorId(txtSexo);
 	//	 genero.setIdGenero(txtSexo);
-
+		
+		//2000-11-10
+		
+		int anio= 2020;//Integer.parseInt(txtFecha.substring(0,4));
+		int mes= 02;//Integer.parseInt(txtFecha.substring(5,7));
+		int dia= 01;//Integer.parseInt(txtFecha.substring(8,10));
+//		
+		Date fechaCrea = new java.sql.Date(anio,mes,dia);
+//		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd/MM/yyyy");
+//		//String strFecha = “2007-12-25”;
+//		Date fecha = null;
+//		try {
+//		fecha = formatoDelTexto.parse(txtFecha);
+//		}catch (ParseException ex) {
+//
+//			ex.printStackTrace();
+//
+//		}
 		 usuario.setActivo(true);
 		 usuario.setPerfil(perfil);
 		 usuario.setPass("1234");
@@ -113,7 +133,7 @@ public class UsuarioController {
 		 
 		 persona.setNombre(txtNombre);
 		 persona.setApellido(txtApellido);
-		// persona.setFechanac((date)txtFecha);
+		 persona.setFechanac(fechaCrea);
 		 persona.setDNI(txtDNI);
 		 persona.setPais(pais);
 		 persona.setProvincia(provincia);
@@ -131,10 +151,10 @@ public class UsuarioController {
 		
 			 
 		} catch (Exception e) {
-			mensaje = "No se pudo crear el usuario";
+			mensaje = "No se pudo generar el usuario.";
 			
 		}
-	//	 showMessageDialog(null, mensaje);
+		 showMessageDialog(null, mensaje);
 		 
 		 ArrayList<Personas> ListaPersonas2=(ArrayList<Personas>) iPersonaService.obtenerPersonas();
 		 ModelAndView model = new ModelAndView();
