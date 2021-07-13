@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import main.java.com.SiGeBan.models.dao.ICuentaDAO;
 import main.java.com.SiGeBan.models.entity.Cuentas;
 import main.java.com.SiGeBan.models.entity.Personas;
+import main.java.com.SiGeBan.models.entity.TiposDeCuentas;
 @Service
 public class CuentaService implements ICuentaService {
 	@Autowired
@@ -27,6 +28,13 @@ public class CuentaService implements ICuentaService {
 		iCuentaoDAO.insertarCuenta(cuenta);
 	}
 
+	@Override
+	public TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta) {
+		
+		System.out.println("Ingreso en CuentaService obtenerTipoCuentaPorID, Valor idTipoDeCuenta=" + idTipoDeCuenta);
+		return iCuentaoDAO.obtenerTipoCuentaPorID(idTipoDeCuenta);
+	}
+	
 	@Override
 	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta) {
 		// TODO Auto-generated method stub

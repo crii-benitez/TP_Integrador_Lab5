@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<html lang="en">
+<html lang="es">
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
@@ -18,6 +18,11 @@ java.util.Date currentTime = new java.util.Date (); // Obtener la hora actual de
 String str_date1 = formatter.format (currentTime); // format datetime
 String str_date2 = str_date1.toString (); // Convertir fecha y hora en forma de cadena
 %>
+	<script type="text/javascript">
+				
+			    var msg = "${mensaje}";
+			    if (msg) alert(msg);
+			</script>
 <head>
 <script>
 function checkIt() {
@@ -120,9 +125,9 @@ function checkIt() {
 					<option value="3">Cuenta corriente - Pesos</option>
 					<option value="4">Cuenta corriente - Dolares</option>
 				</select> 
-				<input type="date" class="form-control border border-secondary" name="Fecha" placeholder="<%=str_date2%>" />  
+<%-- 				<input type="date" class="form-control border border-secondary" name="Fecha" placeholder="<%=str_date2%>" />   --%>
 				<input type="text" class="form-control border border-secondary" name="Cbu" placeholder="CBU" /> 
-				<input type="text" class="form-control border border-secondary" required name="Monto" placeholder="Monto en $" /></br>
+<!-- 				<input type="text" class="form-control border border-secondary" required name="Monto" placeholder="Monto en $" /></br> -->
 
 				<div class="text-white bg-dark">Datos del Cliente</div>
 
@@ -137,7 +142,7 @@ function checkIt() {
 					
 				<select name="Cliente" class="form-control border border-secondary" placeholder="Clientes">
 					<c:forEach var="cli" items="${listpersonas}">
-				    	<option value="${cli.idPersona}">${cli.nombre} ${cli.apellido} </option>            
+				    	<option value="${cli.DNI}">${cli.nombre} ${cli.apellido} </option>            
 				    </c:forEach>
 					
 

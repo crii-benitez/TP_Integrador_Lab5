@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import main.java.com.SiGeBan.models.entity.Cuentas;
 import main.java.com.SiGeBan.models.entity.Personas;
+import main.java.com.SiGeBan.models.entity.TiposDeCuentas;
 
 public interface ICuentaDAO {
 	//Alta de Cuenta
@@ -11,6 +12,9 @@ public interface ICuentaDAO {
 
 	//Obtener Cuenta por numeroDeCuenta
 	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta);
+	
+	// Obtiene Tipos de cuentas por id
+	TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta);
 
 	//Obtiene todas las Cuentas
 	public ArrayList<Cuentas> obtenerCuentas();
