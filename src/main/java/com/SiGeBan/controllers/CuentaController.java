@@ -112,44 +112,66 @@ public class CuentaController {
 		Cuentas cuentaNueva = new Cuentas();
 		Movimientos movimiento = new Movimientos();
 
-		Personas persona = new Personas();
-		persona = iPersonaService.obtenerUnRegistro(Cliente);// .setIdPersona(Integer.valueOf(Cliente));
+		// crii validaciones a cuentas:
+		if (Cbu.isEmpty()) {
+			mensaje = "NO se puede crear una cuenta sin CBU";
+		} 
 
-		TiposDeCuentas tipodeCuenta = new TiposDeCuentas();
-		tipodeCuenta = iCuentaService.obtenerTipoCuentaPorID(Integer.parseInt(tipoCuenta));// .setIdTipoDeCuenta(Integer.valueOf(tipoCuenta));
-
-		// objeto cuenta
-		cuentaNueva.setFechaDeCreacion(fecha);
-		cuentaNueva.setCbu(Cbu);
-		cuentaNueva.setNumeroDeCuenta(NumCuenta);
-		cuentaNueva.setPersona(persona);
-		cuentaNueva.setTipoDeCuenta(tipodeCuenta);
-		cuentaNueva.setAlias(Alias);
-		cuentaNueva.setSaldo(saldoInicial);
-		cuentaNueva.setActiva(true);
-
-		try {
-			iCuentaService.insertarCuenta(cuentaNueva);
-			mensaje = "Cuenta Creada para:" + cuentaNueva.getPersona().getNombre() + " "
-					+ cuentaNueva.getPersona().getApellido();
-		} catch (Exception e) {
-			mensaje = "No se pudo crear la cuenta: " + e.toString();
+		if (Alias.isEmpty()) {
+			mensaje = "NO se puede crear cuenta sin Alias";
+		}
+		if (NumCuenta.isEmpty()) {
+			mensaje = "NO se puede crear cuenta sin Numero de Cuenta";
+		}
+		if (Cliente.isEmpty()) {
+			mensaje = "NO se puede crear cuenta sin Cliente";
+		}
+		if (tipoCuenta.isEmpty()) {
+			mensaje = "NO se puede crear cuenta sin Tipo de Cuenta";
 		}
 
-		// objeto movimiento
-		movimiento.setDetalle("Apertura de cuenta");
-		movimiento.setImporte(saldoInicial);
-		movimiento.setFechaDeMovimiento(fechaDeMovimiento);
-		Cuentas cd = (Cuentas) iCuentaServiceD.obtenerCuentaPorNumeroDeCuenta(NumCuenta);
-		movimiento.setNumeroDecuentaDestino(cd);
-		Cuentas co = (Cuentas) iCuentaServiceO.obtenerCuentaPorNumeroDeCuenta(nroCuentaBanco);
-		movimiento.setNumeroDecuentaOrigen(co);
+		Personas persona = new Personas();
+		persona = iPersonaService.obtenerUnRegistro(Cliente);
 
-		try {
-			iMovimientoService.insertarMovimiento(movimiento);
+		TiposDeCuentas tipodeCuenta = new TiposDeCuentas();
+		tipodeCuenta = iCuentaService.obtenerTipoCuentaPorID(Integer.parseInt(tipoCuenta));
 
-		} catch (Exception e) {
-			mensaje = "No se pudo insertar Movimiento de Apertura: " + e.toString();
+		if (mensaje.isEmpty()) {
+			//if (iCuentaService.obtenerCantCuentas(persona.getIdPersona())<CantCuentasPermitidas){ 
+				// objeto cuenta
+				cuentaNueva.setFechaDeCreacion(fecha);
+				cuentaNueva.setCbu(Cbu);
+				cuentaNueva.setNumeroDeCuenta(NumCuenta);
+				cuentaNueva.setPersona(persona);
+				cuentaNueva.setTipoDeCuenta(tipodeCuenta);
+				cuentaNueva.setAlias(Alias);
+				cuentaNueva.setSaldo(saldoInicial);
+				cuentaNueva.setActiva(true);
+				try {
+					iCuentaService.insertarCuenta(cuentaNueva);
+					mensaje = "Cuenta Creada para:" + cuentaNueva.getPersona().getNombre() + " "
+							+ cuentaNueva.getPersona().getApellido();
+				} catch (Exception e) {
+					mensaje = "No se pudo crear la cuenta: " + e.toString();
+				}
+			//}else
+//			{
+//				mensaje="No se puede tener mas de: "+ CantCuentasPermitidas +" cuentas.";
+//			}
+				// objeto movimiento
+				movimiento.setDetalle("Apertura de cuenta");
+				movimiento.setImporte(saldoInicial);
+				movimiento.setFechaDeMovimiento(fechaDeMovimiento);
+				Cuentas cd = (Cuentas) iCuentaServiceD.obtenerCuentaPorNumeroDeCuenta(NumCuenta);
+				movimiento.setNumeroDecuentaDestino(cd);
+				Cuentas co = (Cuentas) iCuentaServiceO.obtenerCuentaPorNumeroDeCuenta(nroCuentaBanco);
+				movimiento.setNumeroDecuentaOrigen(co);
+
+				try {
+					iMovimientoService.insertarMovimiento(movimiento);
+				} catch (Exception e) {
+					mensaje = "No se pudo insertar Movimiento de Apertura: " + e.toString();
+				}
 		}
 
 		model.setViewName("addaccount");
@@ -161,4 +183,5 @@ public class CuentaController {
 
 		return model;
 	}
+
 }
