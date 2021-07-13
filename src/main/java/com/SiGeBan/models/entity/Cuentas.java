@@ -26,11 +26,11 @@ public class Cuentas implements Serializable {
 	private double saldo;
 	private Boolean  activa;
 
-	@ManyToOne(cascade= {CascadeType.ALL})
+	@ManyToOne(cascade= {CascadeType.DETACH})
 	@JoinColumn(name="tipoDeCuenta")
 	private TiposDeCuentas tipoDeCuenta;
 	
-	@ManyToOne(cascade= {CascadeType.ALL})
+	@ManyToOne(cascade= {CascadeType.DETACH})
 	@JoinColumn(name="idPersona")
 	private Personas persona;
 	

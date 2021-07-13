@@ -29,8 +29,16 @@ public class CuentaDAO implements ICuentaDAO {
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta) {
-		// TODO Auto-generated method stub
-	    return (Cuentas) this.hibernateTemplate.find("FROM Cuentas c WHERE c.numeroDeCuenta = ?",numeroDeCuenta).get(0);
+		// TODO Auto-generated method stub		
+		System.out.println("Ingreso en CuentaDAO obtenerCuentaPorNumeroDeCuenta, Valor numeroDeCuenta=" + numeroDeCuenta);
+		try {
+			Cuentas _c= (Cuentas) this.hibernateTemplate.find("FROM Cuentas c WHERE c.numeroDeCuenta = ?",numeroDeCuenta).get(0);
+			System.out.println(_c.toString());
+		    return _c;
+		}
+		catch (Exception E) {
+			return null;
+		}
 	}
 
 	@Override

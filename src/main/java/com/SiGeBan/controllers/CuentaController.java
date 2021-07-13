@@ -21,6 +21,7 @@ public class CuentaController {
 	private double saldoInicial=10000;
 	@Autowired
 	private ICuentaService iCuentaService;
+	@Autowired
 	private IPersonaService iPersonaService;
 	
 	 @RequestMapping("IrAMisCuentas.html")

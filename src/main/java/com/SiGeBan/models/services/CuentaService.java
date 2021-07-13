@@ -30,6 +30,7 @@ public class CuentaService implements ICuentaService {
 	@Override
 	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta) {
 		// TODO Auto-generated method stub
+		System.out.println("Ingreso en CuentaService obtenerCuentaPorNumeroDeCuenta, Valor numeroDeCuenta=" + numeroDeCuenta);
 		return iCuentaoDAO.obtenerCuentaPorNumeroDeCuenta(numeroDeCuenta);
 	}
 

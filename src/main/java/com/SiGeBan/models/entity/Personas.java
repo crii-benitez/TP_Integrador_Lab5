@@ -35,23 +35,23 @@ public class Personas implements Serializable {
 	private Date fechaNacimiento;
 	private String direccion;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = { CascadeType.DETACH })
 	@JoinColumn(name = "localidad")
 	private Localidades localidad;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = { CascadeType.DETACH })
 	@JoinColumn(name = "pais")
 	private Paises pais;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = { CascadeType.DETACH })
 	@JoinColumn(name = "genero")
 	private Generos genero;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = { CascadeType.DETACH })
 	@JoinColumn(name = "provincia")
 	private Provincias provincia;
 
-	@OneToOne(cascade = { CascadeType.ALL })
+	@OneToOne(cascade = { CascadeType.DETACH })
 	@JoinColumn(name = "usuario")
 	private Usuario usuario;
 

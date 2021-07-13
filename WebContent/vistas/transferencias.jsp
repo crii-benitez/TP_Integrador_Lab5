@@ -91,49 +91,50 @@ function checkIt() {
 	<!-- Close Header -->
 	<div class="bg-light">
 		<div class="container table py-4">
-
+			<br/>
+			${mensaje}
+			<br/>
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Transferencias</h1>
-			<form class="table table-bordered bg-light" action="#" method="post">
+			<form class="table table-bordered bg-light"  action="RegistrarTransferencia.html" method="post">
 
-				<div class="text-white bg-dark">Datos de la Transferencia</div>
-
-				<select name="tipo" class="form-control border border-secondary"
-					placeholder="Tipo de transferencia">
-					<option value="1">A cuenta Propia</option>
-					<option value="2">A cuenta de un Tercero</option>
-				</select> </br>
-
+ 				<div class="text-white bg-dark">Datos de la Transferencia</div>
+ 				<input type="text" class="form-control border border-secondary" name="detalle" placeholder="Ingrese el motivo" />
+<!-- 				<select name="detalle" class="form-control border border-secondary" -->
+<!-- 					placeholder="Tipo de transferencia"> -->
+<!-- 					<option value="1">A cuenta Propia</option> -->
+<!-- 					<option value="2">A cuenta de un Tercero</option> -->
+<!-- 				</select>  -->
+				
 				<div class="text-white  bg-dark">Datos de la Cuenta Origen</div>
 				<!--  <div class="form-group">-->
-				<select name="pais" class="form-control border border-secondary"
-					placeholder="Tipo de Cuenta">
-					<option value="1">Caja de ahorro - Pesos</option>
-					<option value="2">Caja de ahorro - Dolares</option>
-					<option value="3">Cuenta corriente - Pesos</option>
-					<option value="4">Cuenta corriente - Dolares</option>
-				</select> <span class="input-group-text border border-secondary">1458963/4</span>
-				<span class="input-group-text border border-secondary">$
-					478964.25</span>
+<!-- 				<select name="pais" class="form-control border border-secondary" -->
+<!-- 					placeholder="Tipo de Cuenta"> -->
+<!-- 					<option value="1">Caja de ahorro - Pesos</option> -->
+<!-- 					<option value="2">Caja de ahorro - Dolares</option> -->
+<!-- 					<option value="3">Cuenta corriente - Pesos</option> -->
+<!-- 					<option value="4">Cuenta corriente - Dolares</option> -->
+<!-- 				</select> -->
+				<input type="text" class="form-control border border-secondary" name="numeroCuentaOrigen" placeholder="numeroCuentaOrigen" />  
+<!-- 				<span class="input-group-text border border-secondary">1458963/4</span> -->
+<!-- 				<span class="input-group-text border border-secondary">$478964.25</span> -->
 				<!--	</div>-->
-				</br>
 				<div class="text-white bg-dark">Datos de la Cuenta Destino</div>
-
+				<input type="text" class="form-control border border-secondary" name="numeroCuentaDestino" placeholder="numeroCuentaDestino" />
 <!-- 				<input type="text" class="form-control border border-secondary" required title="CBU" placeholder="CBU" />  -->
-				<select name="CBU" class="form-control border border-secondary" placeholder="CBU ClienteS">
-					<c:forEach var="cli" items="${datoscuentas}">
-				    	<option value="${cli.idPersona}">${cli.nombre} ${cli.apellido} </option>            
-				    </c:forEach>
-				</select> 
-				<span class="input-group-text border border-secondary">Maximiliano Dario Guiol</span> 
-				<span class="input-group-text border border-secondary">$25000.00</span>
-				</br>
+<!--				<select name="CBU" class="form-control border border-secondary" placeholder="CBU ClienteS">-->
+					<!--<c:forEach var="cli" items="${datoscuentas}">
+				    	<option value="${cli.idMovimiento}">${cli.detalle} ${cli.importe} </option>            
+				    </c:forEach>-->
+<!--				</select>--> 
+<!-- 				<span class="input-group-text border border-secondary">Maximiliano Dario Guiol</span>  -->
+<!-- 				<span class="input-group-text border border-secondary">$25000.00</span> -->
 
 				<div class="text-white bg-dark">Monto a Transferir</div>
 
-				<input type="text" class="form-control border border-secondary"
+				<input type="text" name="importe" class="form-control border border-secondary"
 					required title="Monto a Transferir"
 					placeholder="Monto a Transferir" /> </br>
-				<button type="button" class="btn btn-primary">Realizar
+				<button type="submit" class="btn btn-primary">Realizar
 					Transferencia</button>
 			</form>
 

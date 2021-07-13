@@ -28,7 +28,8 @@ public class MovimientoDAO implements IMovimientoDAO {
 	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 	public ArrayList<Movimientos> obtenerMovimientosPornumeroDeCuentaOrigen(String numeroDeCuentaOrigen) {
 		// TODO Auto-generated method stub
-		return (ArrayList<Movimientos>) this.hibernateTemplate.find("SELECT m.detalle, m.importe, co.cbu as 'cbu origen', co.numeroDeCuenta as 'numeroCuentaOrigen', co.saldo as 'saldo origen' " + 
+		System.out.println("Ingreso en obtenerMovimientosPornumeroDeCuentaOrigen");
+		return (ArrayList<Movimientos>) this.hibernateTemplate.find("SELECT m.idMovimiento, m.detalle, m.importe, co.cbu as 'cbu origen', co.numeroDeCuenta as 'numeroCuentaOrigen', co.saldo as 'saldo origen' " + 
 				", co.cbu as 'cbu destino', cd.numeroDeCuenta as 'numeroCuentaDestino', cd.saldo as 'saldo destino'  FROM sigeban.movimientos as m " + 
 				"inner join sigeban.cuentas as co on co.idCuenta=m.numeroCuentaOrigen " + 
 				"inner join sigeban.cuentas as cd on cd.idCuenta=m.numeroCuentaDestino " + 
