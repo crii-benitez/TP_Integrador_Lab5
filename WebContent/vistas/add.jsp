@@ -121,7 +121,7 @@ function checkIt() {
 			<form class="table table-bordered bg-light" action="agregarUsuario.html"
 				method="get">
 					<p class="form-control">
-					Seleccione Perfil de usuario
+					Seleccione Perfil de usuario (*)
 					<select name="txtPerfil" class="text-control border border-secondary" placeholder="Perfil">
 					<c:forEach var="per" items="${listperfiles}">
 				    	<option selected="selected" value="${per.idPerfil}">${per.perfil}</option>            
@@ -129,11 +129,11 @@ function checkIt() {
 					</select>
 				<p />
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese nombre" type="text" name="txtNombre">
+					placeholder="Ingrese nombre (*)" type="text" name="txtNombre">
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese apellido" type="text" name="txtApellido">
+					placeholder="Ingrese apellido (*)" type="text" name="txtApellido">
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese DNI" type="text" name="txtDNI">
+					placeholder="Ingrese DNI (*)" type="text" name="txtDNI">
 				<p class="form-control">
 					Seleccione genero
 					<select name="txtSexo" class="text-control border border-secondary" placeholder="Sexo">

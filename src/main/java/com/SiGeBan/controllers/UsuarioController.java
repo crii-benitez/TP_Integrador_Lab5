@@ -3,8 +3,9 @@ package main.java.com.SiGeBan.controllers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Objects;
 //import java.util.Date;
-import java.sql.Date;  
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,6 @@ import main.java.com.SiGeBan.models.services.IPerfilService;
 import main.java.com.SiGeBan.models.services.IPersonaService;
 import main.java.com.SiGeBan.models.services.IProvinciaService;
 import static javax.swing.JOptionPane.showMessageDialog;
-
-
 
 @Controller
 public class UsuarioController {
@@ -80,6 +79,9 @@ public class UsuarioController {
 	 
 	 @RequestMapping("agregarUsuario.html")
 		public ModelAndView agregarUser(String txtNombre, String txtApellido,Integer txtPerfil, String txtFecha, String txtDNI, Integer txtSexo, Integer txtPais, Integer txtProvincia, Integer txtLocalidad, String txtCalle, String txtNumero, String txtDto) {
+		 
+		 String mensaje ="";
+		 
 		 ArrayList<Paises> _LPaises=(ArrayList<Paises>) iPaisService.obtenerPaises();
 		 ArrayList<Provincias> _LProvincias=(ArrayList<Provincias>) iProvinciaService.obtenerProvincias();
 		 ArrayList<Localidades> _LLocalidades=(ArrayList<Localidades>) ilocalidadService.obtenerLocalidades();
@@ -87,6 +89,8 @@ public class UsuarioController {
 		 ArrayList<Perfiles> _LPerfiles=(ArrayList<Perfiles>) iperfilService.obtenerPerfiles();
 		 
 		 Personas persona = new Personas();
+		 Personas personaPrueba = new Personas();
+		 
 		 Generos genero = new Generos();
 		 Paises pais = new Paises();
 		 Usuario usuario = new Usuario();
@@ -95,86 +99,63 @@ public class UsuarioController {
 		 Localidades localidad = new Localidades();
 		 
 		 perfil  = iperfilService.obtenePerfilPorId(txtPerfil);
-		// perfil.setIdPerfil(txtPerfil);	 
-		// perfil.setPerfil(perfil);
 		 
 		 pais = iPaisService.obtenerUnPais(txtPais);
-	//	 pais.setIdPais(txtPais);
 		 
 		 provincia = iProvinciaService.obtenerUnProvincia(txtProvincia);
-	//	 provincia.setIdProvincia(txtProvincia);
 		 
 		localidad = ilocalidadService.obtenerUnLocalidad(txtLocalidad);
-		// localidad.setIdLocalidad(txtLocalidad);
 		 
 		genero = igeneroService.obtenerGeneroPorId(txtSexo);
-	//	 genero.setIdGenero(txtSexo);
-		
-		//2000-11-10
-		
-//		int anio= 2020;//Integer.parseInt(txtFecha.substring(0,4));
-//		int mes= 02;//Integer.parseInt(txtFecha.substring(5,7));
-//		int dia= 01;//Integer.parseInt(txtFecha.substring(8,10));
-//		
-		
+
+		if (txtFecha.isEmpty()) {
+			txtFecha="2000-01-01";
+		} 
 		 Date date = Date.valueOf(txtFecha);
-				 
-				
-		
-////		
-//		Date fecha = new Date();
-//		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
-//		String currentTime = sdf.format(fechaCrea);
-//		Date fechaCrea = new java.sql.Date(anio,mes,dia);
-//		
-//		
-//		
-//		Date fecha = new Date();
-//		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
-//		String currentTime = sdf.format(fecha);
-//	//	Date fechaCreados = new java.sql.Date(fecha.getYear(),fecha.getMonth(),fecha.getDate());
-//		Date fechaCreados = new java.sql.Date(anio,mes,dia);
-		
-//		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd/MM/yyyy");
-//		//String strFecha = “2007-12-25”;
-//		Date fecha = null;
-//		try {
-//		fecha = formatoDelTexto.parse(txtFecha);
-//		}catch (ParseException ex) {
-//
-//			ex.printStackTrace();
-//
-//		}
-		 usuario.setActivo(true);
-		 usuario.setPerfil(perfil);
-		 usuario.setPass("1234");
-		 usuario.setUsuario(txtNombre.substring(0,3)+txtApellido.substring(0,3));
-		 
-		 persona.setNombre(txtNombre);
-		 persona.setApellido(txtApellido);
-		 persona.setFechanac(date);
-		 persona.setDNI(txtDNI);
-		 persona.setPais(pais);
-		 persona.setProvincia(provincia);
-		 persona.setLocalidad(localidad);
-		 persona.setDireccion(txtCalle + " " + txtNumero + " " + txtDto);
-		 persona.setUsuario(usuario);
-		 persona.setGenero(genero);
-		 
-		 String mensaje ="";
-		 
-		 try {
-			 iPersonaService.insertarPersona(persona);
-			
-			 mensaje = "Usuario Creado";
-		
-			 
-		} catch (Exception e) {
-			mensaje = "No se pudo crear el usuario";
-			
+		 if (txtNombre.isEmpty()) {
+				mensaje = "NO se puede crear usuario sin NOMBRE";
+			}
+		 if (txtApellido.isEmpty()) {
+				mensaje = "NO se puede crear usuario sin APELLIDO";
+			}
+		if (txtDNI.isEmpty()) {
+			mensaje = "NO se puede crear usuario sin DNI";
 		}
-		 //showMessageDialog(null, mensaje);
-		 
+		personaPrueba= iPersonaService.obtenerUnRegistro(txtDNI);
+		if (mensaje.isEmpty()) {
+			if (Objects.isNull(personaPrueba)){
+	
+			 usuario.setActivo(true);
+			 usuario.setPerfil(perfil);
+			 usuario.setPass("1234");
+			 usuario.setUsuario(txtNombre.substring(0,3)+txtApellido.substring(0,3));
+			 
+			 persona.setNombre(txtNombre);
+			 persona.setApellido(txtApellido);
+			 persona.setFechanac(date);
+			 persona.setDNI(txtDNI);
+			 persona.setPais(pais);
+			 persona.setProvincia(provincia);
+			 persona.setLocalidad(localidad);
+			 persona.setDireccion(txtCalle + " " + txtNumero + " " + txtDto);
+			 persona.setUsuario(usuario);
+			 persona.setGenero(genero);
+			 
+				 try {
+					 iPersonaService.insertarPersona(persona);
+					
+					 mensaje = "Usuario Creado";
+				
+					 
+				} catch (Exception e) {
+					mensaje = "No se pudo crear el usuario";
+					
+				}
+			}else
+			{
+				mensaje="No se puede insertar usuario - DNI DUPLICADO: "+txtDNI;
+			}
+		}
 		 ArrayList<Personas> ListaPersonas2=(ArrayList<Personas>) iPersonaService.obtenerPersonas();
 		 ModelAndView model = new ModelAndView();
 			model.setViewName("add");
@@ -188,5 +169,4 @@ public class UsuarioController {
 			return model;
 
 		}
-
 }
