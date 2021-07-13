@@ -8,6 +8,12 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+	<script type="text/javascript">
+				
+			    var msg = "${mensaje}";
+			    if (msg) alert(msg);
+			</script>
 <%
 if ((Integer) session.getAttribute("perfilUser") != 1) {
 	response.sendRedirect("IrALogin.html");
@@ -105,7 +111,13 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar
 				Nuevo Usuario</h1>
-				<br/> ${mensaje} <br/>
+				<br/> 
+				
+				
+				
+				
+			
+		 <br/>
 			<form class="table table-bordered bg-light" action="agregarUsuario.html"
 				method="get">
 					<p class="form-control">
@@ -327,13 +339,14 @@ function checkIt() {
 				               	<td>Nombre</td>
 								<td>Apellido</td>
 								<td>DNI</td>
-								<td>Sexo</td>
+<!-- 								<td>Sexo</td> -->
 								<td>Pais</td>
 								<td>Provincia</td>
 								<td>Localidad</td> 
-								<td>Direccion</td>
+<!-- 								<td>Direccion</td> -->
 								<td>Usuario</td>
-<!-- 								<td>Fecha de nacimiento</td> -->
+								<td>Perfil</td>
+								<td>Fecha de nacimiento</td> 
 				            </tr>
 				            </thead>
 						    <tbody>
@@ -342,13 +355,14 @@ function checkIt() {
 				                    <td>${mov.nombre}</td>
  				                    <td>${mov.apellido}</td> 
 				                    <td>${mov.DNI}</td>
- 				                    <td>${mov.genero.genero}</td> 
+<%--  				                    <td>${mov.genero.genero}</td>  --%>
  				                    <td>${mov.pais.pais}</td> 
 				                    <td>${mov.provincia.provincia}</td> 
  				                    <td>${mov.localidad.localidad}</td>
-				                    <td>${mov.direccion}</td>
+<%-- 				                    <td>${mov.direccion}</td> --%>
 				                    <td>${mov.usuario.usuario}</td>
-<%-- 				                    <td>${mov.fechaNacimiento}</td> --%>
+				                     <td>${mov.usuario.perfil.perfil}</td>
+ 				                    <td>${mov.fechaNacimiento}</td> 
 				                </tr>
 				            </c:forEach>
 				           	</tbody>

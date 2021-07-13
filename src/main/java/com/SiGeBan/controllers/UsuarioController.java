@@ -3,7 +3,8 @@ package main.java.com.SiGeBan.controllers;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
+import java.sql.Date;  
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -111,11 +112,29 @@ public class UsuarioController {
 		
 		//2000-11-10
 		
-		int anio= 2020;//Integer.parseInt(txtFecha.substring(0,4));
-		int mes= 02;//Integer.parseInt(txtFecha.substring(5,7));
-		int dia= 01;//Integer.parseInt(txtFecha.substring(8,10));
+//		int anio= 2020;//Integer.parseInt(txtFecha.substring(0,4));
+//		int mes= 02;//Integer.parseInt(txtFecha.substring(5,7));
+//		int dia= 01;//Integer.parseInt(txtFecha.substring(8,10));
 //		
-		Date fechaCrea = new java.sql.Date(anio,mes,dia);
+		
+		 Date date = Date.valueOf(txtFecha);
+				 
+				
+		
+////		
+//		Date fecha = new Date();
+//		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
+//		String currentTime = sdf.format(fechaCrea);
+//		Date fechaCrea = new java.sql.Date(anio,mes,dia);
+//		
+//		
+//		
+//		Date fecha = new Date();
+//		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy");
+//		String currentTime = sdf.format(fecha);
+//	//	Date fechaCreados = new java.sql.Date(fecha.getYear(),fecha.getMonth(),fecha.getDate());
+//		Date fechaCreados = new java.sql.Date(anio,mes,dia);
+		
 //		SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd/MM/yyyy");
 //		//String strFecha = “2007-12-25”;
 //		Date fecha = null;
@@ -133,7 +152,7 @@ public class UsuarioController {
 		 
 		 persona.setNombre(txtNombre);
 		 persona.setApellido(txtApellido);
-		 persona.setFechanac(fechaCrea);
+		 persona.setFechanac(date);
 		 persona.setDNI(txtDNI);
 		 persona.setPais(pais);
 		 persona.setProvincia(provincia);
@@ -151,7 +170,7 @@ public class UsuarioController {
 		
 			 
 		} catch (Exception e) {
-			mensaje = e.toString();
+			mensaje = "No se pudo crear el usuario";
 			
 		}
 		 //showMessageDialog(null, mensaje);
