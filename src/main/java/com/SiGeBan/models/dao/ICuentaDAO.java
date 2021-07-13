@@ -32,4 +32,6 @@ public interface ICuentaDAO {
 
 	Cuentas obtenerCuentaPorId(Long idCuenta);
 	
+	// Obtengo la cantidad de cuentas que tiene la persona
+	Integer obtenerCantCuentas(int idPersona);
 }
