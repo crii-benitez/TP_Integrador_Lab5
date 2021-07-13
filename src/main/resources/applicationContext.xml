@@ -46,7 +46,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/SiGeBan?createDatabaseIfNotExist=true" />
 		<property name="username" value="root" />
-		<property name="password" value="ROOT" />
+		<property name="password" value="root" />
 	</bean>
 	<bean id="iPersonaDAOBean" class="main.java.com.SiGeBan.models.dao.PersonaDAO"
 		scope="singleton">

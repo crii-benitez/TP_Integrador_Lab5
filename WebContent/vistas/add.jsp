@@ -153,23 +153,6 @@ function checkIt() {
 				    </c:forEach>
 					</select>
 					
-					
-<!-- 					<select -->
-<!-- 						class="text-control border border-secondary" name="pais"> -->
-<!-- 						<option value="1">Argentina</option> -->
-<!-- 						<option value="2">Colombia</option> -->
-<!-- 						<option value="3">Chile</option> -->
-<!-- 						<option value="4">Perú</option> -->
-<!-- 						<option value="5">México</option> -->
-<!-- 						<option value="6">Brazil</option> -->
-<!-- 						<option value="7">Paraguay</option> -->
-<!-- 						<option value="8">Venezuela</option> -->
-<!-- 						<option value="9">Ecuador</option> -->
-<!-- 						<option value="10">Guyana</option> -->
-<!-- 						<option value="11">Uruguay</option> -->
-<!-- 						<option value="12">Suriname</option> -->
-<!-- 					</select> -->
-					
 					 &nbsp &nbsp &nbsp Seleccione Provincia 
 					 
 					 	<select class="text-control border border-secondary" name="txtProvincia" placeholder="Provincia">
@@ -178,21 +161,7 @@ function checkIt() {
 				    </c:forEach>
 					</select>
 					 
-<!-- 					 <select -->
-<!-- 						class="text-control border border-secondary" name="provincia"> -->
-<!-- 						<option value="1">Buenos aires</option> -->
-<!-- 						<option value="2">Jujuy</option> -->
-<!-- 						<option value="3">Salta</option> -->
-<!-- 						<option value="4">Tucuman</option> -->
-<!-- 						<option value="5">Formosa</option> -->
-<!-- 						<option value="6">Misiones</option> -->
-<!-- 						<option value="7">Corrientes</option> -->
-<!-- 						<option value="8">Entre Rios</option> -->
-<!-- 						<option value="9">La Pampa</option> -->
-<!-- 						<option value="10">Santa Fe</option> -->
-<!-- 						<option value="11">Cordoba</option> -->
-<!-- 						<option value="12">San Luis</option> -->
-<!-- 					</select> -->
+
 					
 					 &nbsp &nbsp &nbsp Seleccione Localidad 
 					 
@@ -202,24 +171,10 @@ function checkIt() {
 				    </c:forEach>
 					</select>
 					 
-<!-- 					 <select -->
-<!-- 						class="text-control border border-secondary" name="localidad"> -->
-<!-- 						<option value="1">Jose C Paz</option> -->
-<!-- 						<option value="2">San Miguel</option> -->
-<!-- 						<option value="3">Moreno</option> -->
-<!-- 						<option value="4">Tigre</option> -->
-<!-- 						<option value="5">Pilar</option> -->
-<!-- 						<option value="6">Caba</option> -->
-<!-- 						<option value="7">Vicente Lopes</option> -->
-<!-- 						<option value="8">Zarate</option> -->
-<!-- 						<option value="9">San Martin</option> -->
-<!-- 						<option value="10"># de Febrero</option> -->
-<!-- 						<option value="11">Merlo</option> -->
-<!-- 						<option value="12">Ramo Mejia</option> -->
-<!-- 					</select> -->
+
 				<p />
 
-				<input type="date" class="form-control border border-secondary" name="txtFecha" placeholder="<%=str_date2%>" />  
+				<input type="date" class="form-control border border-secondary" name="txtFecha" placeholder="Ingrese su fecha de nacimiento en el siguiente formato:   <%=str_date2%>" />  
 
 				<p class="form-control">
 					Ingrese su direccion: <input
@@ -237,101 +192,7 @@ function checkIt() {
 			</form>
 
 
-			<div class="bg-lingh">
-				<div class="container table py-4">
-					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">Listado
-						de Usuarios</h1>
-
-					<p>
-						Buscar: <input class="text-control border border-secondary"
-							placeholder="Ingrese detalle a buscar" type="text" name="buscar">
-						<button type="button" class="btn btn-primary">Filtrar</button>
-					</p>
-
-					</br>
-
-<!-- 					<table id="example" -->
-<!-- 						class="container table table-striped table-bordered"> -->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th>Nombre</th> -->
-<!-- 								<th>Apellido</th> -->
-<!-- 								<th>DNI</th> -->
-<!-- 								<th>Sexo</th> -->
-<!-- 								<th>Pais</th> -->
-<!-- 								<th>Provincia</th> -->
-<!-- 								<th>Localidad</th> -->
-<!-- 								<th>Fecha de nacimiento</th> -->
-<!-- 									<th>Calle</th>
-<!-- 								<th>Numero</th> -->
-<!-- 								<th>Dto</th> --> 
-<!-- 								<th></th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<!-- 							<tr> -->
-<!-- 								<td>Cristian</td> -->
-<!-- 								<td>Benitez</td> -->
-<!-- 								<td>32548777</td> -->
-<!-- 								<td>Masculino</td> -->
-<!-- 								<td>Argentina</td> -->
-<!-- 								<td>Buenos Aires</td> -->
-<!-- 								<td>San Miguel</td> -->
-<!-- 								<td>01/01/1986</td> -->
-<!-- 								<td>Arenales</td>
-<!-- 								<td>2276</td> -->
-<!-- 								<td>-</td>--> 
-<!-- 								<td><button type="button" class="btn btn-primary"> -->
-<!-- 										<i class="fas fa-edit"></i> -->
-<!-- 									</button> -->
-<!-- 									<button type="button" class="btn btn-danger"> -->
-<!-- 										<i class="fas fa-trash-alt"></i> -->
-<!-- 									</button></td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td>Germnan</td> -->
-<!-- 								<td>Medina</td> -->
-<!-- 								<td>32520857</td> -->
-<!-- 								<td>Masculino</td> -->
-<!-- 								<td>Argentina</td> -->
-<!-- 								<td>Buenos Aires</td> -->
-<!-- 								<td>Jose c. Paz</td> -->
-<!-- 								<td>01/09/1986</td> -->
-<!-- 									<td>Girondo</td>
-<!-- 								<td>1076</td> -->
-<!-- 								<td>-</td> --> 
-<!-- 								<td><button type="button" class="btn btn-primary"> -->
-<!-- 										<i class="fas fa-edit"></i> -->
-<!-- 									</button> -->
-<!-- 									<button type="button" class="btn btn-danger"> -->
-<!-- 										<i class="fas fa-trash-alt"></i> -->
-<!-- 									</button></td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td>Pablo</td> -->
-<!-- 								<td>Maciel</td> -->
-<!-- 								<td>32548777</td> -->
-<!-- 								<td>Masculino</td> -->
-<!-- 								<td>Argentina</td> -->
-<!-- 								<td>Buenos Aires</td> -->
-<!-- 								<td>San Miguel</td> -->
-<!-- 								<td>12/07/1984</td> -->
-<!-- 										<td>Peron</td>
-<!-- 								<td>1045</td> -->
-<!-- 								<td>-</td> --> 
-<!-- 								<td><button type="button" class="btn btn-primary"> -->
-<!-- 										<i class="fas fa-edit"></i> -->
-<!-- 									</button> -->
-<!-- 									<button type="button" class="btn btn-danger"> -->
-<!-- 										<i class="fas fa-trash-alt"></i> -->
-<!-- 									</button></td> -->
-<!-- 							</tr> -->
-<!-- 							<tr> -->
-<!-- 								<td colspan="9" align="right">1... 1</td> -->
-
-<!-- 							</tr> -->
-<!-- 						</tbody> -->
-<!-- 					</table> -->
+		 
 				<table id="tableta"
 						class="container table table-striped table-bordered">
 				            <thead>
