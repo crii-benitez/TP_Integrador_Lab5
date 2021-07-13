@@ -109,9 +109,10 @@ function checkIt() {
 		<div class="container table py-4">
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Creacion de Cuenta</h1>
-			<br/>
-			${mensaje}
-			<br/>
+			<script type="text/javascript">
+			    var msg = "${mensaje}";
+			    if (msg) alert(msg);
+			</script>
 			<form class="table table-bordered bg-light" action="crearCuenta.html" method="post">
 				<!-- <button type="button" class="btn btn-primary">Obtener Usuario</button>-->
 				<div class="text-white  bg-dark">Datos de la Cuenta</div>

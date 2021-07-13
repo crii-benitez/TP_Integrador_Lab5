@@ -10,6 +10,8 @@
 <html lang="en">
 <%
 String url = "IrAMisCuentas.html"+"?UserName="+session.getAttribute("nameUser");
+String urlTranferencias = "IrATransferencias.html"+"?UserName="+session.getAttribute("nameUser");
+String urlMovimientos = "IrAMovimientos.html"+"?UserName="+session.getAttribute("nameUser");
 if ((Integer) session.getAttribute("perfilUser") != 2) {
 	response.sendRedirect("IrALogin.html");
 	
@@ -77,10 +79,10 @@ function checkIt() {
 						href="<%=url%>">Cuentas</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrAMovimientos.html">Movimientos</a></li>
+						href="<%=urlMovimientos%>">Movimientos</a></li>
 					<li class="nav-item"><a
 						class="nav-link btn-outline-primary rounded-pill px-3"
-						href="IrATransferencias.html">Transferencias</a></li>
+						href="<%=urlTranferencias%>">Transferencias</a></li>
 				</ul>
 			</div>
 			<div class="navbar align-self-center d-flex">

@@ -34,6 +34,8 @@ public class MovimientoController {
 	@Autowired
 	private IMovimientoService iMovimientoService;
 	@Autowired
+	private ICuentaService iCuentaService;
+	@Autowired
 	private ICuentaService iCuentaServiceO;
 	@Autowired
 	private ICuentaService iCuentaServiceD;
@@ -50,13 +52,14 @@ public class MovimientoController {
 	 }
 	 
 		@RequestMapping("IrATransferencias.html")
-		public ModelAndView abrirTransferencias() {
+		public ModelAndView abrirTransferencias(String UserName) {
 			System.out.println("Ingreso en MovimientoController 'abrirTransferencias'");
 			/*ArrayList<Cuentas> _c= (ArrayList<Cuentas>) iCuentaService.obtenerCuentaPorNumeroDeCuenta("096402000142384");
 			System.out.println("Retorno en MovimientoController 'obtenerCuentaPorNumeroDeCuenta': " + _c.toString());
 			*/
+			ArrayList<Cuentas> _Ncuentas = (ArrayList<Cuentas>) iCuentaService.obtenerMisCuentas(UserName);
 			ModelAndView model = new ModelAndView();
-			model.addObject("datoscuentas", "");
+			model.addObject("NumerosdeCuenta", _Ncuentas);
 			model.setViewName("transferencias");
 			return model;
 
