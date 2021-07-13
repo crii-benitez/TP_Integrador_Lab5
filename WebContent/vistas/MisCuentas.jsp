@@ -106,7 +106,7 @@ function checkIt() {
 				<div class="text-white bg-dark">Datos del Cliente</div>
 <%-- 				<c:forEach var="dat" items="${datospersona}"> --%>
 					<span class="input-group-text border border-secondary">${datospersona.DNI}</span> 
- 					<span class="input-group-text border border-secondary">${datospersona.apellido} ${datospersona.apellido}</span> 
+ 					<span class="input-group-text border border-secondary">${datospersona.nombre} ${datospersona.apellido}</span> 
 					<span class="input-group-text border border-secondary">${datospersona.fechaNacimiento}</span>  
  					<span class="input-group-text border border-secondary">${datospersona.direccion}</span> 
 <%-- 					<span class="input-group-text border border-secondary">${datospersona.provincia}</span> --%>
