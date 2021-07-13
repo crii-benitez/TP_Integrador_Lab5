@@ -103,5 +103,18 @@ public class CuentaDAO implements ICuentaDAO {
 	public ArrayList<Personas> obtenerPersonas() {
 		return (ArrayList<Personas>) this.hibernateTemplate.loadAll(Personas.class);
 	}
-
+	
+		@Override
+	@Transactional(propagation=Propagation.REQUIRED, readOnly=true)
+	public TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta) {	
+		System.out.println("Ingreso en CuentaDAO obtenerTipoCuentaPorID, Valor idTipoDeCuenta=" + idTipoDeCuenta);
+		try {
+			TiposDeCuentas _c= (TiposDeCuentas) this.hibernateTemplate.find("FROM TiposDeCuentas tip WHERE tip.idTipoDeCuenta = ?",idTipoDeCuenta).get(0);
+			System.out.println(_c.toString());
+		    return _c;
+		}
+		catch (Exception E) {
+			return null;
+		}
+	}
 }
