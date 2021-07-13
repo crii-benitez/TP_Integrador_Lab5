@@ -107,23 +107,25 @@
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Modificar
 				Usuario</h1>
+<%-- 				${persona} --%>
 			<br /> <br />
-			<form class="table table-bordered bg-light"
-				action="actualizarUsuario.html" method="get">
+			<form class="table table-bordered bg-light" action="actualizarUsuario.html?idPersona=" method="get">
+				 <input type="hidden" id="idPersona" name="idPersona" value="${persona.idPersona}">
 				<p class="form-control">
+<%-- 				${persona.usuario.perfil.perfil} --%>
 					Seleccione Perfil de usuario (*) <select name="txtPerfil"
 						class="text-control border border-secondary" placeholder="Perfil">
-						<c:forEach var="persona" items="${listpersonafiles}">
-							<option selected="selected" value="${persona.idperfil}">${persona.perfil.perfil}</option>
-						</c:forEach>
+<%-- 						<c:forEach var="persona" items="${persona}"> --%>
+							<option selected="selected" value="${persona.usuario.perfil.idPerfil}">${persona.usuario.perfil.perfil}</option>
+<%-- 						</c:forEach> --%>
 					</select>
 				<p />
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese nombre (*)" type="text" name="txtNombre">
+					placeholder="Ingrese nombre (*)" type="text" name="txtNombre" value=${persona.nombre}>
 				<input class="form-control border border-secondary"
-					placeholder="Ingrese apellido (*)" type="text" name="txtApellido">
-				<input class="form-control border border-secondary"
-					placeholder="Ingrese DNI (*)" type="text" name="txtDNI">
+					placeholder="Ingrese apellido (*)" type="text" name="txtApellido" value=${persona.apellido}>
+<!-- 				<input class="form-control border border-secondary" -->
+<!-- 					placeholder="Ingrese DNI (*)" type="text" name="txtDNI" value=${persona.DNI}> -->
 				<p class="form-control">
 					Seleccione genero <select name="txtSexo"
 						class="text-control border border-secondary" placeholder="Sexo">
@@ -156,13 +158,13 @@
 					</select>
 				<p />
 
-				<input type="date" class="form-control border border-secondary"
+				<input type="date" class="form-control border border-secondary" value=${persona.fechaNacimiento}
 					name="txtFecha"
 					placeholder="Ingrese su fecha de nacimiento en el siguiente formato:   <%=str_date2%>" />
 
 				<p class="form-control">
 					Ingrese su direccion: <input
-						class="text-control border border-secondary" placeholder="Calle"
+						class="text-control border border-secondary" placeholder="Calle" value=${persona.direccion}
 						type="text" name="txtCalle"> <input
 						class="text-control border border-secondary" placeholder="Numero"
 						type="text" name="txtNumero"> <input

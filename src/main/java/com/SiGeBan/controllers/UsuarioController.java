@@ -1,7 +1,5 @@
 package main.java.com.SiGeBan.controllers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 //import java.util.Date;
@@ -27,8 +25,6 @@ import main.java.com.SiGeBan.models.services.IPerfilService;
 import main.java.com.SiGeBan.models.services.IPersonaService;
 import main.java.com.SiGeBan.models.services.IProvinciaService;
 import main.java.com.SiGeBan.models.services.IUsuarioService;
-
-import static javax.swing.JOptionPane.showMessageDialog;
 
 @Controller
 public class UsuarioController {
@@ -82,10 +78,61 @@ public class UsuarioController {
 		model.addObject("listperfiles", _LPerfiles);
 		return model;
 	}
+	
+	@RequestMapping("actualizarUsuario.html")
+	public ModelAndView actualizarUsuario(Integer idPersona, Integer txtPerfil, String txtNombre, String txtApellido, String txtDNI, Integer txtSexo, Integer txtPais,Integer txtProvincia,Integer txtLocalidad, String txtFecha, String txtCalle, String txtNumero, String txtDto) {
+		ModelAndView model = new ModelAndView();
+		Perfiles perfil = new Perfiles();
+		Usuario usuario = new Usuario();
+		Generos genero = new Generos();
+		Paises pais = new Paises();
+		Provincias provincia = new Provincias();
+		Localidades localidad = new Localidades();
+	//iPersonaService.ob
+		Personas persona = iPersonaService.obtenerPersonaPorId(idPersona);
+		genero = igeneroService.obtenerGeneroPorId(txtSexo);
+		perfil = iperfilService.obtenePerfilPorId(txtPerfil);
+		pais = iPaisService.obtenerUnPais(txtPais);
+		provincia = iProvinciaService.obtenerUnProvincia(txtProvincia);
+		localidad = ilocalidadService.obtenerUnLocalidad(txtLocalidad);
+		
+		usuario = persona.getUsuario();
+	//	perfil = usuario.getPerfil();
+		
+		persona.setApellido(txtApellido);
+		persona.setNombre(txtNombre);
+	//	persona.setDNI(txtDNI);
+		persona.setGenero(genero);
+		usuario.setPerfil(perfil);
+		persona.setUsuario(usuario);
+		persona.setPais(pais);
+		persona.setProvincia(provincia);
+		persona.setLocalidad(localidad);
+		persona.setIdPersona(idPersona);
+	//	persona.setFechaNacimiento(txtFecha);
+		persona.setDireccion(txtCalle + " " + txtNumero + " " + txtDto );
+		iPersonaService.actualizarPersona(persona);
+		ArrayList<Personas> _LPersonas = (ArrayList<Personas>) iPersonaService.obtenerPersonas();
+		ArrayList<Paises> _LPaises = (ArrayList<Paises>) iPaisService.obtenerPaises();
+		ArrayList<Provincias> _LProvincias = (ArrayList<Provincias>) iProvinciaService.obtenerProvincias();
+		ArrayList<Localidades> _LLocalidades = (ArrayList<Localidades>) ilocalidadService.obtenerLocalidades();
+		ArrayList<Generos> _LGeneros = (ArrayList<Generos>) igeneroService.obtenerGeneros();
+		ArrayList<Perfiles> _LPerfiles = (ArrayList<Perfiles>) iperfilService.obtenerPerfiles();
+		
+		model.addObject("listpaises", _LPaises);
+		model.addObject("listprovincias", _LProvincias);
+		model.addObject("listlocalidades", _LLocalidades);
+		model.addObject("listpersonas", _LPersonas);
+		model.addObject("listgeneros", _LGeneros);
+		model.addObject("listperfiles", _LPerfiles);
+		model.setViewName("add");
+		return model;
+	}
 	@RequestMapping(value = "modificaUsuarios.html", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView modificaUsuarios(int idPersona) {
 		ModelAndView model = new ModelAndView();
 		Personas persona = iPersonaService.obtenerPersonaPorId(idPersona);
+		//persona.setIdPersona(idPersona);
 		ArrayList<Paises> _LPaises = (ArrayList<Paises>) iPaisService.obtenerPaises();
 		ArrayList<Provincias> _LProvincias = (ArrayList<Provincias>) iProvinciaService.obtenerProvincias();
 		ArrayList<Localidades> _LLocalidades = (ArrayList<Localidades>) ilocalidadService.obtenerLocalidades();

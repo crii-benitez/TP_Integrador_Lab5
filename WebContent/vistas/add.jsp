@@ -214,7 +214,7 @@
 							<span hidden="hidden">${mov.idPersona}</span>
 							<td><a name="btnModificar" class="btn btn-primary"
 								href="modificaUsuarios.html?idPersona=${mov.idPersona}">
-									<i class="fas fa-trash-alt"></i>
+									<i class="fas fa-edit"></i>
 							</a></td>
 							<td><a name="btnEliminar" class="btn btn-danger"
 								href="bajaUsuarios.html?usuario=${mov.usuario.usuario}">
