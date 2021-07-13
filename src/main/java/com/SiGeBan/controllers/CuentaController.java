@@ -70,6 +70,46 @@ public class CuentaController {
 		return model;
 	}
 
+	@RequestMapping("modificaCuentas.html")
+	public ModelAndView modifCuentas(Long idCuenta) {
+		ModelAndView model = new ModelAndView();
+		Cuentas cuenta = iCuentaService.obtenerCuentaPorId(idCuenta);
+		model.addObject("cuenta", cuenta);
+		model.setViewName("ModiCuentas");
+		return model;
+	}
+	
+	@RequestMapping("actualizacuenta.html")
+	public ModelAndView modifCuentas(Long idCuenta, String txtCuenta, String txtAlias, String txtCbu) {
+		ModelAndView model = new ModelAndView();
+		String mensaje = "";
+		Cuentas cuenta = iCuentaService.obtenerCuentaPorId(idCuenta);
+		cuenta.setAlias(txtAlias);
+		cuenta.setCbu(txtCbu);
+		cuenta.setNumeroDeCuenta(txtCuenta);
+		
+		try {
+			iCuentaService.actualizarCuenta(cuenta);
+			mensaje = "Cuenta actualizada";
+		} catch (Exception e) {
+			mensaje = "No se pudo actualizar la cuenta" ;
+		}
+		
+		
+		
+		
+		
+		model.addObject("mensaje", mensaje);
+		model.addObject("cuenta", cuenta);
+		ArrayList<Personas> _LPersonas = (ArrayList<Personas>) iCuentaService.obtenerPersonas();
+		model.addObject("listpersonas", _LPersonas);
+		ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+		model.addObject("listcuentas", _Lcuentas);
+		
+		model.setViewName("addaccount");
+		return model;
+	}
+	
 	@RequestMapping("bajaCuentas.html")
 	public ModelAndView bajaCuentas(Long idCuenta) {
 		ModelAndView model = new ModelAndView();
