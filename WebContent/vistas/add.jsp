@@ -213,7 +213,7 @@
 							<td>${mov.fechaNacimiento}</td>
 							<span hidden="hidden">${mov.idPersona}</span>
 							<td><a name="btnModificar" class="btn btn-primary"
-								href="modificaUsuarios.html?usuario=${mov.idPersona}">
+								href="modificaUsuarios.html?idPersona=${mov.idPersona}">
 									<i class="fas fa-trash-alt"></i>
 							</a></td>
 							<td><a name="btnEliminar" class="btn btn-danger"

@@ -474,12 +474,15 @@ function checkIt() {
  				                    <td>${mov.cbu}</td> 
  				                    <td>${mov.fechaDeCreacion}</td> 
 				                    <td>${mov.saldo}</td>
-				                     <td><button type="button" class="btn btn-primary">
-										<i class="fas fa-edit"></i>
-									</button>
-									<button type="button" class="btn btn-danger">
-										<i class="fas fa-trash-alt"></i>
-									</button></td> 
+							<span hidden="hidden">${mov.idCuenta}</span>
+							<td><a name="btnModificar" class="btn btn-primary"
+								href="modificaCuentas.html?idCuenta=${mov.idCuenta}">
+									<i class="fas fa-trash-alt"></i>
+							</a></td>
+							<td><a name="btnEliminar" class="btn btn-danger"
+								href="bajaCuentas.html?idCuenta=${mov.idCuenta}">
+									<i class="fas fa-trash-alt"></i>
+							</a></td>
 				                </tr>
 				               
 				            </c:forEach>

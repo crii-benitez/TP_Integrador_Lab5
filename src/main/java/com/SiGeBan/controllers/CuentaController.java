@@ -70,6 +70,24 @@ public class CuentaController {
 		return model;
 	}
 
+	@RequestMapping("bajaCuentas.html")
+	public ModelAndView bajaCuentas(Long idCuenta) {
+		ModelAndView model = new ModelAndView();
+
+		Cuentas cuenta = iCuentaService.obtenerCuentaPorId(idCuenta);
+		cuenta.setActiva(false);
+		iCuentaService.actualizarCuenta(cuenta);
+
+		ArrayList<Personas> _LPersonas = (ArrayList<Personas>) iCuentaService.obtenerPersonas();
+		ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaService.obtenerCuentas();
+
+		model.addObject("listpersonas", _LPersonas);
+		model.addObject("listcuentas", _Lcuentas);
+
+		model.setViewName("addaccount");
+		return model;
+	}
+
 	@RequestMapping("IrACuentas.html")
 	public ModelAndView abrirIrACuentas() {
 

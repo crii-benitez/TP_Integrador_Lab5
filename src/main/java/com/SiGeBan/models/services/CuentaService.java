@@ -41,7 +41,10 @@ public class CuentaService implements ICuentaService {
 		System.out.println("Ingreso en CuentaService obtenerCuentaPorNumeroDeCuenta, Valor numeroDeCuenta=" + numeroDeCuenta);
 		return iCuentaoDAO.obtenerCuentaPorNumeroDeCuenta(numeroDeCuenta);
 	}
-
+	@Override
+	public Cuentas obtenerCuentaPorId(Long idCuenta) {
+		return iCuentaoDAO.obtenerCuentaPorId(idCuenta);
+	}
 	@Override
 	public ArrayList<Cuentas> obtenerCuentas() {
 		// TODO Auto-generated method stub
@@ -61,7 +64,6 @@ public class CuentaService implements ICuentaService {
 
 	@Override
 	public void actualizarCuenta(Cuentas cuenta) {
-		// TODO Auto-generated method stub
 		iCuentaoDAO.actualizarCuenta(cuenta);
 	}
 	

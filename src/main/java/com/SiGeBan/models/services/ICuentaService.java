@@ -22,4 +22,6 @@ public interface ICuentaService {
 	void eliminarCuenta(Long idCuenta);
 
 	void actualizarCuenta(Cuentas cuenta);
+
+	Cuentas obtenerCuentaPorId(Long idCuenta);
 }

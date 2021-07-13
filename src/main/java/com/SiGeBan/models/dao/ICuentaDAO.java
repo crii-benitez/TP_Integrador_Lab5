@@ -8,26 +8,28 @@ import main.java.com.SiGeBan.models.entity.TiposDeCuentas;
 
 public interface ICuentaDAO {
 	//Alta de Cuenta
-	public void insertarCuenta(Cuentas cuenta);
+	void insertarCuenta(Cuentas cuenta);
 
 	//Obtener Cuenta por numeroDeCuenta
-	public Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta);
+	Cuentas obtenerCuentaPorNumeroDeCuenta(String numeroDeCuenta);
 	
 	//Obtener Cuenta por numeroDeCuenta
-	public ArrayList<Cuentas> obtenerMisCuentas(String usuario);
+	ArrayList<Cuentas> obtenerMisCuentas(String usuario);
 	
 	// Obtiene Tipos de cuentas por id
 	TiposDeCuentas obtenerTipoCuentaPorID(int idTipoDeCuenta);
 
 	//Obtiene todas las Cuentas
-	public ArrayList<Cuentas> obtenerCuentas();
+	ArrayList<Cuentas> obtenerCuentas();
 
 	//Elimina una Cuenta apartir del idCuenta
-	public void eliminarCuenta(Long idCuenta);
+	void eliminarCuenta(Long idCuenta);
 
 	//Actualiza los datos de una Cuenta
-	public void actualizarCuenta(Cuentas cuenta);
+	void actualizarCuenta(Cuentas cuenta);
 	
-	public ArrayList<Personas> obtenerPersonas();
+	ArrayList<Personas> obtenerPersonas();
+
+	Cuentas obtenerCuentaPorId(Long idCuenta);
 	
 }
