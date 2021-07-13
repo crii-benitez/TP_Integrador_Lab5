@@ -41,7 +41,7 @@ public class MovimientoDAO implements IMovimientoDAO {
 //				"group by m.detalle, m.importe,'cbu origen','numeroCuentaOrigen', 'saldo origen' " + 
 //				", 'cbu destino', 'numeroCuentaDestino', 'saldo destino'",numeroDeCuentaOrigen).get(0);
 //	
-		return	(ArrayList<Movimientos>) this.hibernateTemplate.find("FROM Movimientos m WHERE m.numeroDecuentaOrigen= ?",numeroDeCuentaOrigen);
+		return	(ArrayList<Movimientos>) this.hibernateTemplate.find("FROM Movimientos m WHERE m.numeroDecuentaOrigen.numeroDeCuenta= ? or m.numeroDecuentaDestino.numeroDeCuenta= ?",new Object[]{numeroDeCuentaOrigen,numeroDeCuentaOrigen});
 				
 				//," or m.numeroDecuentaDestino= ?",numeroDeCuentaOrigen);
 	}

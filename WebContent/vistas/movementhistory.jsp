@@ -101,7 +101,9 @@ function checkIt() {
 				Históricos</h1>
 			<form class="table table-bordered bg-light" action="<%=urlMovimientos%>" method="post">
 				<div class="text-white  bg-dark">Datos de Busqueda</div>
+				
 				<table class="container table table-bordered">
+				<br>
 					<tr>
 				
 						<td colspan="2">	 	<select class="text-control border border-secondary"  name="txtCuenta" placeholder="Cuentas">
@@ -220,7 +222,7 @@ $(document).ready(function () {
         language:
         {
             searchPlaceholder: "Que desea buscar?",
-            "emptyTable": "No hay datos para mostrar.",
+            "emptyTable": "Seleccione una cuenta y presione consultar.",
             "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
             "infoEmpty": "Mostrando 0 a 0 de 0 registros",
             "infoFiltered": "(filtrados de _MAX_ registros totales)",
