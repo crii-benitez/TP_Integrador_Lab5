@@ -40,13 +40,26 @@ public class MovimientoController {
 	@Autowired
 	private ICuentaService iCuentaServiceD;
 	
+	
+	
 	 @RequestMapping("IrAMovimientos.html")
-	 public ModelAndView listMovement() {
+	 public ModelAndView listMovement(String UserName, String txtCuenta) {
+	 
+		 ArrayList<Movimientos> _Lmovimientos= new ArrayList<Movimientos>();
+		 ArrayList<Cuentas> _Lcuentas = (ArrayList<Cuentas>) iCuentaServiceO.obtenerMisCuentas(UserName);
+		 
+		 ModelAndView model = new ModelAndView("movementhistory");
+	 
+	 if (txtCuenta != null){
+	//	_Lmovimientos=(ArrayList<Movimientos>) iMovimientoService.obtenerMovimientos();
 	
-	 ArrayList<Movimientos> _Lmovimientos=(ArrayList<Movimientos>) iMovimientoService.obtenerMovimientos();
-	 ModelAndView model = new ModelAndView("movementhistory");
+		_Lmovimientos=(ArrayList<Movimientos>) iMovimientoService.obtenerMovimientosPornumeroDeCuentaOrigen(txtCuenta);
+		model.addObject("listmovimientos", _Lmovimientos);
+	 }	 
+			
 	
-	 model.addObject("listmovimientos", _Lmovimientos);
+	 model.addObject("listcuentas", _Lcuentas);
+	 
 	 return model;
 	
 	 }

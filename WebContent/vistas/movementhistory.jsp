@@ -99,45 +99,46 @@ function checkIt() {
 
 			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Movimientos
 				Históricos</h1>
-			<form class="table table-bordered bg-light" action="#" method="post">
+			<form class="table table-bordered bg-light" action="<%=url2%>" method="post">
 				<div class="text-white  bg-dark">Datos de Busqueda</div>
 				<table class="container table table-bordered">
 					<tr>
-						<td colspan="2"><select name="pais"
-							class="form-control border border-secondary"
-							placeholder="Numero de Cuenta">
-								<option value="1">20750921406888</option>
-								<option value="2">20750921406890</option>
-						</select></td>
+				
+						<td colspan="2">	 	<select class="text-control border border-secondary"  name="txtCuenta" placeholder="Cuentas">
+					<c:forEach var="lic" items="${listcuentas}">
+				
+				    	<option selected="selected" value="${lic.numeroDeCuenta}">	${lic.tipoDeCuenta.nombreDeTipoDeCuenta}: ${lic.numeroDeCuenta} Saldo disponible: ${lic.saldo}</option>            
+				    </c:forEach>
+					</select></td>
 					</tr>
-					<tr>
-						<td colspan="2"><select name="pais"
-							class="form-control border border-secondary"
-							placeholder="Tipo de Cuenta">
-								<option value="1">Caja de ahorro - Pesos</option>
-								<option value="2">Caja de ahorro - Dolares</option>
-						</select></td>
-					</tr>
-					<tr>
-						<td><input type="text"
-							class="form-control border border-secondary" title="NombCuenta"
-							placeholder="Fecha Desde" value="03/09/2020" /></td>
-						<td><input type="text"
-							class="form-control border border-secondary" title="NombCuenta"
-							placeholder="Fecha Hasta" value="10/05/2021" /></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<td colspan="2"><select name="pais" -->
+<!-- 							class="form-control border border-secondary" -->
+<!-- 							placeholder="Tipo de Cuenta"> -->
+<!-- 								<option value="1">Caja de ahorro - Pesos</option> -->
+<!-- 								<option value="2">Caja de ahorro - Dolares</option> -->
+<!-- 						</select></td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td><input type="text" -->
+<!-- 							class="form-control border border-secondary" title="NombCuenta" -->
+<!-- 							placeholder="Fecha Desde" value="03/09/2020" /></td> -->
+<!-- 						<td><input type="text" -->
+<!-- 							class="form-control border border-secondary" title="NombCuenta" -->
+<!-- 							placeholder="Fecha Hasta" value="10/05/2021" /></td> -->
+<!-- 					</tr> -->
 					<tr>
 						<td colspan="2">
-							<button type="button" class="btn btn-primary">Consultar</button>
+							<button type="submit" class="btn btn-primary">Consultar</button>
 						</td>
 					</tr>
 				</table>
 			</form>
 			<div class="bg-lingh">
 				<div class="container table py-4">
-					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3">
-						Cuenta seleccionada: Caja de Ahorro Nro: 20750921406888 CBU:
-						0110092130001111111111</h1>
+<!-- 					<h1 class="col-12 col-xl-8 h3 text-left text-primary pt-3"> -->
+<!-- 						Cuenta seleccionada: Caja de Ahorro Nro: 20750921406888 CBU: -->
+<!-- 						0110092130001111111111</h1> -->
 						
 						<p>
 						<!-- Buscar: <input class="text-control border border-secondary"
