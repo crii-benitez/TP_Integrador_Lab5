@@ -1,9 +1,6 @@
 <%@ page session="true" language="java"
 	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-<!DOCTYPE html>
 <html lang="en">
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -108,16 +105,16 @@
 	<div class="bg-light">
 		<div class="container py-4">
 
-			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Registrar
-				Nuevo Usuario</h1>
+			<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Modificar
+				Usuario</h1>
 			<br /> <br />
 			<form class="table table-bordered bg-light"
-				action="agregarUsuario.html" method="get">
+				action="actualizarUsuario.html" method="get">
 				<p class="form-control">
 					Seleccione Perfil de usuario (*) <select name="txtPerfil"
 						class="text-control border border-secondary" placeholder="Perfil">
-						<c:forEach var="per" items="${listperfiles}">
-							<option selected="selected" value="${per.idPerfil}">${per.perfil}</option>
+						<c:forEach var="persona" items="${listpersonafiles}">
+							<option selected="selected" value="${persona.idperfil}">${persona.perfil.perfil}</option>
 						</c:forEach>
 					</select>
 				<p />
@@ -173,84 +170,33 @@
 						type="text" name="txtDto">
 				</p>
 				</br>
-				<button type="submit" class="btn btn-primary">Ingresar
+				<button type="submit" class="btn btn-primary">Actualizar
 					Usuario</button>
 
 			</form>
 
 
-
-			<table id="tableta"
-				class="container table table-striped table-bordered">
-				<thead>
-					<tr>
-						<td>Nombre</td>
-						<td>Apellido</td>
-						<td>DNI</td>
-						<!-- 								<td>Sexo</td> -->
-						<td>Pais</td>
-						<td>Provincia</td>
-						<td>Localidad</td>
-						<!-- 								<td>Direccion</td> -->
-						<td>Usuario</td>
-						<td>Perfil</td>
-						<td>Fecha de nacimiento</td>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="mov" items="${listpersonas}">
-						<tr>
-							<td>${mov.nombre}</td>
-							<td>${mov.apellido}</td>
-							<td>${mov.DNI}</td>
-							<%--  				                    <td>${mov.genero.genero}</td>  --%>
-							<td>${mov.pais.pais}</td>
-							<td>${mov.provincia.provincia}</td>
-							<td>${mov.localidad.localidad}</td>
-							<%-- 				                    <td>${mov.direccion}</td> --%>
-							<td>${mov.usuario.usuario}</td>
-							<td>${mov.usuario.perfil.perfil}</td>
-							<td>${mov.fechaNacimiento}</td>
-							<span hidden="hidden">${mov.idPersona}</span>
-							<td><a name="btnModificar" class="btn btn-primary"
-								href="modificaUsuarios.html?usuario=${mov.idPersona}">
-									<i class="fas fa-trash-alt"></i>
-							</a></td>
-							<td><a name="btnEliminar" class="btn btn-danger"
-								href="bajaUsuarios.html?usuario=${mov.usuario.usuario}">
-									<i class="fas fa-trash-alt"></i>
-							</a></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	</div>
-	</div>
+			<!-- Start Footer -->
+			<footer class="bg-secondary pt-4">
 
 
-	<!-- Start Footer -->
-	<footer class="bg-secondary pt-4">
-
-
-	<div class="w-100 bg-primary py-4">
-		<div class="container">
-			<div class="row pt-2">
-				<div class="col-lg-6 col-sm-12">
-					<p class="text-lg-start text-center text-light light-300">©
-						Copyright 2021 SiGeBan. All Rights Reserved.</p>
-				</div>
-				<div class="col-lg-6 col-sm-12">
-					<p class="text-lg-end text-center text-light light-300">
-						Realizado por Grupo 9 LAB5 UtnFrgp</p>
+			<div class="w-100 bg-primary py-4">
+				<div class="container">
+					<div class="row pt-2">
+						<div class="col-lg-6 col-sm-12">
+							<p class="text-lg-start text-center text-light light-300">©
+								Copyright 2021 SiGeBan. All Rights Reserved.</p>
+						</div>
+						<div class="col-lg-6 col-sm-12">
+							<p class="text-lg-end text-center text-light light-300">
+								Realizado por Grupo 9 LAB5 UtnFrgp</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	</footer>
-	<!-- End Footer -->
+			</footer>
+			<!-- End Footer -->
 </body>
 
 <!-- Bootstrap -->

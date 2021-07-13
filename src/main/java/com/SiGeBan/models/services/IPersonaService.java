@@ -2,6 +2,7 @@ package main.java.com.SiGeBan.models.services;
 
 import java.util.ArrayList;
 
+
 import main.java.com.SiGeBan.models.entity.Personas;
 
 public interface IPersonaService {
@@ -13,8 +14,10 @@ public interface IPersonaService {
 
 	void insertarPersona(Personas persona);
 
-    void eliminarPersona(String dni) ;
+	void eliminarPersona(String dni);
 
 	void actualizarPersona(Personas persona);
-	
+
+	Personas obtenerPersonaPorId(int idPersona);
+
 }

@@ -61,4 +61,9 @@ public class PersonaService implements IPersonaService{
 		
 	}
 
+	@Override
+	public Personas obtenerPersonaPorId(int idPersona) {
+		return iPersonaDAO.obtenerPersonaPorId(idPersona);
+	}
+
 }

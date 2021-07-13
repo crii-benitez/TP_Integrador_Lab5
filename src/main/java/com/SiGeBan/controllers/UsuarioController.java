@@ -60,7 +60,7 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "bajaUsuarios.html", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView abmlUsuarios(String usuario) {
+	public ModelAndView bajaUsuarios(String usuario) {
 		ModelAndView model = new ModelAndView();
 		Usuario usser = iUsuarioService.obtenerUnRegistro(usuario);
 		usser.setActivo(false);
@@ -78,6 +78,26 @@ public class UsuarioController {
 		model.addObject("listprovincias", _LProvincias);
 		model.addObject("listlocalidades", _LLocalidades);
 		model.addObject("listpersonas", _LPersonas);
+		model.addObject("listgeneros", _LGeneros);
+		model.addObject("listperfiles", _LPerfiles);
+		return model;
+	}
+	@RequestMapping(value = "modificaUsuarios.html", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView modificaUsuarios(int idPersona) {
+		ModelAndView model = new ModelAndView();
+		Personas persona = iPersonaService.obtenerPersonaPorId(idPersona);
+		ArrayList<Paises> _LPaises = (ArrayList<Paises>) iPaisService.obtenerPaises();
+		ArrayList<Provincias> _LProvincias = (ArrayList<Provincias>) iProvinciaService.obtenerProvincias();
+		ArrayList<Localidades> _LLocalidades = (ArrayList<Localidades>) ilocalidadService.obtenerLocalidades();
+		ArrayList<Generos> _LGeneros = (ArrayList<Generos>) igeneroService.obtenerGeneros();
+		ArrayList<Perfiles> _LPerfiles = (ArrayList<Perfiles>) iperfilService.obtenerPerfiles();
+
+		model.setViewName("modificacionUsuario");
+
+		model.addObject("listpaises", _LPaises);
+		model.addObject("listprovincias", _LProvincias);
+		model.addObject("listlocalidades", _LLocalidades);
+		model.addObject("persona", persona);
 		model.addObject("listgeneros", _LGeneros);
 		model.addObject("listperfiles", _LPerfiles);
 		return model;
